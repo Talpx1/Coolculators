@@ -1,0 +1,199 @@
+{
+    "hello": "Hello!",
+    "no_results": "No Results",
+    "search_a_calculator": "Search a calculator...",
+    "calculator_not_available_toast_summary": "Calculator not available",
+    "calculator_not_available_toast_detail": "{0} is not currently available or it's still in development. Check back later.",
+    "calculate": "Calculate",
+    "tags": {
+        "health": "health",
+        "diet": "diet",
+        "food": "food"
+    },
+    "calculators": {
+        "body_mass_index": {
+            "title": "Body Mass Index (BMI) Calculator",
+            "description": ""
+        },
+        "calories": {
+            "title": "Calories Calculator",
+            "description": ""
+        },
+        "pregnancy": {
+            "title": "Pregnancy Calculator",
+            "description": ""
+        },
+        "heart_rate": {
+            "title": "Heart Rate Calculator",
+            "description": ""
+        },
+        "hydration": {
+            "title": "Hydration Calculator",
+            "description": ""
+        },
+        "date_difference": {
+            "title": "Date Difference Calculator",
+            "description": ""
+        },
+        "age": {
+            "title": "Age Calculator",
+            "description": ""
+        },
+        "time_zone": {
+            "title": "Time Zone Calculator",
+            "description": ""
+        },
+        "countdown": {
+            "title": "Countdown Calculator",
+            "description": ""
+        },
+        "work_hours": {
+            "title": "Work Hours Calculator",
+            "description": ""
+        },
+        "paint": {
+            "title": "Paint Calculator",
+            "description": ""
+        },
+        "tile": {
+            "title": "Tile Calculator",
+            "description": ""
+        },
+        "concrete": {
+            "title": "Concrete Calculator",
+            "description": ""
+        },
+        "insulation": {
+            "title": "Insulation Calculator",
+            "description": ""
+        },
+        "fertilizer": {
+            "title": "Fertilizer Calculator",
+            "description": ""
+        },
+        "series_and_parallel_resistor": {
+            "title": "Series and Parallel Resistor Calculator",
+            "description": ""
+        },
+        "voltage_drop": {
+            "title": "Voltage Drop Calculator",
+            "description": ""
+        },
+        "electrical_power": {
+            "title": "Electrical Power Calculator",
+            "description": ""
+        },
+        "material_strength": {
+            "title": "Material Strength Calculator",
+            "description": ""
+        },
+        "battery_charge_time": {
+            "title": "Battery Charge Time Calculator",
+            "description": ""
+        },
+        "grade_point_average": {
+            "title": "Grade Point Average Calculator",
+            "description": ""
+        },
+        "percentage": {
+            "title": "Percentage Calculator",
+            "description": ""
+        },
+        "mileage": {
+            "title": "Mileage Calculator",
+            "description": ""
+        },
+        "fuel_cost": {
+            "title": "Fuel Cost Calculator",
+            "description": ""
+        },
+        "navigation_route": {
+            "title": "Navigation Route Calculator",
+            "description": ""
+        },
+        "co2_emissions": {
+            "title": "CO2 Emissions Calculator",
+            "description": ""
+        },
+        "flight_time": {
+            "title": "Flight Time Calculator",
+            "description": ""
+        },
+        "body_fat": {
+            "title": "Body Fat Calculator",
+            "description": ""
+        },
+        "macronutrient": {
+            "title": "Macronutrient Calculator",
+            "description": ""
+        },
+        "ideal_weight": {
+            "title": "Ideal Weight Calculator",
+            "description": ""
+        },
+        "maximum_heart_rate": {
+            "title": "Maximum Heart Rate Calculator",
+            "description": ""
+        },
+        "recovery_time": {
+            "title": "Recovery Time Calculator",
+            "description": ""
+        },
+        "volume": {
+            "title": "Volume Calculator",
+            "description": ""
+        },
+        "surface_area": {
+            "title": "Surface Area Calculator",
+            "description": ""
+        },
+        "weight": {
+            "title": "Weight Calculator",
+            "description": ""
+        },
+        "profit_margin": {
+            "title": "Profit Margin Calculator",
+            "description": ""
+        },
+        "sale_price": {
+            "title": "Sale Price Calculator",
+            "description": ""
+        },
+        "break_even_point": {
+            "title": "Break-Even Point Calculator",
+            "description": ""
+        },
+        "car_performance": {
+            "title": "Car Performance Calculator",
+            "description": ""
+        },
+        "car_maintenance": {
+            "title": "Car Maintenance Calculator",
+            "description": ""
+        },
+        "car_financing": {
+            "title": "Car Financing Calculator",
+            "description": ""
+        },
+        "energy_consumption": {
+            "title": "Energy Consumption Calculator",
+            "description": ""
+        },
+        "solar_panel": {
+            "title": "Solar Panel Calculator",
+            "description": ""
+        },
+        "carbon_footprint": {
+            "title": "Carbon Footprint Calculator",
+            "description": ""
+        },
+        "energy_efficiency": {
+            "title": "Energy Efficiency Calculator",
+            "description": ""
+        },
+        "energy_savings": {
+            "title": "Energy Savings Calculator",
+            "description": ""
+        }
+    }
+}

@@ -1,0 +1,199 @@
+{
+    "hello": "Ciao!",
+    "no_results": "Nessun Risultato",
+    "search_a_calculator": "Cerca un calcolatore...",
+    "calculator_not_available_toast_summary": "Calcolatore non disponibile",
+    "calculator_not_available_toast_detail": "{0} non è al momento disponibile o è ancora in fase di sviluppo. Riprova più avanti.",
+    "calculate": "Calcola",
+    "tags": {
+        "health": "salute",
+        "diet": "dieta",
+        "food": "cibo"
+    },
+    "calculators": {
+        "body_mass_index": {
+            "title": "Calcolatore di Indice di Massa Corporea (IMC)",
+            "description": ""
+        },
+        "calories": {
+            "title": "Calcolatore di Calorie",
+            "description": ""
+        },
+        "pregnancy": {
+            "title": "Calcolatore di Gravidanza",
+            "description": ""
+        },
+        "heart_rate": {
+            "title": "Calcolatore di Battito Cardiaco",
+            "description": ""
+        },
+        "hydration": {
+            "title": "Calcolatore di Idratazione",
+            "description": ""
+        },
+        "date_difference": {
+            "title": "Calcolatore di Differenza tra Date",
+            "description": ""
+        },
+        "age": {
+            "title": "Calcolatore di Età",
+            "description": ""
+        },
+        "time_zone": {
+            "title": "Calcolatore di Fusi Orari",
+            "description": ""
+        },
+        "countdown": {
+            "title": "Calcolatore di Conto alla Rovescia",
+            "description": ""
+        },
+        "work_hours": {
+            "title": "Calcolatore di Ore di Lavoro",
+            "description": ""
+        },
+        "paint": {
+            "title": "Calcolatore di Vernice",
+            "description": ""
+        },
+        "tile": {
+            "title": "Calcolatore di Piastrelle",
+            "description": ""
+        },
+        "concrete": {
+            "title": "Calcolatore di Calcestruzzo",
+            "description": ""
+        },
+        "insulation": {
+            "title": "Calcolatore di Isolamento",
+            "description": ""
+        },
+        "fertilizer": {
+            "title": "Calcolatore di Fertilizzanti",
+            "description": ""
+        },
+        "series_and_parallel_resistor": {
+            "title": "Calcolatore di Resistenze in Serie e Parallelo",
+            "description": ""
+        },
+        "voltage_drop": {
+            "title": "Calcolatore di Caduta di Tensione",
+            "description": ""
+        },
+        "electrical_power": {
+            "title": "Calcolatore di Potenza Elettrica",
+            "description": ""
+        },
+        "material_strength": {
+            "title": "Calcolatore di Resistenza dei Materiali",
+            "description": ""
+        },
+        "battery_charge_time": {
+            "title": "Calcolatore di Tempo di Carica della Batteria",
+            "description": ""
+        },
+        "grade_point_average": {
+            "title": "Calcolatore di Media Voti",
+            "description": ""
+        },
+        "percentage": {
+            "title": "Calcolatore di Percentuali",
+            "description": ""
+        },
+        "mileage": {
+            "title": "Calcolatore di Chilometraggio",
+            "description": ""
+        },
+        "fuel_cost": {
+            "title": "Calcolatore di Costo del Carburante",
+            "description": ""
+        },
+        "navigation_route": {
+            "title": "Calcolatore di Rotte di Navigazione",
+            "description": ""
+        },
+        "co2_emissions": {
+            "title": "Calcolatore di Emissioni di CO2",
+            "description": ""
+        },
+        "flight_time": {
+            "title": "Calcolatore di Tempo di Volo",
+            "description": ""
+        },
+        "body_fat": {
+            "title": "Calcolatore di Massa Grassa",
+            "description": ""
+        },
+        "macronutrient": {
+            "title": "Calcolatore di Macro Nutrienti",
+            "description": ""
+        },
+        "ideal_weight": {
+            "title": "Calcolatore di Peso Ideale",
+            "description": ""
+        },
+        "maximum_heart_rate": {
+            "title": "Calcolatore di Battito Cardiaco Massimo",
+            "description": ""
+        },
+        "recovery_time": {
+            "title": "Calcolatore di Tempo di Recupero",
+            "description": ""
+        },
+        "volume": {
+            "title": "Calcolatore di Volume",
+            "description": ""
+        },
+        "surface_area": {
+            "title": "Calcolatore di Superficie",
+            "description": ""
+        },
+        "weight": {
+            "title": "Calcolatore di Peso",
+            "description": ""
+        },
+        "profit_margin": {
+            "title": "Calcolatore di Margine di Profitto",
+            "description": ""
+        },
+        "sale_price": {
+            "title": "Calcolatore di Prezzo di Vendita",
+            "description": ""
+        },
+        "break_even_point": {
+            "title": "Calcolatore di Punto di Pareggio",
+            "description": ""
+        },
+        "car_performance": {
+            "title": "Calcolatore di Prestazioni dell'Auto",
+            "description": ""
+        },
+        "car_maintenance": {
+            "title": "Calcolatore di Manutenzione Auto",
+            "description": ""
+        },
+        "car_financing": {
+            "title": "Calcolatore di Finanziamento Auto",
+            "description": ""
+        },
+        "energy_consumption": {
+            "title": "Calcolatore di Consumo Energetico",
+            "description": ""
+        },
+        "solar_panel": {
+            "title": "Calcolatore di Pannelli Solari",
+            "description": ""
+        },
+        "carbon_footprint": {
+            "title": "Calcolatore di Impronta di Carbonio",
+            "description": ""
+        },
+        "energy_efficiency": {
+            "title": "Calcolatore di Efficienza Energetica",
+            "description": ""
+        },
+        "energy_savings": {
+            "title": "Calcolatore di Risparmio Energetico",
+            "description": ""
+        }
+    }
+}
