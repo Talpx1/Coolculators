@@ -5,6 +5,7 @@
     "calculator_not_available_toast_summary": "Calcolatore non disponibile",
     "calculator_not_available_toast_detail": "{0} non è al momento disponibile o è ancora in fase di sviluppo. Riprova più avanti.",
     "calculate": "Calcola",
+    "insert_data_to_calculate": "Specifica dei valori per ogni campo richiesto per calcolare il risultato",
     "tags": {
         "health": "salute",
         "diet": "dieta",
@@ -13,7 +14,23 @@
     "calculators": {
         "body_mass_index": {
             "title": "Calcolatore di Indice di Massa Corporea (IMC)",
-            "description": ""
+            "description": "",
+            "messages": {
+                "weight": "Peso",
+                "height": "Altezza",
+                "bmi": "IMC",
+                "severe_thinness": "Grave magrezza",
+                "moderate_thinness": "Magrezza moderata",
+                "mild_thinness": "Lieve magrezza",
+                "normal": "Normopeso",
+                "overweight": "Sovrappeso",
+                "underweight": "Sottopeso",
+                "obese": "Obeso",
+                "obese_class_1": "Obeso classe 1",
+                "obese_class_2": "Obeso classe 2",
+                "obese_class_3": "Obeso classe 3",
+                "your_bmi": "Il tuo IMC"
+            }
         },
         "calories": {
             "title": "Calcolatore di Calorie",

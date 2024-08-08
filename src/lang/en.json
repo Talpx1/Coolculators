@@ -5,6 +5,7 @@
     "calculator_not_available_toast_summary": "Calculator not available",
     "calculator_not_available_toast_detail": "{0} is not currently available or it's still in development. Check back later.",
     "calculate": "Calculate",
+    "insert_data_to_calculate": "Specify values for every required field to calculate the result",
     "tags": {
         "health": "health",
         "diet": "diet",
@@ -13,7 +14,23 @@
     "calculators": {
         "body_mass_index": {
             "title": "Body Mass Index (BMI) Calculator",
-            "description": ""
+            "description": "",
+            "messages": {
+                "weight": "Weight",
+                "height": "Height",
+                "bmi": "BMI",
+                "severe_thinness": "Severe Thinness",
+                "moderate_thinness": "Moderate Thinness",
+                "mild_thinness": "Mild Thinness",
+                "normal": "Normal",
+                "overweight": "Overweight",
+                "underweight": "Underweight",
+                "obese": "Obese",
+                "obese_class_1": "Obese class 1",
+                "obese_class_2": "Obese class 2",
+                "obese_class_3": "Obese class 3",
+                "your_bmi": "Your BMI"
+            }
         },
         "calories": {
             "title": "Calories Calculator",
