@@ -1,10 +1,11 @@
 <script setup lang="ts">
 import NumberInput from '@/components/ui/inputs/NumberInput.vue'
-import { computed, ref } from 'vue'
+import { computed, nextTick, ref } from 'vue'
 import { useI18n } from 'vue-i18n'
 import MeterGroup from 'primevue/metergroup'
 import colors from 'tailwindcss/colors'
 import { PrimeIcons } from '@primevue/core/api'
+import CalculatorPageWrapper from '@/components/ui/CalculatorPageWrapper.vue'
 
 const { t } = useI18n()
 
@@ -159,11 +160,11 @@ function bmiRangeAsPercentage(range: Pick<BmiRange, 'max' | 'min'>) {
 </script>
 
 <template>
-    <div class="grid grid-cols-1 place-content-center gap-16 h-full">
+    <CalculatorPageWrapper :title="t('calculators.body_mass_index.title')">
         <div class="flex gap-16 justify-center">
             <NumberInput
                 input-class="py-8"
-                class="!w-48 text-4xl"
+                class="!w-32 lg:!w-48 text-2xl lg:text-4xl"
                 :label="t('calculators.body_mass_index.messages.weight')"
                 v-model="weight"
                 suffix=" kg"
@@ -173,7 +174,7 @@ function bmiRangeAsPercentage(range: Pick<BmiRange, 'max' | 'min'>) {
             />
             <NumberInput
                 input-class="py-8"
-                class="!w-48 text-4xl"
+                class="!w-32 lg:!w-48 text-2xl lg:text-4xl"
                 :label="t('calculators.body_mass_index.messages.height')"
                 v-model="height"
                 suffix=" m"
@@ -187,7 +188,7 @@ function bmiRangeAsPercentage(range: Pick<BmiRange, 'max' | 'min'>) {
         </div>
 
         <div class="flex justify-center text-center">
-            <div v-if="bmi && bmiRange" class="text-4xl space-y-4">
+            <div v-if="bmi && bmiRange" class="text-2xl lg:text-4xl space-y-4">
                 <div>
                     {{ t('calculators.body_mass_index.messages.bmi') }}:
                     <span :style="{ color: bmiRange.color }"
@@ -217,7 +218,7 @@ function bmiRangeAsPercentage(range: Pick<BmiRange, 'max' | 'min'>) {
             </template>
 
             <template #label>
-                <div class="flex">
+                <div class="hidden lg:flex">
                     <div
                         v-for="range in bmiMacroRanges"
                         :key="range.label"
@@ -240,5 +241,55 @@ function bmiRangeAsPercentage(range: Pick<BmiRange, 'max' | 'min'>) {
                 </div>
             </template>
         </MeterGroup>
-    </div>
+
+        <div class="flex flex-col gap-16 lg:flex-row justify-evenly items-center">
+            <div>
+                <h2 class="text-xl font-bold mb-2">Formula</h2>
+                <div class="flex items-center gap-2">
+                    <p>{{ t('calculators.body_mass_index.messages.bmi') }} (kg/m<sup>2</sup>)</p>
+                    <p>=</p>
+                    <div class="divide-y text-center [&>p]:py-1">
+                        <p class="border-b border-primary-950">
+                            {{ t('calculators.body_mass_index.messages.weight').toLowerCase() }}
+                            (kg)
+                        </p>
+                        <p>
+                            ({{
+                                t('calculators.body_mass_index.messages.height').toLowerCase()
+                            }}
+                            (m))<sup>2</sup>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="w-fit">
+                <header class="text-center border p-5 border-primary">
+                    <h2 class="text-xl font-bold">
+                        {{ t('calculators.body_mass_index.messages.bmi_ranges') }}
+                    </h2>
+                </header>
+                <div
+                    class="grid grid-cols-2 [&>*]:border [&>*]:p-5 [&>*]:border-primary"
+                    v-for="range in bmiRanges"
+                    :key="range.label"
+                    :style="{
+                        color: range.color
+                    }"
+                >
+                    <h3>{{ range.label }}</h3>
+                    <p>
+                        {{
+                            [
+                                isFinite(range.min) && `>=${range.min}`,
+                                isFinite(range.max) && `<${range.max}`
+                            ]
+                                .filter((x) => x !== false)
+                                .join('&nbsp;&nbsp;-&nbsp;&nbsp;')
+                        }}
+                    </p>
+                </div>
+            </div>
+        </div>
+    </CalculatorPageWrapper>
 </template>

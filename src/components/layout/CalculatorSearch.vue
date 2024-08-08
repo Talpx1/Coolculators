@@ -51,13 +51,14 @@ const onOptionSelection = async (e: AutoCompleteOptionSelectEvent) => {
 <template>
     <AutoComplete
         v-model="query"
-        dropdown=""
+        dropdown
         :suggestions="found"
         @complete="search"
         option-label="title"
         @option-select="onOptionSelection"
-        input-class="w-full"
+        input-class="w-full !rounded-r-none"
         :empty-search-message="t('no_results')"
         :placeholder="t('search_a_calculator')"
+        data-key="id"
     />
 </template>

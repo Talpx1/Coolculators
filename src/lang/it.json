@@ -29,7 +29,7 @@
                 "obese_class_1": "Obeso classe 1",
                 "obese_class_2": "Obeso classe 2",
                 "obese_class_3": "Obeso classe 3",
-                "your_bmi": "Il tuo IMC"
+                "bmi_ranges": "Intervalli IMC"
             }
         },
         "calories": {

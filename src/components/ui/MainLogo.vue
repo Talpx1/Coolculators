@@ -1,25 +1,34 @@
 <script setup lang="ts">
 import logo from '@/assets/logo.png'
+import { APP_TITLE } from '@/main'
+import { computed } from 'vue'
 
 const props = withDefaults(
     defineProps<{
-        size?: 'small' | 'medium' | 'large'
+        size?: 'small' | 'medium' | 'large' | number
     }>(),
     { size: 'small' }
 )
 
-function widthFromSize() {
+const sizeInPx = computed(() => {
     switch (props.size) {
+        default:
+            return props.size
         case 'small':
-            return 100
+            return 75
         case 'medium':
-            return 250
+            return 150
         case 'large':
-            return 400
+            return 300
     }
-}
+})
 </script>
 
 <template>
-    <img :src="logo" alt="Coolculators" :width="widthFromSize()" />
+    <img
+        :src="logo"
+        :alt="APP_TITLE"
+        :width="sizeInPx"
+        :style="{ maxWidth: `${sizeInPx}px`, minWidth: `${sizeInPx}px` }"
+    />
 </template>

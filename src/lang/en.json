@@ -29,7 +29,7 @@
                 "obese_class_1": "Obese class 1",
                 "obese_class_2": "Obese class 2",
                 "obese_class_3": "Obese class 3",
-                "your_bmi": "Your BMI"
+                "bmi_ranges": "BMI Ranges"
             }
         },
         "calories": {

@@ -1,7 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import routes from './routes'
 import useLocale, { SUPPORTED_LOCALE_CODES } from '@/composables/useLocale'
-import BaseLayout from '@/components/layout/BaseLayout.vue'
+import BaseLayout from '@/components/layout/AppLayout.vue'
 import NotFoundView from '@/views/errors/NotFoundView.vue'
 
 const router = createRouter({
