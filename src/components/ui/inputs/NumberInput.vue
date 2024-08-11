@@ -6,7 +6,7 @@ import InputWrapper, { type InputWrapperProps } from './InputWrapper.vue'
 
 const { locale } = useI18n()
 
-type NumberInputProps = Omit<InputNumberProps, 'unstyled'> & InputWrapperProps
+type NumberInputProps = Omit<InputNumberProps, 'unstyled' | 'locale'> & InputWrapperProps
 
 withDefaults(defineProps<NumberInputProps>(), {
     incrementIcon: PrimeIcons.PLUS,

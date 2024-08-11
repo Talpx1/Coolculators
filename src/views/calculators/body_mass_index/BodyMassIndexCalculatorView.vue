@@ -7,6 +7,8 @@ import useBmi from './composables/useBmi'
 import BmiBar from './components/BmiBar.vue'
 import BmiFormula from './components/BmiFormula.vue'
 import BmiRangesTable from './components/BmiRangesTable.vue'
+import SecondaryHeading from '@/components/ui/typography/SecondaryHeading.vue'
+import TextParagraph from '@/components/ui/typography/TextParagraph.vue'
 
 const { t, n } = useI18n()
 
@@ -22,10 +24,26 @@ const numberInputProps = {
     decrementButtonClass: '[&>span.pi]:w-full [&>span.pi]:h-full [&>span.pi]:align-middle',
     labelClass: 'text-center text-2xl mb-2'
 }
+
+/**
+ * calcola bmi
+ * calcolo del bmi
+ * calcolo bmi online
+ * calcolo bmi donne
+ * calcolo bmi donna
+ * bmi calcolatore
+ * calcolare bmi
+ * calcolatore bmi
+ * bmi calcolo
+ * calcolo bmi
+ * imc calcolo
+ * calcolo imc
+ * calcolare l'imc
+ */
 </script>
 
 <template>
-    <CalculatorPageWrapper :title="t('calculators.body_mass_index.title')">
+    <CalculatorPageWrapper id="body_mass_index">
         <div class="flex gap-16 justify-center">
             <NumberInput
                 v-bind="numberInputProps"
@@ -48,7 +66,9 @@ const numberInputProps = {
             <div v-if="bmi && bmiRange" class="text-2xl lg:text-4xl space-y-4">
                 <div>
                     {{ t('calculators.body_mass_index.messages.bmi') }}:
-                    <span :style="{ color: bmiRange.color }">{{ n(bmi) }} kg/m<sup>2</sup></span>
+                    <span :style="{ color: bmiRange.color }"
+                        >{{ n(bmi, { maximumFractionDigits: 1 }) }} kg/m<sup>2</sup></span
+                    >
                 </div>
                 <div :style="{ color: bmiRange.color }">{{ bmiRange.label }}</div>
             </div>
@@ -61,6 +81,28 @@ const numberInputProps = {
             <BmiFormula />
 
             <BmiRangesTable />
+        </div>
+
+        <div
+            class="flex flex-col lg:flex-row gap-y-16 justify-around justify-self-center lg:justify-self-auto"
+        >
+            <div>
+                <SecondaryHeading>
+                    {{ t('calculators.body_mass_index.messages.what_bmi_is') }}
+                </SecondaryHeading>
+                <TextParagraph>
+                    {{ t('calculators.body_mass_index.messages.what_bmi_is_description') }}
+                </TextParagraph>
+            </div>
+
+            <div>
+                <SecondaryHeading>
+                    {{ t('calculators.body_mass_index.messages.low_or_high_bmi_risks') }}
+                </SecondaryHeading>
+                <TextParagraph>{{
+                    t('calculators.body_mass_index.messages.low_or_high_bmi_risks_description')
+                }}</TextParagraph>
+            </div>
         </div>
     </CalculatorPageWrapper>
 </template>

@@ -3,7 +3,7 @@ import { useI18n } from 'vue-i18n'
 import useBmiRanges from '../composables/useBmiRanges'
 import Card from 'primevue/card'
 
-const { t } = useI18n()
+const { t, n } = useI18n()
 const bmiRanges = useBmiRanges()
 </script>
 
@@ -28,8 +28,10 @@ const bmiRanges = useBmiRanges()
                     <p>
                         {{
                             [
-                                isFinite(range.min) && `>=${range.min}`,
-                                isFinite(range.max) && `<${range.max}`
+                                isFinite(range.min) &&
+                                    `>=${n(range.min, { maximumFractionDigits: 1 })}`,
+                                isFinite(range.max) &&
+                                    `<${n(range.max, { maximumFractionDigits: 1 })}`
                             ]
                                 .filter((x) => x !== false)
                                 .join('&nbsp;&nbsp;-&nbsp;&nbsp;')

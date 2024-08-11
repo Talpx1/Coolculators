@@ -29,7 +29,11 @@
                 "obese_class_1": "Obese class 1",
                 "obese_class_2": "Obese class 2",
                 "obese_class_3": "Obese class 3",
-                "bmi_ranges": "BMI Ranges"
+                "bmi_ranges": "BMI Ranges",
+                "what_bmi_is": "What is BMI?",
+                "what_bmi_is_description": "The Body Mass Index (BMI) is a parameter used to assess whether a person's weight is proportionate to their height. To calculate BMI, simply divide the weight in kilograms by the square of the height in meters. This tool is useful for both women and men who want to monitor their health, helping you understand if you are underweight, at a normal weight, or overweight, providing a useful indication of your physical condition.",
+                "low_or_high_bmi_risks": "Risks of a High or Low BMI",
+                "low_or_high_bmi_risks_description": "A high or low body mass index can indicate health risks. A BMI above the normal range suggests overweight or obesity, increasing the risk of heart disease, diabetes, and high blood pressure. Conversely, a low BMI may indicate underweight, leading to issues such as weakness, osteoporosis, and nutritional deficiencies. If your BMI is outside the normal parameters, consult a doctor for advice on diet and exercise."
             }
         },
         "calories": {

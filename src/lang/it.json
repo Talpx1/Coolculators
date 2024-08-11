@@ -29,7 +29,11 @@
                 "obese_class_1": "Obeso classe 1",
                 "obese_class_2": "Obeso classe 2",
                 "obese_class_3": "Obeso classe 3",
-                "bmi_ranges": "Intervalli IMC"
+                "bmi_ranges": "Intervalli IMC",
+                "what_bmi_is": "Cos'è l'IMC",
+                "what_bmi_is_description": "L'Indice di Massa Corporea (IMC), noto anche come BMI, è un parametro utilizzato per valutare se il peso di una persona è proporzionato alla sua altezza. Per calcolare l'IMC, basta dividere il peso in chilogrammi per il quadrato dell'altezza in metri. Questo strumento è utile per donne e uomini che desiderano monitorare la propria salute, aiutandoti a capire se sei sotto peso, normopeso o in sovrappeso, fornendo un'indicazione utile sul tuo stato fisico.",
+                "low_or_high_bmi_risks": "Rischi di un IMC Alto o Basso",
+                "low_or_high_bmi_risks_description": "Un indice di massa corporea alto o basso può indicare rischi per la salute. Un BMI superiore al normale suggerisce sovrappeso o obesità, aumentando il rischio di malattie cardiache, diabete e ipertensione. Al contrario, un BMI basso può indicare sottopeso, portando a problemi come debolezza, osteoporosi e carenze nutrizionali. Se il tuo BMI è fuori dai parametri normali, consulta un medico per consigli su dieta ed esercizio fisico."
             }
         },
         "calories": {

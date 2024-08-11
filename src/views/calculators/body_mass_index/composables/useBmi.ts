@@ -1,10 +1,7 @@
-import { computed, isRef, ref, type Ref } from 'vue'
+import { computed, isRef, ref, type MaybeRef, type Ref } from 'vue'
 import useBmiRanges from './useBmiRanges'
 
-export default function useBmi(
-    height: Ref<number | null> | number | null,
-    weight: Ref<number | null> | number | null
-) {
+export default function useBmi(height: MaybeRef<number | null>, weight: MaybeRef<number | null>) {
     const _height = isRef(height) ? height : ref(height)
     const _weight = isRef(weight) ? weight : ref(weight)
 

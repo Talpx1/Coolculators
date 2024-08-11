@@ -2,8 +2,11 @@
 import { computed } from 'vue'
 import useMacroBmiRanges from '../composables/useMacroBmiRanges'
 import MeterGroup from 'primevue/metergroup'
-import useBmiRanges, { BmiRange, MAX_BMI, MIN_BMI } from '../composables/useBmiRanges'
+import useBmiRanges, { type BmiRange, MAX_BMI, MIN_BMI } from '../composables/useBmiRanges'
 import { PrimeIcons } from '@primevue/core/api'
+import { useI18n } from 'vue-i18n'
+
+const { n } = useI18n()
 
 const props = defineProps<{ bmi: number | null; bmiRange: BmiRange | null }>()
 
@@ -41,7 +44,7 @@ const bmiAsPercentage = computed(() => {
                     class="text-center absolute top-0 -translate-x-1/2"
                     :style="{ left: `${bmiAsPercentage}%` }"
                 >
-                    {{ bmi.toFixed(1) }}<br />
+                    {{ n(bmi, { maximumFractionDigits: 1 }) }}<br />
                     <i :class="PrimeIcons.ANGLE_DOWN"></i>
                 </div>
             </div>
@@ -61,8 +64,9 @@ const bmiAsPercentage = computed(() => {
                     {{ range.label }} <br />
                     {{
                         [
-                            isFinite(range.min) && `>=${range.min}`,
-                            isFinite(range.max) && `<${range.max}`
+                            isFinite(range.min) &&
+                                `>=${n(range.min, { maximumFractionDigits: 1 })}`,
+                            isFinite(range.max) && `<${n(range.max, { maximumFractionDigits: 1 })}`
                         ]
                             .filter((x) => x !== false)
                             .join('&nbsp;&nbsp;-&nbsp;&nbsp;')
