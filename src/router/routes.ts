@@ -13,7 +13,8 @@ const routes: RouteRecordRaw[] = [
     {
         path: useLocalizedRoutePath('calculators.body_mass_index'),
         name: 'calculators.body_mass_index',
-        component: () => import('@/views/calculators/BodyMassIndexCalculatorView.vue')
+        component: () =>
+            import('@/views/calculators/body_mass_index/BodyMassIndexCalculatorView.vue')
     }
 ]
 
