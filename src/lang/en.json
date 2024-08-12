@@ -2,7 +2,8 @@
     "home": {
         "description": "Discover our collection of free online calculators for every need."
     },
-    "privacy_disclaimer": "This site does NOT use cookies and does NOT collect, store, or share any information with third parties.""contact_us": "Contact Us",
+    "privacy_disclaimer": "This site does NOT use cookies and does NOT collect, store, or share any information with third parties.",
+    "contact_us": "Contact Us",
     "no_results": "No Results",
     "search_a_calculator": "Search a calculator...",
     "calculator_not_available_toast_summary": "Calculator not available",
