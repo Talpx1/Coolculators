@@ -2,6 +2,8 @@
     "home": {
         "description": "Scopri la nostra raccolta di calcolatori online gratuiti per ogni esigenza."
     },
+    "contact_us": "Contattaci",
+    "privacy_disclaimer": "Questo sito NON usa cookie e NON raccoglie, salva o condivide a terzi alcuna informazione.",
     "no_results": "Nessun Risultato",
     "search_a_calculator": "Cerca un calcolatore...",
     "calculator_not_available_toast_summary": "Calcolatore non disponibile",
