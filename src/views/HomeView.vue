@@ -4,30 +4,39 @@ import useCalculatorList from '@/composables/useCalculatorList'
 import Tag from 'primevue/tag'
 import Button from 'primevue/button'
 import { useI18n } from 'vue-i18n'
+import PrimaryHeading from '@/components/ui/typography/PrimaryHeading.vue'
+import { APP_TITLE } from '@/main'
 
 const calculators = useCalculatorList()
 
-// const { t } = useI18n()
+const { t } = useI18n()
 </script>
 
 <template>
+    <div class="py-16">
+        <PrimaryHeading>{{ APP_TITLE }}</PrimaryHeading>
+        <h2>{{ t('home.description') }}</h2>
+    </div>
+
     <div class="grid grid-cols-1 lg:grid-cols-3 gap-4">
         <Card v-for="calculator in calculators" :key="calculator.id">
-            <template #title>{{ calculator.title }}</template>
+            <template #title>
+                <h3>{{ calculator.title }}</h3>
+            </template>
             <template #subtitle>
                 <div class="flex gap-2">
-                    <Tag v-for="tag in calculator.tags" :key="`${calculator.id}_${tag}`">{{
-                        tag
-                    }}</Tag>
+                    <Tag v-for="tag in calculator.tags" :key="`${calculator.id}_${tag}`">
+                        {{ tag }}
+                    </Tag>
                 </div>
             </template>
             <template #content>
-                <p class="m-0">
+                <h4 class="mb-8">
                     {{ calculator.description }}
-                </p>
-                <!-- <RouterLink :to="calculator.route">
+                </h4>
+                <RouterLink :to="calculator.route">
                     <Button :label="t('calculate')" />
-                </RouterLink> -->
+                </RouterLink>
             </template>
         </Card>
     </div>

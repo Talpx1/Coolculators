@@ -1,4 +1,3 @@
-import { i18n } from '@/composables/useLocale'
 import useLocalizedRoutePath from '@/composables/useLocalizedRoutePath'
 import type { RouteRecordRaw } from 'vue-router'
 

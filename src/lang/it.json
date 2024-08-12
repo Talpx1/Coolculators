@@ -1,5 +1,7 @@
 {
-    "hello": "Ciao!",
+    "home": {
+        "description": "Scopri la nostra raccolta di calcolatori online gratuiti per ogni esigenza."
+    },
     "no_results": "Nessun Risultato",
     "search_a_calculator": "Cerca un calcolatore...",
     "calculator_not_available_toast_summary": "Calcolatore non disponibile",

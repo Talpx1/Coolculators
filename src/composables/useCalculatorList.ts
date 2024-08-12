@@ -10,9 +10,10 @@ export type CalculatorObject = {
     route: RouteLocationRaw
     tags: string[]
     description: string
+    disabled?: boolean
 }
 
-type CalculatorRawEntry = string | ({ id: string } & Partial<CalculatorObject>)
+type CalculatorRawEntry = { id: string } & Partial<CalculatorObject>
 
 export default function useCalculatorList(): Ref<CalculatorObject[]> {
     const { t, locale } = useI18n()
@@ -46,100 +47,103 @@ export default function useCalculatorList(): Ref<CalculatorObject[]> {
 
         {
             id: 'calories',
-            tags: ['tags.health', 'tags.diet', 'tags.food']
+            tags: ['tags.health', 'tags.diet', 'tags.food'],
+            disabled: true
         },
 
-        'pregnancy',
+        { id: 'pregnancy', disabled: true },
 
-        'heart_rate',
+        { id: 'heart_rate', disabled: true },
 
-        'hydration',
+        { id: 'hydration', disabled: true },
 
-        'date_difference',
+        { id: 'date_difference', disabled: true },
 
-        'age',
+        { id: 'age', disabled: true },
 
-        'time_zone',
+        { id: 'time_zone', disabled: true },
 
-        'countdown',
+        { id: 'countdown', disabled: true },
 
-        'work_hours',
+        { id: 'work_hours', disabled: true },
 
-        'paint',
+        { id: 'paint', disabled: true },
 
-        'tile',
+        { id: 'tile', disabled: true },
 
-        'concrete',
+        { id: 'concrete', disabled: true },
 
-        'insulation',
+        { id: 'insulation', disabled: true },
 
-        'fertilizer',
+        { id: 'fertilizer', disabled: true },
 
-        'series_and_parallel_resistor',
+        { id: 'series_and_parallel_resistor', disabled: true },
 
-        'voltage_drop',
+        { id: 'voltage_drop', disabled: true },
 
-        'electrical_power',
+        { id: 'electrical_power', disabled: true },
 
-        'material_strength',
+        { id: 'material_strength', disabled: true },
 
-        'battery_charge_time',
+        { id: 'battery_charge_time', disabled: true },
 
-        'grade_point_average',
+        { id: 'grade_point_average', disabled: true },
 
-        'percentage',
+        { id: 'percentage', disabled: true },
 
-        'mileage',
+        { id: 'mileage', disabled: true },
 
-        'fuel_cost',
+        { id: 'fuel_cost', disabled: true },
 
-        'navigation_route',
+        { id: 'navigation_route', disabled: true },
 
-        'co2_emissions',
+        { id: 'co2_emissions', disabled: true },
 
-        'flight_time',
+        { id: 'flight_time', disabled: true },
 
-        'body_fat',
+        { id: 'body_fat', disabled: true },
 
-        'macronutrient',
+        { id: 'macronutrient', disabled: true },
 
-        'ideal_weight',
+        { id: 'ideal_weight', disabled: true },
 
-        'maximum_heart_rate',
+        { id: 'maximum_heart_rate', disabled: true },
 
-        'recovery_time',
+        { id: 'recovery_time', disabled: true },
 
-        'volume',
+        { id: 'volume', disabled: true },
 
-        'surface_area',
+        { id: 'surface_area', disabled: true },
 
-        'weight',
+        { id: 'weight', disabled: true },
 
-        'profit_margin',
+        { id: 'profit_margin', disabled: true },
 
-        'sale_price',
+        { id: 'sale_price', disabled: true },
 
-        'break_even_point',
+        { id: 'break_even_point', disabled: true },
 
-        'car_performance',
+        { id: 'car_performance', disabled: true },
 
-        'car_maintenance',
+        { id: 'car_maintenance', disabled: true },
 
-        'car_financing',
+        { id: 'car_financing', disabled: true },
 
-        'energy_consumption',
+        { id: 'energy_consumption', disabled: true },
 
-        'solar_panel',
+        { id: 'solar_panel', disabled: true },
 
-        'carbon_footprint',
+        { id: 'carbon_footprint', disabled: true },
 
-        'energy_efficiency',
+        { id: 'energy_efficiency', disabled: true },
 
-        'energy_savings'
+        { id: 'energy_savings', disabled: true }
     ]
 
     function buildList(): CalculatorObject[] {
-        return calculators.map((c) => translateCalculatorObject(buildCalculatorObject(c)))
+        return calculators
+            .filter((c) => !c.disabled)
+            .map((c) => translateCalculatorObject(buildCalculatorObject(c)))
     }
 
     const list = ref(buildList())
