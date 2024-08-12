@@ -30,9 +30,9 @@ const toggleContactDialog = useToggle(isContactDialogOpen)
         </Dialog>
 
         <Dialog v-model:visible="isContactDialogOpen" :header="t('contact_us')">
-            <a href="mailto:software@simonecerruti.com" class="flex items-center gap-4">
+            <a href="mailto:hello@coolculators.com" class="flex items-center gap-4">
                 <span :class="PrimeIcons.ENVELOPE"></span>
-                software@simonecerruti.com
+                hello@coolculators.com
             </a>
         </Dialog>
     </footer>
