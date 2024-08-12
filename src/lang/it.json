@@ -14,7 +14,7 @@
     "calculators": {
         "body_mass_index": {
             "title": "Calcolatore di Indice di Massa Corporea (IMC)",
-            "description": "",
+            "description": "Calcola facilmente il tuo IMC online e gratis.",
             "messages": {
                 "weight": "Peso",
                 "height": "Altezza",

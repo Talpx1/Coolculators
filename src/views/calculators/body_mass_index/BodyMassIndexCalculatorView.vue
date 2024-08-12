@@ -24,22 +24,6 @@ const numberInputProps = {
     decrementButtonClass: '[&>span.pi]:w-full [&>span.pi]:h-full [&>span.pi]:align-middle',
     labelClass: 'text-center text-2xl mb-2'
 }
-
-/**
- * calcola bmi
- * calcolo del bmi
- * calcolo bmi online
- * calcolo bmi donne
- * calcolo bmi donna
- * bmi calcolatore
- * calcolare bmi
- * calcolatore bmi
- * bmi calcolo
- * calcolo bmi
- * imc calcolo
- * calcolo imc
- * calcolare l'imc
- */
 </script>
 
 <template>

@@ -14,7 +14,7 @@
     "calculators": {
         "body_mass_index": {
             "title": "Body Mass Index (BMI) Calculator",
-            "description": "",
+            "description": "Easily calculate your BMI online and for free.",
             "messages": {
                 "weight": "Weight",
                 "height": "Height",
