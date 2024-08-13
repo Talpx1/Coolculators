@@ -72,7 +72,7 @@ watch(
 </script>
 
 <template>
-    <div class="grid grid-cols-1 place-content-center gap-32 h-full py-5">
+    <div class="grid grid-cols-1 place-content-center gap-16 lg:gap-32 h-full py-5">
         <div class="text-center">
             <PrimaryHeading>{{ t(`calculators.${props.id}.title`) }}</PrimaryHeading>
 
