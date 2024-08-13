@@ -10,7 +10,31 @@ import PrimaryHeading from './typography/PrimaryHeading.vue'
 import { watch } from 'vue'
 import { useRoute } from 'vue-router'
 
-const props = defineProps<{ id: string }>()
+type ApplicationCategory =
+    | 'GameApplication'
+    | 'SocialNetworkingApplication'
+    | 'TravelApplication'
+    | 'ShoppingApplication'
+    | 'SportsApplication'
+    | 'LifestyleApplication'
+    | 'BusinessApplication'
+    | 'DesignApplication'
+    | 'DeveloperApplication'
+    | 'DriverApplication'
+    | 'EducationalApplication'
+    | 'HealthApplication'
+    | 'FinanceApplication'
+    | 'SecurityApplication'
+    | 'BrowserApplication'
+    | 'CommunicationApplication'
+    | 'DesktopEnhancementApplication'
+    | 'EntertainmentApplication'
+    | 'MultimediaApplication'
+    | 'HomeApplication'
+    | 'UtilitiesApplication'
+    | 'ReferenceApplication'
+
+const props = defineProps<{ id: string; applicationCategory: ApplicationCategory }>()
 
 const { t, locale } = useI18n()
 
@@ -57,7 +81,7 @@ watch(
                 name: title,
                 description,
                 url: canonical,
-                applicationCategory: 'HealthApplication',
+                applicationCategory: props.applicationCategory,
                 operatingSystem: 'Web',
                 provider: {
                     '@type': 'Organization',

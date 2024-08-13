@@ -2,7 +2,7 @@
 import NumberInput from '@/components/ui/inputs/NumberInput.vue'
 import { ref } from 'vue'
 import { useI18n } from 'vue-i18n'
-import CalculatorPageWrapper from '@/components/ui/CalculatorPageWrapper.vue'
+import CalculatorPageWrapper from '@/components/functional/CalculatorPageWrapper.vue'
 import useBmi from './composables/useBmi'
 import BmiBar from './components/BmiBar.vue'
 import BmiFormula from './components/BmiFormula.vue'
@@ -27,7 +27,7 @@ const numberInputProps = {
 </script>
 
 <template>
-    <CalculatorPageWrapper id="body_mass_index">
+    <CalculatorPageWrapper id="body_mass_index" application-category="HealthApplication">
         <div class="flex gap-16 justify-center">
             <NumberInput
                 v-bind="numberInputProps"
