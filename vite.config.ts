@@ -10,6 +10,7 @@ export default defineConfig({
         vue(),
         UnheadVite(),
         Sitemap({
+            hostname: 'https://coolculators.com',
             dynamicRoutes: [
                 '/it',
                 '/en',
