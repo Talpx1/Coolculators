@@ -18,7 +18,7 @@
     "calculators": {
         "body_mass_index": {
             "title": "Body Mass Index (BMI) Calculator",
-            "description": "Easily calculate your BMI online and for free.",
+            "description": "Easily calculate your BMI online for free and determine if your weight is within the normal range for your height.",
             "messages": {
                 "weight": "Weight",
                 "height": "Height",

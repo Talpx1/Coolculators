@@ -1,6 +1,6 @@
 {
-  "name": "all_the_calculators",
-  "version": "0.0.0",
+  "name": "coolculators",
+  "version": "1.0.0",
   "private": true,
   "type": "module",
   "scripts": {

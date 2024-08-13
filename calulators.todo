@@ -1,4 +1,5 @@
-[ ] Calcolatore di Indice di Massa Corporea (IMC): Per valutare se il peso è nella norma rispetto all'altezza.
+[X] Calcolatore di Indice di Massa Corporea (IMC)
+
 [ ] Calcolatore di Calorie: Per stimare il fabbisogno calorico giornaliero basato su attività fisica, età e peso.
 [ ] Calcolatore di Gravidanza: Per calcolare la data prevista del parto.
 [ ] Calcolatore di Battito Cardiaco: Per determinare la frequenza cardiaca ideale durante l'attività fisica.
