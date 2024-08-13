@@ -68,7 +68,7 @@ const numberInputProps = {
         </div>
 
         <div
-            class="flex flex-col lg:flex-row gap-y-16 justify-around justify-self-center lg:justify-self-auto"
+            class="flex flex-col lg:flex-row gap-y-16 justify-around justify-self-center lg:justify-self-auto max-w-full"
         >
             <div>
                 <SecondaryHeading>
