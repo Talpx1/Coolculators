@@ -18,7 +18,7 @@
     "calculators": {
         "body_mass_index": {
             "title": "Calcolatore di Indice di Massa Corporea (IMC)",
-            "description": "Calcola facilmente il tuo IMC online e gratis e valuta se il tuo peso è nella norma rispetto alla tua altezza",
+            "description": "Calcola il tuo IMC e valuta se il tuo peso è nella norma rispetto alla tua altezza",
             "messages": {
                 "weight": "Peso",
                 "height": "Altezza",
