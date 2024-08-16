@@ -1,9 +1,7 @@
-import useLocalizedRoutePath, {
-    type LocalizedRoutesCollection
-} from '@/composables/useLocalizedRoutePath'
+import useLocalizedRoutePath from '@/composables/useLocalizedRoutePath'
 import type { RouteRecordRaw } from 'vue-router'
 
-function routesToParamRegexp(routes: LocalizedRoutesCollection) {
+function routesToParamRegexp(routes: any) {
     return `:localizedPath(${Object.values(routes).join('|')})`
 }
 

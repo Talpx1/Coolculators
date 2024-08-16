@@ -1,12 +1,7 @@
 import type { SupportedLocale } from './useLocale'
 
-export type LocalizedRoutesCollection = Record<SupportedLocale, string>
-
-export default function useLocalizedRoutePath(
-    route: string,
-    locale?: SupportedLocale
-): typeof locale extends string ? string : LocalizedRoutesCollection {
-    const routes: Record<string, LocalizedRoutesCollection> = {
+export default function useLocalizedRoutePath(route: string, locale?: SupportedLocale) {
+    const routes: Record<string, Record<SupportedLocale, string>> = {
         home: {
             it: '',
             en: ''

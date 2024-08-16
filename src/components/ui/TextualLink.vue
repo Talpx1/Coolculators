@@ -5,7 +5,7 @@ defineProps<Omit<RouterLinkProps, 'to'> & { to: string | RouteLocationRaw }>()
 
 defineOptions({ inheritAttrs: false })
 
-function isExternal(destination: string | RouteLocationRaw) {
+function isExternal(destination: string | RouteLocationRaw): destination is string {
     return typeof destination === 'string'
 }
 </script>
