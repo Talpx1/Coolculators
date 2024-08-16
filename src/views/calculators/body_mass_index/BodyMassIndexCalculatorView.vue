@@ -36,7 +36,7 @@ const numberInputProps = {
 
 <template>
     <CalculatorPageWrapper id="body_mass_index" application-category="HealthApplication">
-        <div class="flex gap-16 justify-center">
+        <div class="flex gap-16">
             <NumberInput
                 v-bind="numberInputProps"
                 :label="t('calculators.shared_messages.weight')"
@@ -54,7 +54,7 @@ const numberInputProps = {
             />
         </div>
 
-        <div class="flex justify-center text-center">
+        <div class="flex">
             <div v-if="bmi && bmiRange" class="text-2xl lg:text-4xl space-y-4">
                 <div>
                     {{ t('calculators.body_mass_index.messages.bmi') }}:
@@ -69,41 +69,34 @@ const numberInputProps = {
 
         <BmiBar :bmi :bmi-range />
 
-        <div class="flex flex-col gap-16 lg:flex-row justify-evenly items-center">
-            <BmiFormula />
+        <BmiFormula />
 
-            <BmiRangesTable />
+        <BmiRangesTable />
+
+        <div>
+            <SecondaryHeading>
+                {{ t('calculators.body_mass_index.messages.what_bmi_is') }}
+            </SecondaryHeading>
+            <TextParagraph>
+                {{ t('calculators.body_mass_index.messages.what_bmi_is_description') }}
+            </TextParagraph>
         </div>
 
-        <div class="flex flex-col gap-16 justify-self-center max-w-full">
-            <div>
-                <SecondaryHeading>
-                    {{ t('calculators.body_mass_index.messages.what_bmi_is') }}
-                </SecondaryHeading>
-                <TextParagraph>
-                    {{ t('calculators.body_mass_index.messages.what_bmi_is_description') }}
-                </TextParagraph>
-            </div>
-
-            <div>
-                <SecondaryHeading>
-                    {{ t('calculators.body_mass_index.messages.low_or_high_bmi_risks') }}
-                </SecondaryHeading>
-                <TextParagraph>
-                    {{
-                        t('calculators.body_mass_index.messages.low_or_high_bmi_risks_description')
-                    }}
-                </TextParagraph>
-            </div>
-
-            <RelatedResources
-                :resources="[
-                    'https://www.betterhealth.vic.gov.au/health/healthyliving/body-mass-index-bmi',
-                    'https://www.cdc.gov/bmi/faq/',
-                    'https://emedicine.medscape.com/article/123702-overview#showall?form=fpf'
-                ]"
-                class="justify-self-center"
-            />
+        <div>
+            <SecondaryHeading>
+                {{ t('calculators.body_mass_index.messages.low_or_high_bmi_risks') }}
+            </SecondaryHeading>
+            <TextParagraph>
+                {{ t('calculators.body_mass_index.messages.low_or_high_bmi_risks_description') }}
+            </TextParagraph>
         </div>
+
+        <RelatedResources
+            :resources="[
+                'https://www.betterhealth.vic.gov.au/health/healthyliving/body-mass-index-bmi',
+                'https://www.cdc.gov/bmi/faq/',
+                'https://emedicine.medscape.com/article/123702-overview#showall?form=fpf'
+            ]"
+        />
     </CalculatorPageWrapper>
 </template>

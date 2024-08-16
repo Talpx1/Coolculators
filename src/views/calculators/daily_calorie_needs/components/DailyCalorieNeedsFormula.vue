@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { useI18n } from 'vue-i18n'
 import TextualLink from '@/components/ui/TextualLink.vue'
+import SecondaryHeading from '@/components/ui/typography/SecondaryHeading.vue'
 
 const { t, n } = useI18n()
 

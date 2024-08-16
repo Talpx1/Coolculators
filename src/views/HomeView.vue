@@ -6,7 +6,7 @@ import Button from 'primevue/button'
 import { useI18n } from 'vue-i18n'
 import PrimaryHeading from '@/components/ui/typography/PrimaryHeading.vue'
 import { APP_TITLE } from '@/main'
-import { watch } from 'vue'
+import { computed, watch } from 'vue'
 import { useHead, useSeoMeta } from '@unhead/vue'
 import logo from '@/assets/logo.png'
 import { SUPPORTED_LOCALE_CODES } from '@/composables/useLocale'
@@ -17,37 +17,33 @@ const { t, locale } = useI18n()
 
 const appUrl = window.location.origin
 
-const alternates = SUPPORTED_LOCALE_CODES.filter((l) => l !== locale.value).map((locale) => ({
+const alternates = SUPPORTED_LOCALE_CODES.map((locale) => ({
     rel: 'alternate',
     href: `${appUrl}/${locale}`,
     hreflang: locale
 }))
 
-watch(
-    locale,
-    (newLocale) => {
-        useSeoMeta({
-            title: APP_TITLE,
-            description: t('home.description'),
-            ogImage: logo,
-            ogLocale: newLocale,
-            ogSiteName: APP_TITLE,
-            ogLocaleAlternate: SUPPORTED_LOCALE_CODES.filter((l) => l !== newLocale),
-            creator: APP_TITLE
-        })
+const description = computed(() => t('home.description'))
+const ogLocaleAlternate = computed(() => SUPPORTED_LOCALE_CODES.filter((l) => l !== locale.value))
+useSeoMeta({
+    title: APP_TITLE,
+    description,
+    ogTitle: APP_TITLE,
+    ogDescription: description,
+    ogImage: `${appUrl}${logo}`,
+    ogLocale: locale,
+    ogSiteName: APP_TITLE,
+    ogLocaleAlternate,
+    creator: APP_TITLE
+})
 
-        useHead({
-            link: [
-                {
-                    rel: 'canonical',
-                    href: `${appUrl}/${newLocale}/`
-                },
-                ...alternates
-            ]
-        })
-    },
-    { immediate: true }
-)
+const canonical = computed(() => ({
+    rel: 'canonical',
+    href: `${appUrl}/${locale.value}`
+}))
+useHead({
+    link: [canonical, ...alternates]
+})
 </script>
 
 <template>

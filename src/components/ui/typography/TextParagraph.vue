@@ -14,7 +14,12 @@
 p {
     line-height: calc(1ex / 0.32);
     width: 60ch;
-    max-width: 100%;
+}
+
+@media screen and (max-width: 768px) {
+    p {
+        width: 100%;
+    }
 }
 
 p[lang='en'] {

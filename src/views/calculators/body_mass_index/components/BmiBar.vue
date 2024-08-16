@@ -33,7 +33,7 @@ const bmiAsPercentage = computed(() => {
 </script>
 
 <template>
-    <MeterGroup :value="bmiRanges">
+    <MeterGroup :value="bmiRanges" class="justify-self-stretch">
         <template #start>
             <div
                 v-if="bmiAsPercentage !== null && bmi !== null"

@@ -7,7 +7,7 @@ import { APP_TITLE } from '@/main'
 import { SUPPORTED_LOCALE_CODES, type SupportedLocale } from '@/composables/useLocale'
 import useLocalizedRoutePath from '@/composables/useLocalizedRoutePath'
 import PrimaryHeading from '@/components/ui/typography/PrimaryHeading.vue'
-import { watch } from 'vue'
+import { computed, watch } from 'vue'
 import { useRoute } from 'vue-router'
 import useCalculatorList from '@/composables/useCalculatorList'
 import Tag from 'primevue/tag'
@@ -44,70 +44,64 @@ const route = useRoute()
 
 const currentCalculator = useCalculatorList().value.find((c) => c.id === props.id)!
 
-watch(
-    locale,
-    (newLocale) => {
-        const title = t(`calculators.${props.id}.title`)
-        const description = t(`calculators.${props.id}.description`)
-        const appUrl = window.location.origin
-        const canonical = `${appUrl}/${newLocale}/${useLocalizedRoutePath(`calculators.${props.id}`, newLocale as SupportedLocale)}`
+const appUrl = window.location.origin
+const title = computed(() => `${t(`calculators.${props.id}.title`)} | ${APP_TITLE}`)
+const description = computed(() => t(`calculators.${props.id}.description`))
+const ogLocaleAlternate = computed(() => SUPPORTED_LOCALE_CODES.filter((l) => l !== locale.value))
+useSeoMeta({
+    title,
+    description,
+    ogTitle: title,
+    ogDescription: description,
+    ogImage: `${appUrl}${logo}`,
+    ogLocale: locale,
+    ogSiteName: APP_TITLE,
+    ogLocaleAlternate,
+    creator: APP_TITLE
+})
 
-        useSeoMeta({
-            title: `${title} | ${APP_TITLE}`,
-            description,
-            ogImage: `${appUrl}${logo}`,
-            ogLocale: newLocale,
-            ogSiteName: APP_TITLE,
-            ogLocaleAlternate: SUPPORTED_LOCALE_CODES.filter((l) => l !== newLocale),
-            creator: APP_TITLE
-        })
+const canonical = computed(() => ({
+    rel: 'canonical',
+    href: `${appUrl}/${locale.value}/${useLocalizedRoutePath(`calculators.${props.id}`, locale.value as SupportedLocale)}`
+}))
+const alternates = Object.keys(useLocalizedRoutePath(`calculators.${props.id}`)).map((locale) => ({
+    rel: 'alternate',
+    href: `${appUrl}/${locale}/${useLocalizedRoutePath(`calculators.${props.id}`, locale as SupportedLocale)}`,
+    hreflang: locale
+}))
+useHead({
+    link: [canonical, ...alternates],
+    templateParams: {
+        schemaOrg: {
+            host: appUrl,
+            path: route.fullPath,
+            inLanguage: locale
+        }
+    }
+})
 
-        useHead({
-            link: [
-                {
-                    rel: 'canonical',
-                    href: canonical
-                },
-                ...Object.keys(useLocalizedRoutePath(`calculators.${props.id}`))
-                    .filter((l) => l !== locale.value)
-                    .map((locale) => ({
-                        rel: 'alternate',
-                        href: `${appUrl}/${locale}/${useLocalizedRoutePath(`calculators.${props.id}`, locale as SupportedLocale)}`,
-                        hreflang: locale
-                    }))
-            ],
-            templateParams: {
-                schemaOrg: {
-                    host: appUrl,
-                    path: route.fullPath,
-                    inLanguage: newLocale
-                }
-            }
-        })
-
-        useSchemaOrg([
-            {
-                '@type': 'WebApplication',
-                inLanguage: newLocale,
-                name: title,
-                description,
-                url: canonical,
-                applicationCategory: props.applicationCategory,
-                operatingSystem: 'Web',
-                provider: {
-                    '@type': 'Organization',
-                    name: APP_TITLE,
-                    url: window.location.origin
-                }
-            }
-        ])
-    },
-    { immediate: true }
-)
+useSchemaOrg([
+    {
+        '@type': 'WebApplication',
+        inLanguage: locale,
+        name: title,
+        description,
+        url: canonical,
+        applicationCategory: props.applicationCategory,
+        operatingSystem: 'Web',
+        provider: {
+            '@type': 'Organization',
+            name: APP_TITLE,
+            url: appUrl
+        }
+    }
+])
 </script>
 
 <template>
-    <div class="grid grid-cols-1 place-content-center gap-16 lg:gap-32 h-full py-5">
+    <div
+        class="grid grid-cols-1 place-content-center gap-16 lg:gap-32 h-full py-5 justify-items-center"
+    >
         <div class="text-center">
             <PrimaryHeading>{{ t(`calculators.${props.id}.title`) }}</PrimaryHeading>
 
