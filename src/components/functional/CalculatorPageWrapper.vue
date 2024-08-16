@@ -42,7 +42,7 @@ const { t, locale } = useI18n()
 
 const route = useRoute()
 
-const currentCalculator = useCalculatorList().value.find((c) => c.id === props.id)!
+const currentCalculator = computed(() => useCalculatorList().value.find((c) => c.id === props.id)!)
 
 const appUrl = window.location.origin
 const title = computed(() => `${t(`calculators.${props.id}.title`)} | ${APP_TITLE}`)
