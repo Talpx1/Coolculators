@@ -5,9 +5,9 @@ import CalculatorPageWrapper from '@/components/functional/CalculatorPageWrapper
 import RadioInput from '@/components/ui/inputs/RadioInput.vue'
 import NumberInput from '@/components/ui/inputs/NumberInput.vue'
 import { useBreakpoints, breakpointsTailwind } from '@vueuse/core'
-import SecondaryHeading from '@/components/ui/typography/SecondaryHeading.vue'
-import TextualLink from '@/components/ui/TextualLink.vue'
-import TextParagraph from '@/components/ui/typography/TextParagraph.vue'
+
+import DailyCalorieNeedsFormula from './components/DailyCalorieNeedsFormula.vue'
+import DailyCalorieNeedsParagraphs from './components/DailyCalorieNeedsParagraphs.vue'
 
 const { t, n } = useI18n()
 
@@ -49,10 +49,6 @@ const breakpoints = useBreakpoints(breakpointsTailwind)
 const radioBntsOrientation = computed(() =>
     breakpoints.isSmallerOrEqual('md') ? 'vertical' : 'horizontal'
 )
-
-function nFormula(number: number) {
-    return n(number, { maximumFractionDigits: 5 })
-}
 </script>
 
 <template>
@@ -138,213 +134,11 @@ function nFormula(number: number) {
         </div>
 
         <div class="flex flex-col justify-self-center">
-            <SecondaryHeading>{{ t('calculators.shared_messages.formula') }}</SecondaryHeading>
-            <div class="space-y-8">
-                <div class="flex gap-1 text-sm">
-                    {{ t('calculators.shared_messages.source') }}:
-                    <TextualLink
-                        target="_blank"
-                        to="https://en.wikipedia.org/wiki/Harris%E2%80%93Benedict_equation"
-                    >
-                        <h3>
-                            {{
-                                t(
-                                    'calculators.daily_calorie_needs.messages.harris-benedict_formula'
-                                )
-                            }}
-                        </h3>
-                    </TextualLink>
-                </div>
-
-                <div class="space-y-2">
-                    <h3 class="font-bold">
-                        {{ t('calculators.daily_calorie_needs.messages.bmr') }} (BRM)<sub>kcal</sub>
-                    </h3>
-
-                    <h4>
-                        {{ t('calculators.shared_messages.male') }}: {{ nFormula(66.473) }} + ({{
-                            nFormula(13.7516)
-                        }}
-                        × {{ t('calculators.shared_messages.weight').toLowerCase() }}<sub>kg</sub>)
-                        + ({{ nFormula(5.0033) }} × ({{
-                            t('calculators.shared_messages.height').toLowerCase()
-                        }}<sub>m</sub> × 100)) - ({{ nFormula(6.755) }} ×
-                        {{ t('calculators.shared_messages.age').toLowerCase() }})
-                    </h4>
-                    <h4>
-                        {{ t('calculators.shared_messages.female') }}: {{ nFormula(655.0955) }} +
-                        ({{ nFormula(9.5634) }} ×
-                        {{ t('calculators.shared_messages.weight').toLowerCase() }}<sub>kg</sub>) +
-                        ({{ nFormula(1.8496) }} × ({{
-                            t('calculators.shared_messages.height').toLowerCase()
-                        }}<sub>m</sub> × 100)) - ({{ nFormula(4.6756) }} ×
-                        {{ t('calculators.shared_messages.age').toLowerCase() }})
-                    </h4>
-                </div>
-
-                <div class="space-y-2">
-                    <h3 class="font-bold">
-                        {{ t('calculators.daily_calorie_needs.messages.daily_calorie_needs')
-                        }}<sub>kcal</sub>
-                    </h3>
-
-                    <h4>
-                        BRM ×
-                        {{
-                            t(
-                                'calculators.daily_calorie_needs.messages.physical_activity_coefficient'
-                            ).toLowerCase()
-                        }}
-                    </h4>
-                </div>
-            </div>
+            <DailyCalorieNeedsFormula />
         </div>
 
         <div class="flex flex-col gap-16 justify-self-center max-w-full">
-            <div class="flex flex-col">
-                <SecondaryHeading>{{
-                    t('calculators.daily_calorie_needs.messages.what_daily_calorie_needs_is')
-                }}</SecondaryHeading>
-                <TextParagraph>
-                    {{
-                        t(
-                            'calculators.daily_calorie_needs.messages.what_daily_calorie_needs_is_description'
-                        )
-                    }}
-                </TextParagraph>
-            </div>
-
-            <div class="flex flex-col">
-                <SecondaryHeading>{{
-                    t('calculators.daily_calorie_needs.messages.what_bmr_is')
-                }}</SecondaryHeading>
-                <TextParagraph>
-                    {{ t('calculators.daily_calorie_needs.messages.what_bmr_is_description') }}
-                </TextParagraph>
-            </div>
-
-            <div class="flex flex-col">
-                <SecondaryHeading>{{
-                    t(
-                        'calculators.daily_calorie_needs.messages.purpose_of_knowing_your_daily_calorie_needs'
-                    )
-                }}</SecondaryHeading>
-                <TextParagraph>
-                    {{
-                        t(
-                            'calculators.daily_calorie_needs.messages.purpose_of_knowing_your_daily_calorie_needs_description'
-                        )
-                    }}
-                </TextParagraph>
-            </div>
-
-            <div class="flex flex-col">
-                <SecondaryHeading>{{
-                    t(
-                        'calculators.daily_calorie_needs.messages.how_to_calculate_your_daily_calorie_needs'
-                    )
-                }}</SecondaryHeading>
-                <TextParagraph>
-                    {{
-                        t(
-                            'calculators.daily_calorie_needs.messages.how_to_calculate_your_daily_calorie_needs_description.intro'
-                        )
-                    }}<br /><br />
-
-                    <h3 class="font-bold">
-                        {{
-                            t(
-                                'calculators.daily_calorie_needs.messages.how_to_calculate_your_daily_calorie_needs_description.for_men'
-                            )
-                        }}
-                    </h3>
-                    <h4>
-                        {{
-                            t(
-                                'calculators.daily_calorie_needs.messages.how_to_calculate_your_daily_calorie_needs_description.men_formula'
-                            )
-                        }}
-                    </h4>
-
-                    <h3 class="font-bold">
-                        {{
-                            t(
-                                'calculators.daily_calorie_needs.messages.how_to_calculate_your_daily_calorie_needs_description.for_women'
-                            )
-                        }}
-                    </h3>
-                    <h4>
-                        {{
-                            t(
-                                'calculators.daily_calorie_needs.messages.how_to_calculate_your_daily_calorie_needs_description.women_formula'
-                            )
-                        }}
-                    </h4>
-                    <br />
-
-                    {{
-                        t(
-                            'calculators.daily_calorie_needs.messages.how_to_calculate_your_daily_calorie_needs_description.after_bmr_formula'
-                        )
-                    }}
-
-                    <div class="flex gap-1">
-                        <h3 class="font-bold">
-                            {{ t('calculators.daily_calorie_needs.messages.sedentary_lifestyle') }}:
-                        </h3>
-                        <h4>
-                            {{
-                                t(
-                                    'calculators.daily_calorie_needs.messages.how_to_calculate_your_daily_calorie_needs_description.sedentary_daily_calorie_needs_formula'
-                                )
-                            }}
-                        </h4>
-                    </div>
-                    <div class="flex gap-1">
-                        <h3 class="font-bold">
-                            {{
-                                t(
-                                    'calculators.daily_calorie_needs.messages.moderately_active_lifestyle'
-                                )
-                            }}:
-                        </h3>
-                        <h4>
-                            {{
-                                t(
-                                    'calculators.daily_calorie_needs.messages.how_to_calculate_your_daily_calorie_needs_description.moderately_active_daily_calorie_needs_formula'
-                                )
-                            }}
-                        </h4>
-                    </div>
-                    <div class="flex gap-1">
-                        <h3 class="font-bold">
-                            {{ t('calculators.daily_calorie_needs.messages.active_lifestyle') }}:
-                        </h3>
-                        <h4>
-                            {{
-                                t(
-                                    'calculators.daily_calorie_needs.messages.how_to_calculate_your_daily_calorie_needs_description.active_daily_calorie_needs_formula'
-                                )
-                            }}
-                        </h4>
-                    </div>
-                </TextParagraph>
-            </div>
-
-            <div class="flex flex-col">
-                <SecondaryHeading>{{
-                    t(
-                        'calculators.daily_calorie_needs.messages.why_is_it_important_to_know_your_daily_calorie_needs'
-                    )
-                }}</SecondaryHeading>
-                <TextParagraph>
-                    {{
-                        t(
-                            'calculators.daily_calorie_needs.messages.why_is_it_important_to_know_your_daily_calorie_needs_description'
-                        )
-                    }}
-                </TextParagraph>
-            </div>
+            <DailyCalorieNeedsParagraphs />
         </div>
     </CalculatorPageWrapper>
 </template>
