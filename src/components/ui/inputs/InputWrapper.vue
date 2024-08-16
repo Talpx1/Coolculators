@@ -5,6 +5,7 @@ export type InputWrapperProps = {
     label?: string
     labelClass?: string | object
     labelPosition?: 'top' | 'bottom' | 'left' | 'right'
+    inputId?: string
 }
 
 const props = withDefaults(defineProps<InputWrapperProps>(), { labelPosition: 'top' })
@@ -37,7 +38,7 @@ const computedLabelClasses = computed(() => {
             'flex-col': labelPosition === 'top' || labelPosition === 'bottom'
         }"
     >
-        <label :class="computedLabelClasses">{{ label }}</label>
+        <label class="p-1" :class="computedLabelClasses" :for="inputId">{{ label }}</label>
         <div
             :class="{
                 'order-2': labelPosition === 'top' || labelPosition === 'left',

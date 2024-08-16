@@ -9,19 +9,35 @@
     "calculator_not_available_toast_summary": "Calcolatore non disponibile",
     "calculator_not_available_toast_detail": "{0} non è al momento disponibile o è ancora in fase di sviluppo. Riprova più avanti.",
     "calculate": "Calcola",
-    "insert_data_to_calculate": "Specifica dei valori per ogni campo richiesto per calcolare il risultato",
+    "more_resources_on_the_topic": "Altre risorse sull'argomento",
     "tags": {
         "health": "salute",
         "diet": "dieta",
-        "food": "cibo"
+        "nutrition": "nutrizione",
+        "fitness": "fitness",
+        "wellness": "benessere",
+        "food": "alimentazione",
+        "physical_activity": "attività fisica",
+        "weight": "peso",
+        "body": "corpo",
+        "monitoring": "monitoraggio"
     },
     "calculators": {
+        "shared_messages": {
+            "insert_data_to_calculate": "Specifica dei valori per ogni campo richiesto per calcolare il risultato",
+            "weight": "Peso",
+            "height": "Altezza",
+            "age": "Età",
+            "gender": "Sesso",
+            "male": "Maschio",
+            "female": "Femmina",
+            "source": "Fonte",
+            "formula": "Formula"
+        },
         "body_mass_index": {
             "title": "Calcolatore di Indice di Massa Corporea (IMC)",
             "description": "Calcola il tuo IMC e valuta se il tuo peso è nella norma rispetto alla tua altezza",
             "messages": {
-                "weight": "Peso",
-                "height": "Altezza",
                 "bmi": "IMC",
                 "severe_thinness": "Grave magrezza",
                 "moderate_thinness": "Magrezza moderata",
@@ -40,9 +56,40 @@
                 "low_or_high_bmi_risks_description": "Un indice di massa corporea alto o basso può indicare rischi per la salute. Un BMI superiore al normale suggerisce sovrappeso o obesità, aumentando il rischio di malattie cardiache, diabete e ipertensione. Al contrario, un BMI basso può indicare sottopeso, portando a problemi come debolezza, osteoporosi e carenze nutrizionali. Se il tuo BMI è fuori dai parametri normali, consulta un medico per consigli su dieta ed esercizio fisico."
             }
         },
-        "calories": {
-            "title": "Calcolatore di Calorie",
-            "description": ""
+        "daily_calorie_needs": {
+            "title": "Calcolatore del Fabbisogno Calorico Giornaliero",
+            "description": "Stima il tuo fabbisogno calorico giornaliero basato su attività fisica, età e peso",
+            "messages": {
+                "bmr": "Metabolismo Basale",
+                "daily_calorie_needs": "Fabbisogno Calorico Giornaliero",
+                "bmr_description": "È il numero di calorie che il tuo corpo consuma a riposo per mantenere funzioni vitali come la respirazione e la circolazione sanguigna. Il BMR dipende principalmente da età, sesso, peso e altezza. Esistono diverse formule per calcolare il BMR, come la formula di Harris-Benedict.",
+                "physical_activity": "Attività fisica",
+                "physical_activity_coefficient": "Coefficiente attività fisica",
+                "sedentary_lifestyle": "Sedentario",
+                "moderately_active_lifestyle": "Moderatamente attivo",
+                "active_lifestyle": "Attivo",
+                "harris-benedict_formula": "Formula di Harris-Benedict",
+                "what_daily_calorie_needs_is": "Cos'è il fabbisogno calorico giornaliero?",
+                "what_daily_calorie_needs_is_description": "Il fabbisogno calorico giornaliero è la quantità di calorie che il tuo corpo richiede ogni giorno per svolgere tutte le attività, sia fisiche che mentali. Questo valore è essenziale per mantenere il peso corporeo stabile e garantire il corretto funzionamento del tuo organismo. Il calcolo delle calorie giornaliere tiene conto del metabolismo basale, delle attività fisiche e di altri fattori come età, sesso e peso.",
+                "what_bmr_is": "Cos'è il metabolismo basale (BMR)?",
+                "what_bmr_is_description": "Il metabolismo basale (BMR) rappresenta il numero di calorie che il tuo corpo consuma a riposo per mantenere le funzioni vitali come respirare, far circolare il sangue e mantenere la temperatura corporea. Questo valore è influenzato da fattori come età, sesso, peso e altezza. Il BMR costituisce la base del calcolo del fabbisogno calorico giornaliero, poiché rappresenta le calorie necessarie per sopravvivere senza fare nulla.",
+                "purpose_of_knowing_your_daily_calorie_needs": "A cosa serve sapere il fabbisogno calorico giornaliero?",
+                "purpose_of_knowing_your_daily_calorie_needs_description": "Conoscere il proprio fabbisogno calorico giornaliero è fondamentale per gestire il peso e la salute. Sapere quante calorie il tuo corpo necessita ti permette di impostare una dieta adeguata, evitando il sovrappeso o la perdita eccessiva di peso. Inoltre, ti aiuta a capire quanto mangiare per mantenere, aumentare o ridurre il peso in modo sano ed equilibrato. Questo calcolo è particolarmente utile per chi vuole migliorare la propria forma fisica o per chi ha obiettivi specifici come aumentare la massa muscolare o perdere peso.",
+                "how_to_calculate_your_daily_calorie_needs": "Come calcolare il fabbisogno calorico giornaliero (e il metabolismo basale)",
+                "how_to_calculate_your_daily_calorie_needs_description": {
+                    "intro": "Per calcolare il fabbisogno calorico giornaliero, è necessario partire dal metabolismo basale (BMR) usando, per esempio, la formula di Harris-Benedict. La formula varia leggermente tra uomini e donne:",
+                    "for_men": "Per gli uomini:",
+                    "men_formula": "BMR = 66,473 + (13,7516 × peso in kg) + (5,0033 × altezza in cm) - (6,755 × età in anni)",
+                    "for_women": "Per le donne:",
+                    "women_formula": "BMR = 655,0955 + (9,5634 × peso in kg) + (1,8496 × altezza in cm) - (4,6756 × età in anni)",
+                    "after_bmr_formula": "Una volta calcolato il BMR, moltiplicalo per un fattore di attività fisica:",
+                    "sedentary_daily_calorie_needs_formula": "BRM × 1,2",
+                    "moderately_active_daily_calorie_needs_formula": "BRM × 1,3",
+                    "active_daily_calorie_needs_formula": "BRM × 1,4"
+                },
+                "why_is_it_important_to_know_your_daily_calorie_needs": "Perché è importante sapere il proprio fabbisogno calorico giornaliero?",
+                "why_is_it_important_to_know_your_daily_calorie_needs_description": "Conoscere il proprio fabbisogno calorico giornaliero è cruciale per mantenere uno stile di vita sano. Ti aiuta a prendere decisioni alimentari consapevoli, a mantenere o raggiungere il peso desiderato, e a migliorare la tua salute generale. Sapere quante calorie il tuo corpo richiede ti permette di bilanciare correttamente l'apporto calorico con il consumo energetico, evitando sia il rischio di ingrassare che di perdere peso in modo non salutare."
+            }
         },
         "pregnancy": {
             "title": "Calcolatore di Gravidanza",

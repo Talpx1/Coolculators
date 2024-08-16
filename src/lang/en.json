@@ -9,19 +9,35 @@
     "calculator_not_available_toast_summary": "Calculator not available",
     "calculator_not_available_toast_detail": "{0} is not currently available or it's still in development. Check back later.",
     "calculate": "Calculate",
-    "insert_data_to_calculate": "Specify values for every required field to calculate the result",
+    "more_resources_on_the_topic": "More resources on the topic",
     "tags": {
         "health": "health",
         "diet": "diet",
-        "food": "food"
+        "nutrition": "nutrition",
+        "fitness": "fitness",
+        "wellness": "wellness",
+        "food": "food",
+        "physical_activity": "physical activity",
+        "weight": "weight",
+        "body": "body",
+        "monitoring": "monitoring"
     },
     "calculators": {
+        "shared_messages": {
+            "insert_data_to_calculate": "Specify values for every required field to calculate the result",
+            "weight": "Weight",
+            "height": "Height",
+            "age": "Age",
+            "gender": "Gender",
+            "male": "Male",
+            "female": "Female",
+            "source": "Source",
+            "formula": "Formula"
+        },
         "body_mass_index": {
             "title": "Body Mass Index (BMI) Calculator",
             "description": "Calculate your BMI and determine if your weight is within the normal range for your height.",
             "messages": {
-                "weight": "Weight",
-                "height": "Height",
                 "bmi": "BMI",
                 "severe_thinness": "Severe Thinness",
                 "moderate_thinness": "Moderate Thinness",
@@ -40,9 +56,40 @@
                 "low_or_high_bmi_risks_description": "A high or low body mass index can indicate health risks. A BMI above the normal range suggests overweight or obesity, increasing the risk of heart disease, diabetes, and high blood pressure. Conversely, a low BMI may indicate underweight, leading to issues such as weakness, osteoporosis, and nutritional deficiencies. If your BMI is outside the normal parameters, consult a doctor for advice on diet and exercise."
             }
         },
-        "calories": {
-            "title": "Calories Calculator",
-            "description": ""
+        "daily_calorie_needs": {
+            "title": "Daily Calorie Needs Calculator",
+            "description": "Estimate your daily caloric needs based on physical activity, age, and weight",
+            "messages": {
+                "bmr": "Basal Metabolic Rate",
+                "daily_calorie_needs": "Daily Calorie Needs",
+                "bmr_description": "It is the number of calories your body consumes at rest to maintain vital functions such as breathing and blood circulation. BMR primarily depends on age, sex, weight, and height. There are various formulas to calculate BMR, such as the Harris-Benedict formula.",
+                "physical_activity": "Physical Activity",
+                "physical_activity_coefficient": "Physical Activity Coefficient",
+                "sedentary_lifestyle": "Sedentary",
+                "moderately_active_lifestyle": "Moderately Active",
+                "active_lifestyle": "Active",
+                "harris-benedict_formula": "Harris-Benedict Formula",
+                "what_daily_calorie_needs_is": "What are Daily Calorie Needs?",
+                "what_daily_calorie_needs_is_description": "Daily calorie needs represent the number of calories your body requires each day to perform all activities, both physical and mental. This value is essential for maintaining a stable body weight and ensuring your body's proper function. The calculation of daily calories takes into account the basal metabolic rate, physical activities, and other factors such as age, sex, and weight.",
+                "what_bmr_is": "What is Basal Metabolic Rate (BMR)?",
+                "what_bmr_is_description": "Basal Metabolic Rate (BMR) is the number of calories your body consumes at rest to maintain vital functions such as breathing, blood circulation, and body temperature. This value is influenced by factors like age, sex, weight, and height. BMR forms the basis of the daily calorie needs calculation, as it represents the calories needed to survive without doing anything.",
+                "purpose_of_knowing_your_daily_calorie_needs": "What is the Purpose of Knowing Your Daily Calorie Needs?",
+                "purpose_of_knowing_your_daily_calorie_needs_description": "Knowing your daily calorie needs is essential for managing weight and health. Understanding how many calories your body requires allows you to set an appropriate diet, avoiding both overweight and excessive weight loss. Additionally, it helps you determine how much to eat to maintain, gain, or reduce weight in a healthy and balanced way. This calculation is particularly useful for those looking to improve their fitness or who have specific goals such as building muscle mass or losing weight.",
+                "how_to_calculate_your_daily_calorie_needs": "How to Calculate Your Daily Calorie Needs (and Basal Metabolic Rate)",
+                "how_to_calculate_your_daily_calorie_needs_description": {
+                    "intro": "To calculate your daily calorie needs, you need to start with your Basal Metabolic Rate (BMR) using, for example, the Harris-Benedict formula. The formula varies slightly between men and women:",
+                    "for_men": "For men:",
+                    "men_formula": "BMR = 66.473 + (13.7516 × weight in kg) + (5.0033 × height in cm) - (6.755 × age in years)",
+                    "for_women": "For women:",
+                    "women_formula": "BMR = 655.0955 + (9.5634 × weight in kg) + (1.8496 × height in cm) - (4.6756 × age in years)",
+                    "after_bmr_formula": "Once the BMR is calculated, multiply it by a physical activity factor:",
+                    "sedentary_daily_calorie_needs_formula": "BMR × 1.2",
+                    "moderately_active_daily_calorie_needs_formula": "BMR × 1.3",
+                    "active_daily_calorie_needs_formula": "BMR × 1.4"
+                },
+                "why_is_it_important_to_know_your_daily_calorie_needs": "Why is it Important to Know Your Daily Calorie Needs?",
+                "why_is_it_important_to_know_your_daily_calorie_needs_description": "Knowing your daily calorie needs is crucial for maintaining a healthy lifestyle. It helps you make informed dietary decisions, maintain or reach your desired weight, and improve your overall health. Understanding how many calories your body needs allows you to properly balance caloric intake with energy expenditure, avoiding the risk of gaining weight or losing weight in an unhealthy way."
+            }
         },
         "pregnancy": {
             "title": "Pregnancy Calculator",

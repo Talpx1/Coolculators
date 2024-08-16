@@ -42,13 +42,28 @@ export default function useCalculatorList(): Ref<CalculatorObject[]> {
     const calculators: CalculatorRawEntry[] = [
         {
             id: 'body_mass_index',
-            tags: ['tags.health', 'tags.diet']
+            tags: [
+                'tags.health',
+                'tags.diet',
+                'tags.fitness',
+                'tags.wellness',
+                'tags.weight',
+                'tags.body',
+                'tags.monitoring'
+            ]
         },
 
         {
-            id: 'calories',
-            tags: ['tags.health', 'tags.diet', 'tags.food'],
-            disabled: true
+            id: 'daily_calorie_needs',
+            tags: [
+                'tags.health',
+                'tags.diet',
+                'tags.nutrition',
+                'tags.fitness',
+                'tags.wellness',
+                'tags.food',
+                'tags.physical_activity'
+            ]
         },
 
         { id: 'pregnancy', disabled: true },

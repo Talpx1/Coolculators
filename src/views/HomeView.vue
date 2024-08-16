@@ -15,26 +15,39 @@ const calculators = useCalculatorList()
 
 const { t, locale } = useI18n()
 
-watch(locale, (newLocale) => {
-    useSeoMeta({
-        title: APP_TITLE,
-        description: t('home.description'),
-        ogImage: logo,
-        ogLocale: newLocale,
-        ogSiteName: APP_TITLE,
-        ogLocaleAlternate: SUPPORTED_LOCALE_CODES.filter((l) => l !== newLocale),
-        creator: APP_TITLE
-    })
+const appUrl = window.location.origin
 
-    useHead({
-        link: [
-            {
-                rel: 'canonical',
-                href: `${window.location.origin}/${newLocale}/`
-            }
-        ]
-    })
-})
+const alternates = SUPPORTED_LOCALE_CODES.filter((l) => l !== locale.value).map((locale) => ({
+    rel: 'alternate',
+    href: `${appUrl}/${locale}`,
+    hreflang: locale
+}))
+
+watch(
+    locale,
+    (newLocale) => {
+        useSeoMeta({
+            title: APP_TITLE,
+            description: t('home.description'),
+            ogImage: logo,
+            ogLocale: newLocale,
+            ogSiteName: APP_TITLE,
+            ogLocaleAlternate: SUPPORTED_LOCALE_CODES.filter((l) => l !== newLocale),
+            creator: APP_TITLE
+        })
+
+        useHead({
+            link: [
+                {
+                    rel: 'canonical',
+                    href: `${appUrl}/${newLocale}/`
+                },
+                ...alternates
+            ]
+        })
+    },
+    { immediate: true }
+)
 </script>
 
 <template>
@@ -49,7 +62,7 @@ watch(locale, (newLocale) => {
                 <h3>{{ calculator.title }}</h3>
             </template>
             <template #subtitle>
-                <div class="flex gap-2">
+                <div class="flex flex-wrap gap-2">
                     <Tag v-for="tag in calculator.tags" :key="`${calculator.id}_${tag}`">
                         {{ tag }}
                     </Tag>

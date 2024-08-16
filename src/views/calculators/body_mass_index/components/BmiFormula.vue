@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import SecondaryHeading from '@/components/ui/typography/SecondaryHeading.vue'
 import { useI18n } from 'vue-i18n'
 
 const { t } = useI18n()
@@ -6,18 +7,20 @@ const { t } = useI18n()
 
 <template>
     <div>
-        <h2 class="text-xl font-bold mb-2">Formula</h2>
+        <SecondaryHeading>{{ t('calculators.shared_messages.formula') }}</SecondaryHeading>
         <div class="flex items-center gap-2">
-            <p>{{ t('calculators.body_mass_index.messages.bmi') }} (kg/m<sup>2</sup>)</p>
+            <p>
+                {{ t('calculators.body_mass_index.messages.bmi') }}<sub>kg/m<sup>2</sup></sub>
+            </p>
             <p>=</p>
             <div class="divide-y text-center [&>p]:py-1">
                 <p class="border-b border-primary-950">
-                    {{ t('calculators.body_mass_index.messages.weight').toLowerCase() }}
-                    (kg)
+                    {{ t('calculators.shared_messages.weight').toLowerCase() }}<sub>kg</sub>
                 </p>
                 <p>
-                    ({{ t('calculators.body_mass_index.messages.height').toLowerCase() }} (m))
-                    <sup>2</sup>
+                    ({{ t('calculators.shared_messages.height').toLowerCase() }}<sub>m</sub>)<sup
+                        >2</sup
+                    >
                 </p>
             </div>
         </div>

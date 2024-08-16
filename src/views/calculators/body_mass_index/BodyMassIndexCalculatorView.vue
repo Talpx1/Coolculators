@@ -9,11 +9,19 @@ import BmiFormula from './components/BmiFormula.vue'
 import BmiRangesTable from './components/BmiRangesTable.vue'
 import SecondaryHeading from '@/components/ui/typography/SecondaryHeading.vue'
 import TextParagraph from '@/components/ui/typography/TextParagraph.vue'
+import RelatedResources from '@/components/ui/RelatedResources.vue'
+
+//TODO: SEO:
+//talk about diets
+//talk about difference man/woman
+//talk about bmi in children
+//talk about differences in bmi because of muscles or skeleton structure
 
 const { t, n } = useI18n()
 
-const weight = ref(0)
-const height = ref(0)
+//TODO: improve UX on input, probably set the default ref as undefined
+const weight = ref()
+const height = ref()
 
 const { bmi, range: bmiRange } = useBmi(height, weight)
 
@@ -31,13 +39,13 @@ const numberInputProps = {
         <div class="flex gap-16 justify-center">
             <NumberInput
                 v-bind="numberInputProps"
-                :label="t('calculators.body_mass_index.messages.weight')"
+                :label="t('calculators.shared_messages.weight')"
                 v-model="weight"
                 suffix=" kg"
             />
             <NumberInput
                 v-bind="numberInputProps"
-                :label="t('calculators.body_mass_index.messages.height')"
+                :label="t('calculators.shared_messages.height')"
                 v-model="height"
                 suffix=" m"
                 :step="0.01"
@@ -56,7 +64,7 @@ const numberInputProps = {
                 </div>
                 <div :style="{ color: bmiRange.color }">{{ bmiRange.label }}</div>
             </div>
-            <div v-else>{{ t('insert_data_to_calculate') }}</div>
+            <div v-else>{{ t('calculators.shared_messages.insert_data_to_calculate') }}</div>
         </div>
 
         <BmiBar :bmi :bmi-range />
@@ -67,9 +75,7 @@ const numberInputProps = {
             <BmiRangesTable />
         </div>
 
-        <div
-            class="flex flex-col lg:flex-row gap-y-16 justify-around justify-self-center lg:justify-self-auto max-w-full"
-        >
+        <div class="flex flex-col gap-16 justify-self-center max-w-full">
             <div>
                 <SecondaryHeading>
                     {{ t('calculators.body_mass_index.messages.what_bmi_is') }}
@@ -83,10 +89,21 @@ const numberInputProps = {
                 <SecondaryHeading>
                     {{ t('calculators.body_mass_index.messages.low_or_high_bmi_risks') }}
                 </SecondaryHeading>
-                <TextParagraph>{{
-                    t('calculators.body_mass_index.messages.low_or_high_bmi_risks_description')
-                }}</TextParagraph>
+                <TextParagraph>
+                    {{
+                        t('calculators.body_mass_index.messages.low_or_high_bmi_risks_description')
+                    }}
+                </TextParagraph>
             </div>
+
+            <RelatedResources
+                :resources="[
+                    'https://www.betterhealth.vic.gov.au/health/healthyliving/body-mass-index-bmi',
+                    'https://www.cdc.gov/bmi/faq/',
+                    'https://emedicine.medscape.com/article/123702-overview#showall?form=fpf'
+                ]"
+                class="justify-self-center"
+            />
         </div>
     </CalculatorPageWrapper>
 </template>

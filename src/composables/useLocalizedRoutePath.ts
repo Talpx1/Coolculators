@@ -1,7 +1,12 @@
 import type { SupportedLocale } from './useLocale'
 
-export default function useLocalizedRoutePath(route: string, locale?: SupportedLocale) {
-    const routes: Record<string, Record<SupportedLocale, string>> = {
+export type LocalizedRoutesCollection = Record<SupportedLocale, string>
+
+export default function useLocalizedRoutePath(
+    route: string,
+    locale?: SupportedLocale
+): typeof locale extends string ? string : LocalizedRoutesCollection {
+    const routes: Record<string, LocalizedRoutesCollection> = {
         home: {
             it: '',
             en: ''
@@ -10,9 +15,9 @@ export default function useLocalizedRoutePath(route: string, locale?: SupportedL
             it: 'indice-massa-corporea-calcolatore',
             en: 'body-mass-index-calculator'
         },
-        'calculators.calories': {
-            it: '',
-            en: ''
+        'calculators.daily_calorie_needs': {
+            it: 'fabbisogno-calorico-giornaliero-calcolatore',
+            en: 'daily-calorie-needs-calculator'
         },
         'calculators.pregnancy': {
             it: '',
@@ -196,7 +201,5 @@ export default function useLocalizedRoutePath(route: string, locale?: SupportedL
         throw new Error(`[useLocalizedRoutePath] invalid route: ${route}`)
     }
 
-    return locale
-        ? routes[route][locale]
-        : `:localizedPath(${Object.values(routes[route]).join('|')})`
+    return locale ? routes[route][locale] : routes[route]
 }
