@@ -10,6 +10,15 @@
     "calculator_not_available_toast_detail": "{0} non è al momento disponibile o è ancora in fase di sviluppo. Riprova più avanti.",
     "calculate": "Calcola",
     "more_resources_on_the_topic": "Altre risorse sull'argomento",
+    "select_a_country": "Seleziona una nazione",
+    "countries": {
+        "france": "Francia",
+        "germany": "Germania",
+        "italy": "Italia",
+        "netherlands": "Paesi Bassi",
+        "spain": "Spagna",
+        "usa": "Stati Uniti"
+    },
     "tags": {
         "health": "salute",
         "diet": "dieta",
@@ -20,10 +29,23 @@
         "physical_activity": "attività fisica",
         "weight": "peso",
         "body": "corpo",
-        "monitoring": "monitoraggio"
+        "monitoring": "monitoraggio",
+        "food_waste": "spreco alimentare",
+        "sustainability": "sostenibilità",
+        "environment": "ambiente",
+        "carbon_footprint": "impronta di carbonio",
+        "eco_friendly": "ecologico",
+        "cost_saving": "risparmio economico",
+        "packaging": "imballaggio",
+        "waste_reduction": "riduzione dello spreco",
+        "emissions": "emissioni",
+        "climate_change": "cambiamento climatico",
+        "resource_management": "gestione delle risorse",
+        "responsible_consumption": "consumo responsabile"
     },
     "calculators": {
         "shared_messages": {
+            "data_generated_using_ai": "I dati sono stati generati tramite l'ausilio di intelligenza artificiale, pertanto potrebbero risultare erronei o inaccurati.",
             "insert_data_to_calculate": "Specifica dei valori per ogni campo richiesto per calcolare il risultato",
             "weight": "Peso",
             "height": "Altezza",
@@ -32,7 +54,15 @@
             "male": "Maschio",
             "female": "Femmina",
             "source": "Fonte",
-            "formula": "Formula"
+            "formula": "Formula",
+            "country": "Nazione",
+            "calculating": "Stiamo calcolando il tuo risultato, per favore attendi...",
+            "calculation_error": "Si è verificato un errore nel calcolo, riprova...",
+            "day": "Giorno",
+            "week": "Settimana",
+            "month": "Mese",
+            "year": "Anno",
+            "time_period": "Periodo di tempo"
         },
         "body_mass_index": {
             "title": "Calcolatore di Indice di Massa Corporea (IMC)",
@@ -89,6 +119,34 @@
                 },
                 "why_is_it_important_to_know_your_daily_calorie_needs": "Perché è importante sapere il proprio fabbisogno calorico giornaliero?",
                 "why_is_it_important_to_know_your_daily_calorie_needs_description": "Conoscere il proprio fabbisogno calorico giornaliero è cruciale per mantenere uno stile di vita sano. Ti aiuta a prendere decisioni alimentari consapevoli, a mantenere o raggiungere il peso desiderato, e a migliorare la tua salute generale. Sapere quante calorie il tuo corpo richiede ti permette di bilanciare correttamente l'apporto calorico con il consumo energetico, evitando sia il rischio di ingrassare che di perdere peso in modo non salutare."
+            }
+        },
+        "food_waste": {
+            "title": "Calcolatore Spreco Alimentare",
+            "description": "Analizza le emissioni di CO2 e il costo medio per diverse categorie alimentari, aiutandoti a prendere decisioni più sostenibili e consapevoli.",
+            "messages": {
+                "select_a_time_period": "Seleziona un periodo di tempo",
+                "meat": "Carne",
+                "fruits": "Frutta",
+                "vegetables": "Verdura",
+                "dairy": "Latte/Formaggi/...",
+                "seafood": "Pesce/Molluschi/...",
+                "grains": "Cereali e Legumi",
+                "sweets_and_snacks": "Dolci e Snack",
+                "food_category": "Categoria Alimentare",
+                "bought_amount": "Ammontare Acquistato",
+                "wasted_amount": "Ammontare Sprecato",
+                "paper_packaging_amount": "Ammontare di Confezioni in Carta",
+                "plastic_packaging_amount": "Ammontare di Confezioni in Plastica",
+                "wasted_amount_cant_be_greater_than_bought_amount": "L'ammontare sprecato non può essere maggiore dell'ammontare acquistato",
+                "calculation_results": "Su ~{total_emissions} CO₂eq di emissioni, ~{wasted_emissions} CO₂eq sono andate sprecate. Sarebbero bastate ~{could_have_been_enough_emissions} CO₂eq .{break}Su ~{total_costs}€ spesi, ~{wasted_costs}€ sono andati sprecati. Sarebbero bastati ~{could_have_been_enough_costs}€.",
+                "sources_on_carbon_footprint_and_prices": "Fonti sulle impronte di carbonio e prezzi",
+                "how_food_waste_gets_calculated": "Come viene calcolato lo spreco alimentare",
+                "how_food_waste_gets_calculated_description": "Calcolare lo spreco alimentare è fondamentale per comprendere l'impatto delle nostre abitudini alimentari sull'ambiente e sul portafoglio. Il nostro strumento stima la tua impronta carbonica in base alla quantità di cibo sprecato e alle informazioni da te inserite, stimandone l'equivalente in emissioni di CO₂ per fornire un quadro chiaro di quanto sprechiamo e di come possiamo migliorare.",
+                "how_to_reduce_food_waste": "Come ridurre lo spreco alimentare",
+                "how_to_reduce_food_waste_description": "Ridurre lo spreco alimentare è possibile adottando semplici accorgimenti. Pianifica i pasti settimanali, fai una lista della spesa mirata e conserva correttamente gli alimenti. Impara a riciclare gli avanzi e a monitorare le date di scadenza. Anche porzioni più piccole possono fare la differenza, evitando di cucinare o servire più del necessario.",
+                "how_to_reduce_carbon_footprint_of_our_diet": "Come ridurre l'impronta carbonica della nostra alimentazione",
+                "how_to_reduce_carbon_footprint_of_our_diet_description": "Ridurre l'impronta carbonica della nostra alimentazione inizia con scelte consapevoli. Privilegia cibi locali e di stagione, riduci il consumo di carne e pesce, e opta per prodotti con meno imballaggi. Un calcolatore di impronta carbonica del cibo può aiutarti a visualizzare l'impatto delle tue scelte alimentari, consentendoti di adottare abitudini più sostenibili."
             }
         },
         "pregnancy": {

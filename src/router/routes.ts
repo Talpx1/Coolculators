@@ -25,6 +25,12 @@ const routes: RouteRecordRaw[] = [
         name: 'calculators.daily_calorie_needs',
         component: () =>
             import('@/views/calculators/daily_calorie_needs/DailyCalorieNeedsCalculator.vue')
+    },
+
+    {
+        path: routesToParamRegexp(useLocalizedRoutePath('calculators.food_waste')),
+        name: 'calculators.food_waste',
+        component: () => import('@/views/calculators/food_waste/FoodWasteCalculatorView.vue')
     }
 ]
 

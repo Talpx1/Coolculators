@@ -14,6 +14,10 @@ export default function useLocalizedRoutePath(route: string, locale?: SupportedL
             it: 'fabbisogno-calorico-giornaliero-calcolatore',
             en: 'daily-calorie-needs-calculator'
         },
+        'calculators.food_waste': {
+            it: 'spreco-alimentare-calcolatore',
+            en: 'food-waste-calculator'
+        },
         'calculators.pregnancy': {
             it: '',
             en: ''

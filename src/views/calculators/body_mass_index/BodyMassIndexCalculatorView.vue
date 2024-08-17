@@ -73,22 +73,26 @@ const numberInputProps = {
 
         <BmiRangesTable />
 
-        <div>
-            <SecondaryHeading>
-                {{ t('calculators.body_mass_index.messages.what_bmi_is') }}
-            </SecondaryHeading>
-            <TextParagraph>
-                {{ t('calculators.body_mass_index.messages.what_bmi_is_description') }}
-            </TextParagraph>
-        </div>
+        <div class="flex flex-col gap-16 justify-self-center max-w-full">
+            <div>
+                <SecondaryHeading>
+                    {{ t('calculators.body_mass_index.messages.what_bmi_is') }}
+                </SecondaryHeading>
+                <TextParagraph>
+                    {{ t('calculators.body_mass_index.messages.what_bmi_is_description') }}
+                </TextParagraph>
+            </div>
 
-        <div>
-            <SecondaryHeading>
-                {{ t('calculators.body_mass_index.messages.low_or_high_bmi_risks') }}
-            </SecondaryHeading>
-            <TextParagraph>
-                {{ t('calculators.body_mass_index.messages.low_or_high_bmi_risks_description') }}
-            </TextParagraph>
+            <div>
+                <SecondaryHeading>
+                    {{ t('calculators.body_mass_index.messages.low_or_high_bmi_risks') }}
+                </SecondaryHeading>
+                <TextParagraph>
+                    {{
+                        t('calculators.body_mass_index.messages.low_or_high_bmi_risks_description')
+                    }}
+                </TextParagraph>
+            </div>
         </div>
 
         <RelatedResources

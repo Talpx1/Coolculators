@@ -66,6 +66,24 @@ export default function useCalculatorList(): Ref<CalculatorObject[]> {
             ]
         },
 
+        {
+            id: 'food_waste',
+            tags: [
+                'tags.food_waste',
+                'tags.sustainability',
+                'tags.environment',
+                'tags.carbon_footprint',
+                'tags.eco_friendly',
+                'tags.cost_saving',
+                'tags.packaging',
+                'tags.waste_reduction',
+                'tags.emissions',
+                'tags.climate_change',
+                'tags.resource_management',
+                'tags.responsible_consumption'
+            ]
+        },
+
         { id: 'pregnancy', disabled: true },
 
         { id: 'heart_rate', disabled: true },

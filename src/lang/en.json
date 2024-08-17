@@ -10,6 +10,15 @@
     "calculator_not_available_toast_detail": "{0} is not currently available or it's still in development. Check back later.",
     "calculate": "Calculate",
     "more_resources_on_the_topic": "More resources on the topic",
+    "select_a_country": "Select a country",
+    "countries": {
+        "france": "France",
+        "germany": "Germany",
+        "italy": "Italy",
+        "netherlands": "Netherlands",
+        "spain": "Spain",
+        "usa": "United States"
+    },
     "tags": {
         "health": "health",
         "diet": "diet",
@@ -20,10 +29,23 @@
         "physical_activity": "physical activity",
         "weight": "weight",
         "body": "body",
-        "monitoring": "monitoring"
+        "monitoring": "monitoring",
+        "food_waste": "food waste",
+        "sustainability": "sustainability",
+        "environment": "environment",
+        "carbon_footprint": "carbon footprint",
+        "eco_friendly": "eco friendly",
+        "cost_saving": "cost saving",
+        "packaging": "packaging",
+        "waste_reduction": "waste reduction",
+        "emissions": "emissions",
+        "climate_change": "climate change",
+        "resource_management": "resource management",
+        "responsible_consumption": "responsible consumption"
     },
     "calculators": {
         "shared_messages": {
+            "data_generated_using_ai": "The data was generated with the help of artificial intelligence, therefore it may be erroneous or inaccurate.",
             "insert_data_to_calculate": "Specify values for every required field to calculate the result",
             "weight": "Weight",
             "height": "Height",
@@ -32,7 +54,15 @@
             "male": "Male",
             "female": "Female",
             "source": "Source",
-            "formula": "Formula"
+            "formula": "Formula",
+            "country": "Country",
+            "calculating": "Calculating your result, please wait...",
+            "calculation_error": "An error happened during calculation, please retry...",
+            "day": "Day",
+            "week": "Week",
+            "month": "Month",
+            "year": "Year",
+            "time_period": "Time period"
         },
         "body_mass_index": {
             "title": "Body Mass Index (BMI) Calculator",
@@ -89,6 +119,34 @@
                 },
                 "why_is_it_important_to_know_your_daily_calorie_needs": "Why is it Important to Know Your Daily Calorie Needs?",
                 "why_is_it_important_to_know_your_daily_calorie_needs_description": "Knowing your daily calorie needs is crucial for maintaining a healthy lifestyle. It helps you make informed dietary decisions, maintain or reach your desired weight, and improve your overall health. Understanding how many calories your body needs allows you to properly balance caloric intake with energy expenditure, avoiding the risk of gaining weight or losing weight in an unhealthy way."
+            }
+        },
+        "food_waste": {
+            "title": "Food Waste Calculator",
+            "description": "Analyze CO2 emissions and average cost for different food categories, helping you make more sustainable and informed decisions.",
+            "messages": {
+                "select_a_time_period": "Select a time period",
+                "meat": "Meat",
+                "fruits": "Fruits",
+                "vegetables": "Vegetables",
+                "dairy": "Dairy",
+                "seafood": "Seafood",
+                "grains": "Grains",
+                "sweets_and_snacks": "Sweets and Snacks",
+                "food_category": "Food Category",
+                "bought_amount": "Bought Amount",
+                "wasted_amount": "Wasted Amount",
+                "paper_packaging_amount": "Paper packaging amount",
+                "plastic_packaging_amount": "Plastic packaging amount",
+                "wasted_amount_cant_be_greater_than_bought_amount": "Wasted amount cant be greater than bought amount",
+                "calculation_results": "Out of ~{total_emissions} CO₂eq emitted, ~{wasted_emissions} CO₂eq were wasted. Only ~{could_have_been_enough_emissions} CO₂eq would have been enough.{break}Out of ~{total_costs}€ spent, ~{wasted_costs}€ were wasted. Only ~{could_have_been_enough_costs}€ would have been enough.",
+                "sources_on_carbon_footprint_and_prices": "Sources on carbon footprint and prices",
+                "how_food_waste_gets_calculated": "How food waste is calculated",
+                "how_food_waste_gets_calculated_description": "Calculating food waste is crucial for understanding the impact of our eating habits on the environment and our wallets. Our tool estimates your carbon footprint based on the amount of food wasted and the information you provide, calculating the equivalent in CO₂ emissions to give a clear picture of how much we waste and how we can improve.",
+                "how_to_reduce_food_waste": "How to reduce food waste",
+                "how_to_reduce_food_waste_description": "Reducing food waste is possible by adopting simple measures. Plan your weekly meals, create a targeted shopping list, and store food properly. Learn to recycle leftovers and monitor expiration dates. Even smaller portions can make a difference, preventing you from cooking or serving more than necessary.",
+                "how_to_reduce_carbon_footprint_of_our_diet": "How to reduce the carbon footprint of our diet",
+                "how_to_reduce_carbon_footprint_of_our_diet_description": "Reducing the carbon footprint of our diet starts with conscious choices. Opt for local and seasonal foods, reduce meat and fish consumption, and choose products with less packaging. A food carbon footprint calculator can help you visualize the impact of your food choices, allowing you to adopt more sustainable habits."
             }
         },
         "pregnancy": {

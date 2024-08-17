@@ -8,7 +8,7 @@
 >
     <url>
         <loc>https://coolculators.com/it</loc>
-        <lastmod>2024-08-16T14:45:00.569Z</lastmod>
+        <lastmod>2024-08-17T21:20:23.396Z</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
         <xhtml:link
@@ -24,7 +24,7 @@
     </url>
     <url>
         <loc>https://coolculators.com/en</loc>
-        <lastmod>2024-08-16T14:45:00.569Z</lastmod>
+        <lastmod>2024-08-17T21:20:23.396Z</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
         <xhtml:link
@@ -41,7 +41,7 @@
     
     <url>
         <loc>https://coolculators.com/it/indice-massa-corporea-calcolatore</loc>
-        <lastmod>2024-08-16T14:45:00.569Z</lastmod>
+        <lastmod>2024-08-17T21:20:23.396Z</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
         <xhtml:link
@@ -57,7 +57,7 @@
     </url>
     <url>
         <loc>https://coolculators.com/en/body-mass-index-calculator</loc>
-        <lastmod>2024-08-16T14:45:00.569Z</lastmod>
+        <lastmod>2024-08-17T21:20:23.396Z</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
         <xhtml:link
@@ -74,7 +74,7 @@
     
     <url>
         <loc>https://coolculators.com/it/fabbisogno-calorico-giornaliero-calcolatore</loc>
-        <lastmod>2024-08-16T14:45:00.569Z</lastmod>
+        <lastmod>2024-08-17T21:20:23.396Z</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
         <xhtml:link
@@ -102,6 +102,39 @@
             rel="alternate"
             hreflang="it"
             href="https://coolculators.com/it/fabbisogno-calorico-giornaliero-calcolatore"
+        />
+    </url>    
+
+    <url>
+        <loc>https://coolculators.com/it/spreco-alimentare-calcolatore</loc>
+        <lastmod>2024-08-16T14:45:00.569Z</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>1.0</priority>
+        <xhtml:link
+            rel="alternate"
+            hreflang="en"
+            href="https://coolculators.com/en/food-waste-calculator"
+        />
+        <xhtml:link
+            rel="alternate"
+            hreflang="it"
+            href="https://coolculators.com/it/spreco-alimentare-calcolatore"
+        />
+    </url>    
+    <url>
+        <loc>https://coolculators.com/en/daily-calorie-needs-calculator</loc>
+        <lastmod>2024-08-17T21:20:23.396Z</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>1.0</priority>
+        <xhtml:link
+            rel="alternate"
+            hreflang="en"
+            href="https://coolculators.com/en/food-waste-calculator"
+        />
+        <xhtml:link
+            rel="alternate"
+            hreflang="it"
+            href="https://coolculators.com/it/spreco-alimentare-calcolatore"
         />
     </url>    
 </urlset>
