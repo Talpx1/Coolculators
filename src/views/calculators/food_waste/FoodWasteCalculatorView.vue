@@ -40,10 +40,6 @@ function nFormat(val: number) {
 
 <template>
     <CalculatorPageWrapper id="food_waste" application-category="LifestyleApplication">
-        <Message severity="warn" :closable="false">
-            {{ t('calculators.shared_messages.data_generated_using_ai') }}
-        </Message>
-
         <div class="space-y-8 justify-self-stretch">
             <CountrySelect
                 :countries
