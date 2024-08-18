@@ -7,10 +7,11 @@ import { APP_TITLE } from '@/main'
 import { SUPPORTED_LOCALE_CODES, type SupportedLocale } from '@/composables/useLocale'
 import useLocalizedRoutePath from '@/composables/useLocalizedRoutePath'
 import PrimaryHeading from '@/components/ui/typography/PrimaryHeading.vue'
-import { computed, watch } from 'vue'
+import { computed } from 'vue'
 import { useRoute } from 'vue-router'
 import useCalculatorList from '@/composables/useCalculatorList'
 import Tag from 'primevue/tag'
+import CalculatorCard from '../ui/CalculatorCard.vue'
 
 type ApplicationCategory =
     | 'GameApplication'
@@ -42,7 +43,26 @@ const { t, locale } = useI18n()
 
 const route = useRoute()
 
-const currentCalculator = computed(() => useCalculatorList().value.find((c) => c.id === props.id)!)
+const allCalculators = useCalculatorList()
+const currentCalculator = computed(() => allCalculators.value.find((c) => c.id === props.id)!)
+const relatedCalculators = computed(() =>
+    allCalculators.value
+        .map((c) => ({
+            ...c,
+            common_tags: currentCalculator.value.tags.filter((tag) => c.tags.includes(tag))
+        }))
+        .filter((c) => c.common_tags.length >= 2 && c.id !== currentCalculator.value.id)
+        .sort((c1, c2) => {
+            if (c1.common_tags.length > c2.common_tags.length) {
+                return -1
+            }
+            if (c1.common_tags.length < c2.common_tags.length) {
+                return 1
+            }
+            return 0
+        })
+        .slice(0, 5)
+)
 
 const appUrl = window.location.origin
 const title = computed(() => `${t(`calculators.${props.id}.title`)} | ${APP_TITLE}`)
@@ -109,6 +129,18 @@ useSchemaOrg([
         </div>
 
         <slot />
+
+        <div v-if="relatedCalculators.length">
+            <div class="font-bold mb-4 text-xl">{{ t('related_calculators') }}</div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                <CalculatorCard
+                    v-for="calculator in relatedCalculators"
+                    :calculator
+                    :key="calculator.id"
+                />
+            </div>
+        </div>
 
         <div>
             <h2>Tags:</h2>

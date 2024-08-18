@@ -1,15 +1,13 @@
 <script setup lang="ts">
-import Card from 'primevue/card'
 import useCalculatorList from '@/composables/useCalculatorList'
-import Tag from 'primevue/tag'
-import Button from 'primevue/button'
 import { useI18n } from 'vue-i18n'
 import PrimaryHeading from '@/components/ui/typography/PrimaryHeading.vue'
 import { APP_TITLE } from '@/main'
-import { computed, watch } from 'vue'
+import { computed } from 'vue'
 import { useHead, useSeoMeta } from '@unhead/vue'
 import logo from '@/assets/logo.png'
 import { SUPPORTED_LOCALE_CODES } from '@/composables/useLocale'
+import CalculatorCard from '@/components/ui/CalculatorCard.vue'
 
 const calculators = useCalculatorList()
 
@@ -53,25 +51,11 @@ useHead({
     </div>
 
     <div class="grid grid-cols-1 lg:grid-cols-3 gap-4">
-        <Card v-for="calculator in calculators" :key="calculator.id">
-            <template #title>
-                <h3>{{ calculator.title }}</h3>
-            </template>
-            <template #subtitle>
-                <div class="flex flex-wrap gap-2">
-                    <Tag v-for="tag in calculator.tags" :key="`${calculator.id}_${tag}`">
-                        {{ tag }}
-                    </Tag>
-                </div>
-            </template>
-            <template #content>
-                <h4 class="mb-8">
-                    {{ calculator.description }}
-                </h4>
-                <RouterLink :to="calculator.route">
-                    <Button :label="t('calculate')" />
-                </RouterLink>
-            </template>
-        </Card>
+        <CalculatorCard
+            v-for="calculator in calculators"
+            :calculator
+            use-headings
+            :key="calculator.id"
+        />
     </div>
 </template>
