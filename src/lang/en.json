@@ -1,6 +1,7 @@
 {
     "home": {
-        "description": "Discover our collection of free online calculators for every need."
+        "title": "Free online calculators for every need",
+        "description": "Discover a comprehensive collection of free online calculators designed to meet all your needs. Whether you're looking for financial, health, or utility tools, our site offers a wide range of easy-to-use calculators. Explore our extensive list and find the perfect calculator for any task. Your go-to resource for convenient and accurate calculations."
     },
     "contact_us": "Contact Us",
     "privacy_disclaimer": "This site does NOT use cookies and does NOT collect, store, or share any information with third parties.",
@@ -69,7 +70,7 @@
         },
         "body_mass_index": {
             "title": "Body Mass Index (BMI) Calculator",
-            "description": "Calculate your BMI and determine if your weight is within the normal range for your height.",
+            "description": "Calculate your BMI and discover your ideal weight based on height and age, to assess whether you are underweight, normal weight, or overweight.",
             "messages": {
                 "bmi": "BMI",
                 "severe_thinness": "Severe Thinness",
@@ -86,7 +87,23 @@
                 "what_bmi_is": "What is BMI?",
                 "what_bmi_is_description": "The Body Mass Index (BMI) is a parameter used to assess whether a person's weight is proportionate to their height. To calculate BMI, simply divide the weight in kilograms by the square of the height in meters. This tool is useful for both women and men who want to monitor their health, helping you understand if you are underweight, at a normal weight, or overweight, providing a useful indication of your physical condition.",
                 "low_or_high_bmi_risks": "Risks of a High or Low BMI",
-                "low_or_high_bmi_risks_description": "A high or low body mass index can indicate health risks. A BMI above the normal range suggests overweight or obesity, increasing the risk of heart disease, diabetes, and high blood pressure. Conversely, a low BMI may indicate underweight, leading to issues such as weakness, osteoporosis, and nutritional deficiencies. If your BMI is outside the normal parameters, consult a doctor for advice on diet and exercise."
+                "low_or_high_bmi_risks_description": "A high or low body mass index can indicate health risks. A BMI above the normal range suggests overweight or obesity, increasing the risk of heart disease, diabetes, and high blood pressure. Conversely, a low BMI may indicate underweight, leading to issues such as weakness, osteoporosis, and nutritional deficiencies. If your BMI is outside the normal parameters, consult a doctor for advice on diet and exercise.",
+                "how_to_calculate_bmi": "How to Calculate BMI?",
+                "how_to_calculate_bmi_description": {
+                    "intro": "Calculating Body Mass Index (BMI) is simple and requires only two pieces of information: your weight and your height. Follow these steps:",
+                    "step_1_intro": "Measure your weight:",
+                    "step_2_intro": "Measure your height:",
+                    "step_3_intro": "Use the formula: ",
+                    "step_1": "weigh yourself in kilograms (kg).",
+                    "step_2": "measure your height in meters (m).",
+                    "step_3": "BMI = weight (kg) / height² (m²)."
+                },
+                "what_bmi_does_not_take_into_account": "Factors Not Taken into Account by BMI",
+                "what_bmi_does_not_take_into_account_description": "Body Mass Index (BMI) is a useful tool for evaluating weight in relation to height, but it does not consider several crucial factors. Muscle Mass: BMI does not distinguish between fat and muscle mass. Athletes or very muscular individuals may have a high BMI but not be overweight. Bone Structure: People with heavier bones may have a higher BMI compared to those with a lighter bone structure, without being genuinely overweight. Fat Distribution: BMI does not consider where fat is distributed on the body. Excess abdominal fat can indicate a higher risk of diseases, even if the BMI is normal. Age and Gender: These factors can influence metabolism and body composition, but BMI does not directly account for them. For a more complete health assessment, it is advisable to complement BMI with other measures, such as waist-hip ratio and body fat percentage.",
+                "bmi_difference_between_man_and_woman": "BMI Difference between Men and Women",
+                "bmi_difference_between_man_and_woman_description": "BMI is calculated the same way for men and women, but the values obtained can have different interpretations due to physiological differences. Fat Distribution: Women tend to have a higher body fat percentage compared to men, even at the same BMI. This is natural and related to hormonal factors. Body Composition: Men, on average, have more muscle mass than women, which can result in a higher BMI without a corresponding increase in body fat. Results and Risks: For women, a normal BMI may be associated with a higher body fat percentage compared to men, which may affect health risks differently. Therefore, it is important to consider these differences when using BMI to assess weight and general health.",
+                "bmi_in_children": "BMI in Children",
+                "bmi_in_children_description": "BMI in children works slightly differently than in adults. Instead of using fixed ranges, children's BMI is assessed based on growth charts specific to age and sex. Percentiles: BMI values for children are interpreted using percentiles. A child is considered healthy weight if their BMI is between the 5th and 85th percentile. Growth and Development: As children grow at different rates, their BMI can vary significantly during childhood and adolescence. It is important to monitor BMI over time rather than relying on a single measurement. Early Intervention: A BMI that is too high or too low may indicate growth or health problems, making early intervention necessary with the help of a pediatrician or specialized nutritionist. BMI in children is a valuable tool for preventing obesity or malnutrition during growth."
             }
         },
         "daily_calorie_needs": {

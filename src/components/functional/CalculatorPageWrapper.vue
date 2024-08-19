@@ -68,21 +68,33 @@ const appUrl = window.location.origin
 const title = computed(() => `${t(`calculators.${props.id}.title`)} | ${APP_TITLE}`)
 const description = computed(() => t(`calculators.${props.id}.description`))
 const ogLocaleAlternate = computed(() => SUPPORTED_LOCALE_CODES.filter((l) => l !== locale.value))
+const logoUrl = `${appUrl}${logo}`
 useSeoMeta({
     title,
     description,
+    creator: APP_TITLE,
+
     ogTitle: title,
     ogDescription: description,
-    ogImage: `${appUrl}${logo}`,
+    ogImage: logoUrl,
     ogLocale: locale,
     ogSiteName: APP_TITLE,
     ogLocaleAlternate,
-    creator: APP_TITLE
+
+    twitterCard: 'summary',
+    twitterTitle: title,
+    twitterImage: logoUrl,
+    twitterDescription: description,
+    twitterCreator: APP_TITLE
 })
 
-const canonical = computed(() => ({
+const canonicalUrl = computed(
+    () =>
+        `${appUrl}/${locale.value}/${useLocalizedRoutePath(`calculators.${props.id}`, locale.value as SupportedLocale)}`
+)
+const canonicalObj = computed(() => ({
     rel: 'canonical',
-    href: `${appUrl}/${locale.value}/${useLocalizedRoutePath(`calculators.${props.id}`, locale.value as SupportedLocale)}`
+    href: canonicalUrl.value
 }))
 const alternates = Object.keys(useLocalizedRoutePath(`calculators.${props.id}`)).map((locale) => ({
     rel: 'alternate',
@@ -90,7 +102,7 @@ const alternates = Object.keys(useLocalizedRoutePath(`calculators.${props.id}`))
     hreflang: locale
 }))
 useHead({
-    link: [canonical, ...alternates],
+    link: [canonicalObj, ...alternates],
     templateParams: {
         schemaOrg: {
             host: appUrl,
@@ -106,7 +118,7 @@ useSchemaOrg([
         inLanguage: locale,
         name: title,
         description,
-        url: canonical,
+        url: canonicalUrl,
         applicationCategory: props.applicationCategory,
         operatingSystem: 'Web',
         provider: {

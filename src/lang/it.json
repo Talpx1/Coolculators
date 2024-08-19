@@ -1,6 +1,7 @@
 {
     "home": {
-        "description": "Scopri la nostra raccolta di calcolatori online gratuiti per ogni esigenza."
+        "title": "Calcolatori online gratis per ogni necessità",
+        "description": "Scopri una collezione completa di calcolatori online gratuiti pensati per soddisfare tutte le tue esigenze. Che tu stia cercando strumenti per finanza, salute o utilità, il nostro sito offre una vasta gamma di calcolatori facili da usare. Esplora la nostra lista estesa e trova il calcolatore perfetto per ogni compito. La tua risorsa di riferimento per calcoli comodi e accurati."
     },
     "contact_us": "Contattaci",
     "privacy_disclaimer": "Questo sito NON usa cookie e NON raccoglie, salva o condivide a terzi alcuna informazione.",
@@ -69,7 +70,7 @@
         },
         "body_mass_index": {
             "title": "Calcolatore di Indice di Massa Corporea (IMC)",
-            "description": "Calcola il tuo IMC e valuta se il tuo peso è nella norma rispetto alla tua altezza",
+            "description": "Calcola il tuo IMC e scopri il tuo peso ideale in base all'altezza e all'età, per valutare se sei sottopeso, normopeso o sovrappeso.",
             "messages": {
                 "bmi": "IMC",
                 "severe_thinness": "Grave magrezza",
@@ -86,7 +87,23 @@
                 "what_bmi_is": "Cos'è l'IMC",
                 "what_bmi_is_description": "L'Indice di Massa Corporea (IMC), noto anche come BMI, è un parametro utilizzato per valutare se il peso di una persona è proporzionato alla sua altezza. Per calcolare l'IMC, basta dividere il peso in chilogrammi per il quadrato dell'altezza in metri. Questo strumento è utile per donne e uomini che desiderano monitorare la propria salute, aiutandoti a capire se sei sotto peso, normopeso o in sovrappeso, fornendo un'indicazione utile sul tuo stato fisico.",
                 "low_or_high_bmi_risks": "Rischi di un IMC Alto o Basso",
-                "low_or_high_bmi_risks_description": "Un indice di massa corporea alto o basso può indicare rischi per la salute. Un BMI superiore al normale suggerisce sovrappeso o obesità, aumentando il rischio di malattie cardiache, diabete e ipertensione. Al contrario, un BMI basso può indicare sottopeso, portando a problemi come debolezza, osteoporosi e carenze nutrizionali. Se il tuo BMI è fuori dai parametri normali, consulta un medico per consigli su dieta ed esercizio fisico."
+                "low_or_high_bmi_risks_description": "Un indice di massa corporea alto o basso può indicare rischi per la salute. Un BMI superiore al normale suggerisce sovrappeso o obesità, aumentando il rischio di malattie cardiache, diabete e ipertensione. Al contrario, un BMI basso può indicare sottopeso, portando a problemi come debolezza, osteoporosi e carenze nutrizionali. Se il tuo BMI è fuori dai parametri normali, consulta un medico per consigli su dieta ed esercizio fisico.",
+                "how_to_calculate_bmi": "Come calcolare l'IMC?",
+                "how_to_calculate_bmi_description": {
+                    "intro": "Calcolare l'Indice di Massa Corporea (IMC) è semplice e richiede solo due informazioni: il tuo peso e la tua altezza. Segui questi passaggi:",
+                    "step_1_intro": "Misura il tuo peso:",
+                    "step_2_intro": "Misura la tua altezza:",
+                    "step_3_intro": "Usa la formula: ",
+                    "step_1": "pesa te stesso in chilogrammi (kg).",
+                    "step_2": "misura la tua altezza in metri (m).",
+                    "step_3": "IMC = peso (kg) / altezza² (m²)."
+                },
+                "what_bmi_does_not_take_into_account": "Fattori Non Presi in Considerazione dall'IMC",
+                "what_bmi_does_not_take_into_account_description": "L'Indice di Massa Corporea (IMC) è uno strumento utile per valutare il peso in relazione all'altezza, ma non tiene conto di diversi fattori cruciali. Massa Muscolare: L'IMC non distingue tra massa grassa e massa muscolare. Atleti o persone molto muscolose potrebbero avere un IMC elevato, ma non essere sovrappeso. Struttura Ossea: Le persone con ossa più pesanti possono avere un IMC più alto rispetto a quelle con una struttura ossea più leggera, senza essere realmente in sovrappeso. Distribuzione del Grasso Corporeo: L'IMC non considera dove il grasso è distribuito nel corpo. Grasso addominale eccessivo può indicare un rischio maggiore di malattie, anche se l'IMC è normale. Età e Genere: Questi fattori possono influenzare il metabolismo e la composizione corporea, ma l'IMC non li considera direttamente. Per una valutazione più completa della salute, è consigliabile integrare l'IMC con altre misure, come la circonferenza vita-fianchi e la percentuale di grasso corporeo.",
+                "bmi_difference_between_man_and_woman": "Differenza IMC tra Uomo e Donna",
+                "bmi_difference_between_man_and_woman_description": "L'IMC è calcolato allo stesso modo per uomini e donne, ma i valori ottenuti possono avere interpretazioni diverse a causa delle differenze fisiologiche. Distribuzione del Grasso: Le donne tendono ad avere una percentuale di grasso corporeo più alta rispetto agli uomini, anche a parità di IMC. Questo è naturale e legato a fattori ormonali. Composizione Corporea: Gli uomini hanno, in media, più massa muscolare rispetto alle donne, il che può portare a un IMC più alto senza un corrispondente aumento di grasso corporeo. Risultati e Rischi: Per le donne, un IMC normale può essere associato a una percentuale di grasso corporeo più alta rispetto agli uomini, il che può influire diversamente sui rischi per la salute. Pertanto, è importante considerare queste differenze quando si utilizza l'IMC per valutare il peso e la salute generale.",
+                "bmi_in_children": "BMI nei Bambini",
+                "bmi_in_children_description": "Il BMI nei bambini funziona in modo leggermente diverso rispetto agli adulti. Invece di usare intervalli fissi, il BMI dei bambini viene valutato in base a tabelle di crescita specifiche per età e sesso. Percentili: I valori dell'IMC per i bambini sono interpretati utilizzando percentili. Un bambino è considerato normopeso se il suo IMC è tra il 5° e l'85° percentile. Crescita e Sviluppo: Poiché i bambini crescono a ritmi diversi, il loro BMI può variare significativamente durante l'infanzia e l'adolescenza. È importante monitorare il BMI nel tempo piuttosto che basarsi su un'unica misurazione. Intervento Precoce: Un BMI troppo alto o troppo basso può indicare problemi di crescita o salute, rendendo necessario un intervento precoce con l'aiuto di un pediatra o di un nutrizionista specializzato. L'IMC nei bambini è uno strumento prezioso per prevenire obesità o malnutrizione durante la crescita."
             }
         },
         "daily_calorie_needs": {

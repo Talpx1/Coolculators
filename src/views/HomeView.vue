@@ -22,17 +22,26 @@ const alternates = SUPPORTED_LOCALE_CODES.map((locale) => ({
 }))
 
 const description = computed(() => t('home.description'))
+const logoUrl = `${appUrl}${logo}`
+const title = computed(() => `${APP_TITLE} - ${t('home.title')}`)
 const ogLocaleAlternate = computed(() => SUPPORTED_LOCALE_CODES.filter((l) => l !== locale.value))
 useSeoMeta({
-    title: APP_TITLE,
+    title,
     description,
-    ogTitle: APP_TITLE,
+    creator: APP_TITLE,
+
+    ogTitle: title,
     ogDescription: description,
-    ogImage: `${appUrl}${logo}`,
+    ogImage: logoUrl,
     ogLocale: locale,
     ogSiteName: APP_TITLE,
     ogLocaleAlternate,
-    creator: APP_TITLE
+
+    twitterCard: 'summary',
+    twitterTitle: title,
+    twitterImage: logoUrl,
+    twitterDescription: description,
+    twitterCreator: APP_TITLE
 })
 
 const canonical = computed(() => ({

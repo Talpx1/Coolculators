@@ -10,16 +10,10 @@ import BmiRangesTable from './components/BmiRangesTable.vue'
 import SecondaryHeading from '@/components/ui/typography/SecondaryHeading.vue'
 import TextParagraph from '@/components/ui/typography/TextParagraph.vue'
 import RelatedResources from '@/components/ui/RelatedResources.vue'
-
-//TODO: SEO:
-//talk about diets
-//talk about difference man/woman
-//talk about bmi in children
-//talk about differences in bmi because of muscles or skeleton structure
+import BmiParagraphs from './components/BmiParagraphs.vue'
 
 const { t, n } = useI18n()
 
-//TODO: improve UX on input, probably set the default ref as undefined
 const weight = ref()
 const height = ref()
 
@@ -74,25 +68,7 @@ const numberInputProps = {
         <BmiRangesTable />
 
         <div class="flex flex-col gap-16 justify-self-center max-w-full">
-            <div>
-                <SecondaryHeading>
-                    {{ t('calculators.body_mass_index.messages.what_bmi_is') }}
-                </SecondaryHeading>
-                <TextParagraph>
-                    {{ t('calculators.body_mass_index.messages.what_bmi_is_description') }}
-                </TextParagraph>
-            </div>
-
-            <div>
-                <SecondaryHeading>
-                    {{ t('calculators.body_mass_index.messages.low_or_high_bmi_risks') }}
-                </SecondaryHeading>
-                <TextParagraph>
-                    {{
-                        t('calculators.body_mass_index.messages.low_or_high_bmi_risks_description')
-                    }}
-                </TextParagraph>
-            </div>
+            <BmiParagraphs />
         </div>
 
         <RelatedResources
