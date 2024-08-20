@@ -10,10 +10,12 @@ type CalculatedWastes = {
     wasted_costs: number
     could_have_been_enough_costs: number
     could_have_been_enough_emissions: number
+    km_in_car_equivalent: number
 }
 
 const AVG_PAPER_BAG_CO2E = 5.52
 const AVG_PLASTIC_BAG_CO2E = 1.58
+const AVG_CO2E_PER_KM_IN_CAR = 0.196974607
 
 const foodCategoriesInfo: Record<
     string,
@@ -162,7 +164,8 @@ export default function useFoodWasteCalculation(
             wasted_emissions: 0,
             wasted_costs: 0,
             could_have_been_enough_costs: 0,
-            could_have_been_enough_emissions: 0
+            could_have_been_enough_emissions: 0,
+            km_in_car_equivalent: 0
         }
 
         wastes.total_costs = FOOD_CATEGORIES.reduce((costsAccumulator, foodCategory) => {
@@ -208,6 +211,7 @@ export default function useFoodWasteCalculation(
 
         wastes.could_have_been_enough_costs = wastes.total_costs - wastes.wasted_costs
         wastes.could_have_been_enough_emissions = wastes.total_emissions - wastes.wasted_emissions
+        wastes.km_in_car_equivalent = wastes.wasted_emissions * AVG_CO2E_PER_KM_IN_CAR
 
         results.value = wastes
         loading.value = false

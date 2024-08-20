@@ -15,6 +15,8 @@ import useFoodWasteCalculation from './composables/useFoodWasteCalculation'
 import RelatedResources from '@/components/ui/RelatedResources.vue'
 import SecondaryHeading from '@/components/ui/typography/SecondaryHeading.vue'
 import TextParagraph from '@/components/ui/typography/TextParagraph.vue'
+import TextualLink from '@/components/ui/TextualLink.vue'
+import FoodWasterByCountryTables from './components/FoodWasterByCountryTables.vue'
 
 const { t, n } = useI18n()
 
@@ -41,6 +43,8 @@ function nFormat(val: number) {
 <template>
     <CalculatorPageWrapper id="food_waste" application-category="LifestyleApplication">
         <div class="space-y-8 justify-self-stretch">
+            <h3>{{ t(`calculators.food_waste.messages.intro`) }}</h3>
+
             <CountrySelect
                 :countries
                 v-model:selected="selectedCountry"
@@ -165,6 +169,9 @@ function nFormat(val: number) {
                 <template #could_have_been_enough_emissions>
                     <b>{{ nFormat(results.could_have_been_enough_emissions) }}</b>
                 </template>
+                <template #km_in_car_equivalent>
+                    <b>{{ nFormat(results.km_in_car_equivalent) }}</b>
+                </template>
                 <template #break> <br /><br /> </template>
             </i18n-t>
 
@@ -208,13 +215,73 @@ function nFormat(val: number) {
                     )
                 }}</TextParagraph>
             </div>
+
+            <div>
+                <SecondaryHeading>{{
+                    t(
+                        'calculators.food_waste.messages.how_to_compare_food_waste_emissions_to_emission_per_km_driven_in_car'
+                    )
+                }}</SecondaryHeading>
+                <TextParagraph>
+                    <i18n-t
+                        keypath="calculators.food_waste.messages.how_to_compare_food_waste_emissions_to_emission_per_km_driven_in_car_description"
+                    >
+                        <template #source_link>
+                            <TextualLink
+                                to="https: //www.co2everything.com/how-we-calculate-km-of-driving"
+                            >
+                                https://www.co2everything.com/how-we-calculate-km-of-driving
+                            </TextualLink>
+                        </template>
+                        <template #avg_emissions_per_km>
+                            {{ n(0.196974607, { maximumFractionDigits: 9 }) }}
+                        </template>
+                        <template #break> <br /><br /> </template>
+                    </i18n-t>
+                </TextParagraph>
+            </div>
+
+            <FoodWasterByCountryTables />
+
+            <div>
+                <SecondaryHeading>{{
+                    t(
+                        'calculators.food_waste.messages.how_different_food_categories_impact_on_co2_emissions'
+                    )
+                }}</SecondaryHeading>
+                <TextParagraph>{{
+                    t(
+                        'calculators.food_waste.messages.how_different_food_categories_impact_on_co2_emissions_description'
+                    )
+                }}</TextParagraph>
+            </div>
+
+            <div>
+                <SecondaryHeading>{{
+                    t(
+                        'calculators.food_waste.messages.how_the_supply_chain_impact_the_co2_emissions'
+                    )
+                }}</SecondaryHeading>
+                <TextParagraph>{{
+                    t(
+                        'calculators.food_waste.messages.how_the_supply_chain_impact_the_co2_emissions_description'
+                    )
+                }}</TextParagraph>
+            </div>
         </div>
 
         <RelatedResources
             :resources="[
                 'https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Packaging_waste_statistics#Waste_generation_by_packaging_material',
-                'https://www.sciencedirect.com/science/article/pii/S2666833523000011#sec0005'
+                'https://www.sciencedirect.com/science/article/pii/S2666833523000011#sec0005',
+                'https://openknowledge.fao.org/server/api/core/bitstreams/1694038d-98f7-40f6-be4b-98782544b9f9/content',
+                'https://food.ec.europa.eu/safety/food-waste_en',
+                'https://www.fao.org/platform-food-loss-waste/en/'
             ]"
         />
     </CalculatorPageWrapper>
 </template>
+
+<!-- include relevant long-tail keywords throughout the content, such as "reduce food waste at home," "environmental impact of food waste," and "food waste reduction strategies." -->
+<!-- how different food categories contribute to CO2 emissions  -->
+<!-- come la filiera aumenta le emissioni -->
