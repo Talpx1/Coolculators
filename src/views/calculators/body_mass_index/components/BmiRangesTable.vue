@@ -4,16 +4,17 @@ import useBmiRanges from '../composables/useBmiRanges'
 import Card from 'primevue/card'
 import SecondaryHeading from '@/components/ui/typography/SecondaryHeading.vue'
 
-const { t, n } = useI18n()
+const { n } = useI18n()
 const bmiRanges = useBmiRanges()
 </script>
 
 <template>
     <Card>
         <template #title>
-            <SecondaryHeading class="text-center">
-                {{ t('calculators.body_mass_index.messages.bmi_ranges') }}
-            </SecondaryHeading>
+            <SecondaryHeading
+                class="text-center"
+                v-t="'calculators.body_mass_index.messages.bmi_ranges'"
+            />
         </template>
         <template #content>
             <div class="flex flex-col divide-y">

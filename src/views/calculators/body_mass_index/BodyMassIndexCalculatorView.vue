@@ -7,8 +7,6 @@ import useBmi from './composables/useBmi'
 import BmiBar from './components/BmiBar.vue'
 import BmiFormula from './components/BmiFormula.vue'
 import BmiRangesTable from './components/BmiRangesTable.vue'
-import SecondaryHeading from '@/components/ui/typography/SecondaryHeading.vue'
-import TextParagraph from '@/components/ui/typography/TextParagraph.vue'
 import RelatedResources from '@/components/ui/RelatedResources.vue'
 import BmiParagraphs from './components/BmiParagraphs.vue'
 

@@ -17,6 +17,10 @@ import SecondaryHeading from '@/components/ui/typography/SecondaryHeading.vue'
 import TextParagraph from '@/components/ui/typography/TextParagraph.vue'
 import TextualLink from '@/components/ui/TextualLink.vue'
 import FoodWasterByCountryTables from './components/FoodWasterByCountryTables.vue'
+import I18nTranslator from '@/components/i18n/I18nTranslator.vue'
+import TranslatableParagraphBlock from '@/components/i18n/TranslatableParagraphBlock.vue'
+
+//TODO: SEO: include relevant long-tail keywords throughout the content, such as "reduce food waste at home," "environmental impact of food waste," and "food waste reduction strategies."
 
 const { t, n } = useI18n()
 
@@ -43,7 +47,11 @@ function nFormat(val: number) {
 <template>
     <CalculatorPageWrapper id="food_waste" application-category="LifestyleApplication">
         <div class="space-y-8 justify-self-stretch">
-            <h3>{{ t(`calculators.food_waste.messages.intro`) }}</h3>
+            <I18nTranslator
+                keypath="calculators.food_waste.messages.intro"
+                tag="h3"
+                class="text-center"
+            />
 
             <CountrySelect
                 :countries
@@ -56,11 +64,11 @@ function nFormat(val: number) {
                 class="grid grid-cols-1 lg:grid-cols-5 gap-x-4 gap-y-16 justify-items-center items-center"
             >
                 <header class="hidden lg:contents font-bold">
-                    <div>{{ t(`calculators.food_waste.messages.food_category`) }}</div>
-                    <div>{{ t(`calculators.food_waste.messages.bought_amount`) }}</div>
-                    <div>{{ t(`calculators.food_waste.messages.wasted_amount`) }}</div>
-                    <div>{{ t(`calculators.food_waste.messages.paper_packaging_amount`) }}</div>
-                    <div>{{ t(`calculators.food_waste.messages.plastic_packaging_amount`) }}</div>
+                    <div v-t="'calculators.food_waste.messages.food_category'" />
+                    <div v-t="'calculators.food_waste.messages.bought_amount'" />
+                    <div v-t="'calculators.food_waste.messages.wasted_amount'" />
+                    <div v-t="'calculators.food_waste.messages.paper_packaging_amount'" />
+                    <div v-t="'calculators.food_waste.messages.plastic_packaging_amount'" />
                 </header>
                 <div
                     class="lg:contents space-y-2"
@@ -145,7 +153,7 @@ function nFormat(val: number) {
                 <span v-else-if="loading">{{ t('calculators.shared_messages.calculating') }}.</span>
                 <span v-else>{{ t('calculators.shared_messages.insert_data_to_calculate') }}</span>
             </span>
-            <i18n-t
+            <I18nTranslator
                 v-else
                 class="text-2xl"
                 keypath="calculators.food_waste.messages.calculation_results"
@@ -172,8 +180,7 @@ function nFormat(val: number) {
                 <template #km_in_car_equivalent>
                     <b>{{ nFormat(results.km_in_car_equivalent) }}</b>
                 </template>
-                <template #break> <br /><br /> </template>
-            </i18n-t>
+            </I18nTranslator>
 
             <RelatedResources
                 class="mt-8"
@@ -187,43 +194,24 @@ function nFormat(val: number) {
         </div>
 
         <div class="flex flex-col gap-16 justify-self-center max-w-full">
-            <div>
-                <SecondaryHeading>{{
-                    t('calculators.food_waste.messages.how_food_waste_gets_calculated')
-                }}</SecondaryHeading>
-                <TextParagraph>{{
-                    t('calculators.food_waste.messages.how_food_waste_gets_calculated_description')
-                }}</TextParagraph>
-            </div>
+            <TranslatableParagraphBlock
+                title-keypath="calculators.food_waste.messages.how_food_waste_gets_calculated"
+            />
+            <TranslatableParagraphBlock
+                title-keypath="calculators.food_waste.messages.how_to_reduce_food_waste"
+            />
+            <TranslatableParagraphBlock
+                title-keypath="calculators.food_waste.messages.how_to_reduce_carbon_footprint_of_our_diet"
+            />
 
             <div>
-                <SecondaryHeading>{{
-                    t('calculators.food_waste.messages.how_to_reduce_food_waste')
-                }}</SecondaryHeading>
-                <TextParagraph>{{
-                    t('calculators.food_waste.messages.how_to_reduce_food_waste_description')
-                }}</TextParagraph>
-            </div>
-
-            <div>
-                <SecondaryHeading>{{
-                    t('calculators.food_waste.messages.how_to_reduce_carbon_footprint_of_our_diet')
-                }}</SecondaryHeading>
-                <TextParagraph>{{
-                    t(
-                        'calculators.food_waste.messages.how_to_reduce_carbon_footprint_of_our_diet_description'
-                    )
-                }}</TextParagraph>
-            </div>
-
-            <div>
-                <SecondaryHeading>{{
-                    t(
+                <SecondaryHeading
+                    v-t="
                         'calculators.food_waste.messages.how_to_compare_food_waste_emissions_to_emission_per_km_driven_in_car'
-                    )
-                }}</SecondaryHeading>
+                    "
+                />
                 <TextParagraph>
-                    <i18n-t
+                    <I18nTranslator
                         keypath="calculators.food_waste.messages.how_to_compare_food_waste_emissions_to_emission_per_km_driven_in_car_description"
                     >
                         <template #source_link>
@@ -236,38 +224,15 @@ function nFormat(val: number) {
                         <template #avg_emissions_per_km>
                             {{ n(0.196974607, { maximumFractionDigits: 9 }) }}
                         </template>
-                        <template #break> <br /><br /> </template>
-                    </i18n-t>
+                    </I18nTranslator>
                 </TextParagraph>
             </div>
 
             <FoodWasterByCountryTables />
 
-            <div>
-                <SecondaryHeading>{{
-                    t(
-                        'calculators.food_waste.messages.how_different_food_categories_impact_on_co2_emissions'
-                    )
-                }}</SecondaryHeading>
-                <TextParagraph>{{
-                    t(
-                        'calculators.food_waste.messages.how_different_food_categories_impact_on_co2_emissions_description'
-                    )
-                }}</TextParagraph>
-            </div>
-
-            <div>
-                <SecondaryHeading>{{
-                    t(
-                        'calculators.food_waste.messages.how_the_supply_chain_impact_the_co2_emissions'
-                    )
-                }}</SecondaryHeading>
-                <TextParagraph>{{
-                    t(
-                        'calculators.food_waste.messages.how_the_supply_chain_impact_the_co2_emissions_description'
-                    )
-                }}</TextParagraph>
-            </div>
+            <TranslatableParagraphBlock
+                title-keypath="calculators.food_waste.messages.how_different_food_categories_impact_on_co2_emissions"
+            />
         </div>
 
         <RelatedResources
@@ -281,7 +246,3 @@ function nFormat(val: number) {
         />
     </CalculatorPageWrapper>
 </template>
-
-<!-- include relevant long-tail keywords throughout the content, such as "reduce food waste at home," "environmental impact of food waste," and "food waste reduction strategies." -->
-<!-- how different food categories contribute to CO2 emissions  -->
-<!-- come la filiera aumenta le emissioni -->
