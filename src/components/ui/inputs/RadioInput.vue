@@ -3,6 +3,7 @@ import { useI18n } from 'vue-i18n'
 import InputWrapper, { type InputWrapperProps } from './InputWrapper.vue'
 import type { RadioButtonProps } from 'primevue/radiobutton'
 import RadioButton from 'primevue/radiobutton'
+import { getCurrentInstance, ref } from 'vue'
 
 const { locale } = useI18n()
 
@@ -18,6 +19,7 @@ type RadioInputProps = {
 withDefaults(defineProps<RadioInputProps>(), { orientation: 'horizontal' })
 
 const value = defineModel()
+const { uid } = getCurrentInstance()!
 </script>
 
 <template>
@@ -36,19 +38,13 @@ const value = defineModel()
                 :label="entry.label"
                 :label-position="entry.labelPosition ?? 'right'"
                 :label-class="entry.labelClass"
-                :input-id="
-                    entry.inputId ??
-                    `${entry.label.toLowerCase().replace(' ', '-')}_${entry.value.toString().toLowerCase().replace(' ', '-')}`
-                "
+                :input-id="`${uid}_${entry.inputId ?? `${entry.label.toLowerCase().replace(' ', '-')}_${entry.value.toString().toLowerCase().replace(' ', '-')}`}`"
             >
                 <RadioButton
                     v-model="value"
                     :locale
                     v-bind="{ ...entry }"
-                    :input-id="
-                        entry.inputId ??
-                        `${entry.label.toLowerCase().replace(' ', '-')}_${entry.value.toString().toLowerCase().replace(' ', '-')}`
-                    "
+                    :input-id="`${uid}_${entry.inputId ?? `${entry.label.toLowerCase().replace(' ', '-')}_${entry.value.toString().toLowerCase().replace(' ', '-')}`}`"
                 />
             </InputWrapper>
         </div>

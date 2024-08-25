@@ -206,7 +206,6 @@ const radioBntsOrientation = computed(() =>
                                     'calculators.vegetable_garden.messages.more_info_on_this_vegetable'
                                 )
                             "
-                            :toggleable="true"
                         >
                             <div class="flex flex-col gap-4">
                                 <div class="flex flex-col lg:flex-row gap-1">
