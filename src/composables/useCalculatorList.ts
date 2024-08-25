@@ -82,6 +82,28 @@ export default function useCalculatorList(): Ref<CalculatorObject[]> {
                 'tags.resource_management',
                 'tags.responsible_consumption'
             ]
+        },
+
+        {
+            id: 'vegetable_garden',
+            tags: [
+                'tags.urban_gardening',
+                'tags.self_sufficiency',
+                'tags.home_gardening',
+                'tags.food_security',
+                'tags.local_food_production',
+                'tags.agriculture',
+                'tags.organic_gardening',
+                'tags.sustainability',
+                'tags.eco_friendly',
+                'tags.resource_management',
+                'tags.responsible_consumption',
+                'tags.food',
+                'tags.climate_change',
+                'tags.cost_saving',
+                'tags.environment',
+                'tags.waste_reduction'
+            ]
         }
     ]
 

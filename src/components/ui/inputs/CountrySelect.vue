@@ -22,6 +22,10 @@ const selectedCountry = defineModel('selected')
             :placeholder="t('select_a_country')"
             class="w-full"
             :locale
+            filter
+            :empty-message="$props.emptyMessage ?? t('no_results')"
+            :empty-filter-message="$props.emptyFilterMessage ?? t('no_results')"
+            :invalid
         >
             <template #value="slotProps">
                 <div v-if="slotProps.value" class="flex items-center">

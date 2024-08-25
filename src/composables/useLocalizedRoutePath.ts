@@ -16,6 +16,10 @@ export const routes: Record<string, Record<SupportedLocale, string>> = {
     'calculators.food_waste': {
         it: 'spreco-alimentare-calcolatore',
         en: 'food-waste-calculator'
+    },
+    'calculators.vegetable_garden': {
+        it: 'semina-orto-calcolatore',
+        en: 'garden-sowing-calculator'
     }
 }
 

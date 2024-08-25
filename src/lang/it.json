@@ -13,6 +13,7 @@
     "more_resources_on_the_topic": "Altre risorse sull'argomento",
     "select_a_country": "Seleziona una nazione",
     "related_calculators": "Calcolatori Correlati",
+    "category": "Categoria",
     "countries": {
         "france": "Francia",
         "germany": "Germania",
@@ -61,7 +62,14 @@
         "emissions": "emissioni",
         "climate_change": "cambiamento climatico",
         "resource_management": "gestione delle risorse",
-        "responsible_consumption": "consumo responsabile"
+        "responsible_consumption": "consumo responsabile",
+        "urban_gardening": "orto urbano",
+        "self_sufficiency": "autosufficienza",
+        "home_gardening": "orto domestico",
+        "food_security": "sicurezza alimentare",
+        "local_food_production": "produzione locale di cibo",
+        "agriculture": "agricoltura",
+        "organic_gardening": "orto biologico"
     },
     "calculators": {
         "shared_messages": {
@@ -83,7 +91,14 @@
             "year": "Anno",
             "time_period": "Periodo di tempo",
             "man": "Uomo",
-            "woman": "Donna"
+            "woman": "Donna",
+            "seasons": {
+                "spring": "Primavera",
+                "fall": "Autunno",
+                "winter": "Inverno",
+                "summer": "Estate",
+                "late_spring": "Tarda primavera"
+            }
         },
         "body_mass_index": {
             "title": "Calcolatore di Indice di Massa Corporea (IMC)",
@@ -196,181 +211,132 @@
                 "how_different_food_categories_impact_on_co2_emissions_description": "Ogni categoria di cibo contribuisce alle emissioni di CO₂ in modi diversi, influenzando l'impatto ambientale complessivo della nostra alimentazione.{break}La carne è tra i maggiori responsabili, con la produzione di carne bovina che emette grandi quantità di CO₂ e metano, derivanti principalmente dall'allevamento intensivo e dalla digestione dei ruminanti.{break}Frutta e verdura hanno un impatto minore, ma le emissioni possono aumentare a causa dei trasporti a lunga distanza e delle colture in serra.{break}I latticini seguono la carne, con emissioni elevate legate alla produzione di latte e derivati, a causa delle risorse richieste per l’alimentazione e la gestione delle mucche.{break}I frutti di mare possono variare, ma la pesca intensiva e l'acquacoltura contribuiscono alle emissioni attraverso l'uso di carburanti per le imbarcazioni e l’alimentazione degli allevamenti.{break}I cereali hanno emissioni relativamente basse, ma la produzione su larga scala e l'uso di fertilizzanti chimici le aumentano.{break}Infine, dolci e snack possono sembrare meno impattanti, ma gli ingredienti come lo zucchero e l'olio di palma, insieme ai processi industriali, contribuiscono alle emissioni complessive di CO₂."
             }
         },
-        "pregnancy": {
-            "title": "Calcolatore di Gravidanza",
-            "description": ""
-        },
-        "heart_rate": {
-            "title": "Calcolatore di Battito Cardiaco",
-            "description": ""
-        },
-        "hydration": {
-            "title": "Calcolatore di Idratazione",
-            "description": ""
-        },
-        "date_difference": {
-            "title": "Calcolatore di Differenza tra Date",
-            "description": ""
-        },
-        "age": {
-            "title": "Calcolatore di Età",
-            "description": ""
-        },
-        "time_zone": {
-            "title": "Calcolatore di Fusi Orari",
-            "description": ""
-        },
-        "countdown": {
-            "title": "Calcolatore di Conto alla Rovescia",
-            "description": ""
-        },
-        "work_hours": {
-            "title": "Calcolatore di Ore di Lavoro",
-            "description": ""
-        },
-        "paint": {
-            "title": "Calcolatore di Vernice",
-            "description": ""
-        },
-        "tile": {
-            "title": "Calcolatore di Piastrelle",
-            "description": ""
-        },
-        "concrete": {
-            "title": "Calcolatore di Calcestruzzo",
-            "description": ""
-        },
-        "insulation": {
-            "title": "Calcolatore di Isolamento",
-            "description": ""
-        },
-        "fertilizer": {
-            "title": "Calcolatore di Fertilizzanti",
-            "description": ""
-        },
-        "series_and_parallel_resistor": {
-            "title": "Calcolatore di Resistenze in Serie e Parallelo",
-            "description": ""
-        },
-        "voltage_drop": {
-            "title": "Calcolatore di Caduta di Tensione",
-            "description": ""
-        },
-        "electrical_power": {
-            "title": "Calcolatore di Potenza Elettrica",
-            "description": ""
-        },
-        "material_strength": {
-            "title": "Calcolatore di Resistenza dei Materiali",
-            "description": ""
-        },
-        "battery_charge_time": {
-            "title": "Calcolatore di Tempo di Carica della Batteria",
-            "description": ""
-        },
-        "grade_point_average": {
-            "title": "Calcolatore di Media Voti",
-            "description": ""
-        },
-        "percentage": {
-            "title": "Calcolatore di Percentuali",
-            "description": ""
-        },
-        "mileage": {
-            "title": "Calcolatore di Chilometraggio",
-            "description": ""
-        },
-        "fuel_cost": {
-            "title": "Calcolatore di Costo del Carburante",
-            "description": ""
-        },
-        "navigation_route": {
-            "title": "Calcolatore di Rotte di Navigazione",
-            "description": ""
-        },
-        "co2_emissions": {
-            "title": "Calcolatore di Emissioni di CO2",
-            "description": ""
-        },
-        "flight_time": {
-            "title": "Calcolatore di Tempo di Volo",
-            "description": ""
-        },
-        "body_fat": {
-            "title": "Calcolatore di Massa Grassa",
-            "description": ""
-        },
-        "macronutrient": {
-            "title": "Calcolatore di Macro Nutrienti",
-            "description": ""
-        },
-        "ideal_weight": {
-            "title": "Calcolatore di Peso Ideale",
-            "description": ""
-        },
-        "maximum_heart_rate": {
-            "title": "Calcolatore di Battito Cardiaco Massimo",
-            "description": ""
-        },
-        "recovery_time": {
-            "title": "Calcolatore di Tempo di Recupero",
-            "description": ""
-        },
-        "volume": {
-            "title": "Calcolatore di Volume",
-            "description": ""
-        },
-        "surface_area": {
-            "title": "Calcolatore di Superficie",
-            "description": ""
-        },
-        "weight": {
-            "title": "Calcolatore di Peso",
-            "description": ""
-        },
-        "profit_margin": {
-            "title": "Calcolatore di Margine di Profitto",
-            "description": ""
-        },
-        "sale_price": {
-            "title": "Calcolatore di Prezzo di Vendita",
-            "description": ""
-        },
-        "break_even_point": {
-            "title": "Calcolatore di Punto di Pareggio",
-            "description": ""
-        },
-        "car_performance": {
-            "title": "Calcolatore di Prestazioni dell'Auto",
-            "description": ""
-        },
-        "car_maintenance": {
-            "title": "Calcolatore di Manutenzione Auto",
-            "description": ""
-        },
-        "car_financing": {
-            "title": "Calcolatore di Finanziamento Auto",
-            "description": ""
-        },
-        "energy_consumption": {
-            "title": "Calcolatore di Consumo Energetico",
-            "description": ""
-        },
-        "solar_panel": {
-            "title": "Calcolatore di Pannelli Solari",
-            "description": ""
-        },
-        "carbon_footprint": {
-            "title": "Calcolatore di Impronta di Carbonio",
-            "description": ""
-        },
-        "energy_efficiency": {
-            "title": "Calcolatore di Efficienza Energetica",
-            "description": ""
-        },
-        "energy_savings": {
-            "title": "Calcolatore di Risparmio Energetico",
-            "description": ""
+        "vegetable_garden": {
+            "title": "Calcolatore di Semina dell'Orto",
+            "description": "Con questo calcolatore potrai pianificare la semina del tuo orto: scopri le necessità, il costo e la resa degli ortaggi che hai intenzione di coltivare.",
+            "messages": {
+                "intro": "Fattori presi in considerazione: spazio necessario, irrigazione, fertilizzante, terreno, costi, resa, stagione, malattie.",
+                "diseases_preventions": {
+                    "use_disease_resistant_varieties": "utilizzare varietà resistenti alle malattie",
+                    "rotate_crops": "ruotare le colture",
+                    "ensure_proper_spacing": "garantire il giusto distanziamento",
+                    "use_disease_resistant_seeds": "utilizzare semi resistenti alle malattie",
+                    "ensure_good_air_circulation": "garantire una buona circolazione dell’aria",
+                    "avoid_overhead_watering": "evitare l’irrigazione dall’alto",
+                    "water_at_the_base_of_the_plant": "annaffiare alla base della pianta",
+                    "avoid_soil_compaction": "evitare la compattazione del terreno",
+                    "use_row_covers": "usare teli protettivi",
+                    "use_certified_disease_free_seeds": "utilizzare semi certificati privi di malattie"
+                },
+                "diseases_signs_and_symptoms": {
+                    "yellowing_leaves": "foglie ingiallite",
+                    "stunted_growth": "crescita stentata",
+                    "downy_mildew": "muffa grigia",
+                    "wilting_leaves": "foglie appassite",
+                    "spots_on_fruit": "macchie sui frutti",
+                    "powdery_mildew": "oidio",
+                    "forked_roots": "radici biforcate",
+                    "root_maggots": "larve delle radici",
+                    "black_spots_on_leaves": "macchie nere sulle foglie",
+                    "wilting": "appassimento"
+                },
+                "diseases_treatments": {
+                    "apply_organic_fungicide": "applicare un fungicida biologico",
+                    "remove_affected_plants": "rimuovere le piante colpite",
+                    "apply_fungicide": "applicare un fungicida",
+                    "remove_infected_leaves": "rimuovere le foglie infette",
+                    "apply_copper_fungicide": "applicare un fungicida a base di rame",
+                    "remove_diseased_parts": "rimuovere le parti malate",
+                    "apply_neem_oil": "applicare olio di neem",
+                    "remove_infected_parts": "rimuovere le parti infette",
+                    "use_organic_nematode_control": "utilizzare il controllo biologico dei nematodi",
+                    "apply_insecticidal_soap": "applicare sapone insetticida",
+                    "remove_and_destroy_infected_plants": "rimuovere e distruggere le piante infette"
+                },
+                "fertilizers": {
+                    "compost": "compost",
+                    "organic_nitrogen": "azoto organico",
+                    "organic_compost": "compost organico",
+                    "nitrogen_rich_fertilizer": "fertilizzante ricco di azoto",
+                    "balanced_fertilizer": "fertilizzante bilanciato",
+                    "potassium_rich_fertilizer": "fertilizzante ricco di potassio",
+                    "potash_rich_fertilizer": "fertilizzante ricco di potassa"
+                },
+                "growing_tips": {
+                    "plant_in_cool_weather": "piantare in clima fresco",
+                    "keep_soil_consistently_moist": "mantenere il terreno costantemente umido",
+                    "avoid_planting_in_hot_weather": "evitare di piantare in clima caldo",
+                    "support_with_stakes": "supportare con pali",
+                    "prune_suckers_for_better_yield": "potare i polloni per un rendimento migliore",
+                    "mulch_to_retain_moisture": "concimare/pacciamare per trattenere l'umidità",
+                    "train_vines_on_a_trellis": "far crescere le viti su un pergolato",
+                    "thin_seedlings_to_prevent_crowding": "diradare le piantine per evitare l'affollamento",
+                    "ensure_deep_loose_soil": "garantire un terreno profondo e sciolto",
+                    "harvest_early_to_avoid_bitterness": "raccogliere precocemente per evitare l'amarezza",
+                    "ensure_consistent_moisture": "garantire un'umidità costante",
+                    "hill_up_soil_around_plants": "accumulare terra intorno alle piante",
+                    "avoid_waterlogged_soil": "evitare terreni inzuppati d'acqua"
+                },
+                "soils": {
+                    "loamy_soil": "terreno argilloso",
+                    "well_drained_soil": "terreno ben drenato",
+                    "slightly_acidic_soil": "terreno leggermente acido",
+                    "sandy_loam": "limo sabbioso",
+                    "sandy_soil": "terreno sabbioso"
+                },
+                "vegetable_types": {
+                    "leafy_vegetable": "ortaggio a foglia",
+                    "fruit_vegetable": "ortaggio da frutto",
+                    "root_vegetable": "ortaggio a radice",
+                    "bulb_vegetable": "ortaggio a bulbo",
+                    "tuber_vegetable": "ortaggio tuberoso",
+                    "stem_vegetable": "ortaggio a stelo",
+                    "flowering_vegetable": "ortaggio da fiore",
+                    "legume": "legume",
+                    "seed_vegetable": "ortaggio da seme",
+                    "herb": "erba"
+                },
+                "time_periods": {
+                    "per_week": "a settimana"
+                },
+                "vegetables": {
+                    "lettuce": "Lattuga",
+                    "spinach": "Spinaci",
+                    "tomato": "Pomodoro",
+                    "cucumber": "Cetriolo",
+                    "carrot": "Carota",
+                    "radish": "Ravanello",
+                    "potato": "Patata"
+                },
+                "results": {
+                    "by_price": "Con {cost}€, potrai comprare {plant_amount} piante. Ti serviranno {required_space} cm² di spazio e riuscirai a raccogliere {harvest_amount} kg.",
+                    "by_available_space": "In {required_space} cm², potrai piantare {plant_amount} piante. Ti costerà {cost}€ e riuscirai a raccogliere {harvest_amount} kg.",
+                    "by_harvest_amount": "Per raccogliere almeno {harvest_amount} kg, dovrai piantare {plant_amount} piante e avrai bisogno di {required_space} cm² di spazio. Ti costerà {cost}€."
+                },
+                "select_vegetables": "Seleziona ortaggi",
+                "vegetables_lbl": "Ortaggi",
+                "what_to_base_the_calculation_on": "Su cosa basare il calcolo?",
+                "calculation_by_price": "In base al mio budget",
+                "calculation_by_available_space": "In base allo spazio che ho a disposizione",
+                "calculation_by_harvest_amount": "In base ai kg di raccolto desiderati ",
+                "available_space": "Spazio a disposizione",
+                "desired_harvest": "Raccolto desiderato",
+                "available_budget": "Budget a disposizione",
+                "no_vegetables_selected": "Nessun ortaggio selezionato",
+                "missing_user_data": "Mancano informazioni sugli ortaggi scelti",
+                "more_info_on_this_vegetable": "Più informazioni su questo ortaggio",
+                "space_required_between_plants": "Spazio da lasciare tra le piante",
+                "irrigation": "Irrigazione",
+                "irrigation_message": "{quantity} litri {frequency_amount} volte {frequency_time_period}",
+                "suitable_fertilizers": "Fertilizzanti adatti",
+                "suitable_soils": "Tipo di suolo adatto",
+                "suitable_seasons": "Stagioni di semina",
+                "growing_tips_lbl": "Consigli di coltivazione",
+                "common_diseases": "Malattie comuni",
+                "diseases_signs_and_symptoms_lbl": "Segni e sintomi",
+                "diseases_preventions_lbl": "Prevenzioni",
+                "diseases_treatments_lbl": "Cure"
+            }
         }
     }
 }

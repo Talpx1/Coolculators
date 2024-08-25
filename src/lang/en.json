@@ -13,6 +13,7 @@
     "more_resources_on_the_topic": "More resources on the topic",
     "select_a_country": "Select a country",
     "related_calculators": "Related Calculators",
+    "category": "Category",
     "countries": {
         "france": "France",
         "germany": "Germany",
@@ -61,7 +62,14 @@
         "emissions": "emissions",
         "climate_change": "climate change",
         "resource_management": "resource management",
-        "responsible_consumption": "responsible consumption"
+        "responsible_consumption": "responsible consumption",
+        "urban_gardening": "urban gardening",
+        "self_sufficiency": "self sufficiency",
+        "home_gardening": "home gardening",
+        "food_security": "food security",
+        "local_food_production": "local food production",
+        "agriculture": "agriculture",
+        "organic_gardening": "organic gardening"
     },
     "calculators": {
         "shared_messages": {
@@ -83,7 +91,14 @@
             "year": "Year",
             "time_period": "Time period",
             "man": "Man",
-            "woman": "Woman"
+            "woman": "Woman",
+            "seasons": {
+                "spring": "Spring",
+                "fall": "Fall",
+                "winter": "Winter",
+                "summer": "Summer",
+                "late_spring": "Late spring"
+            }
         },
         "body_mass_index": {
             "title": "Body Mass Index (BMI) Calculator",
@@ -196,181 +211,132 @@
                 "how_different_food_categories_impact_on_co2_emissions_description": "Each food category contributes to CO₂ emissions in different ways, influencing the overall environmental impact of our diet.{break}Meat is among the biggest contributors, with beef production emitting large amounts of CO₂ and methane, primarily from intensive livestock farming and the digestion of ruminants.{break}Fruits and vegetables have a lower impact, but emissions can increase due to long-distance transport and greenhouse cultivation.{break}Dairy follows meat, with high emissions linked to the production of milk and its derivatives, due to the resources required for feeding and managing cows.{break}Seafood can vary, but intensive fishing and aquaculture contribute to emissions through the use of fuels for boats and feeding in aquaculture farms.{break}Grains have relatively low emissions, but large-scale production and the use of chemical fertilizers increase them.{break}Finally, sweets and snacks may seem less impactful, but ingredients like sugar and palm oil, along with industrial processes, contribute to overall CO₂ emissions."
             }
         },
-        "pregnancy": {
-            "title": "Pregnancy Calculator",
-            "description": ""
-        },
-        "heart_rate": {
-            "title": "Heart Rate Calculator",
-            "description": ""
-        },
-        "hydration": {
-            "title": "Hydration Calculator",
-            "description": ""
-        },
-        "date_difference": {
-            "title": "Date Difference Calculator",
-            "description": ""
-        },
-        "age": {
-            "title": "Age Calculator",
-            "description": ""
-        },
-        "time_zone": {
-            "title": "Time Zone Calculator",
-            "description": ""
-        },
-        "countdown": {
-            "title": "Countdown Calculator",
-            "description": ""
-        },
-        "work_hours": {
-            "title": "Work Hours Calculator",
-            "description": ""
-        },
-        "paint": {
-            "title": "Paint Calculator",
-            "description": ""
-        },
-        "tile": {
-            "title": "Tile Calculator",
-            "description": ""
-        },
-        "concrete": {
-            "title": "Concrete Calculator",
-            "description": ""
-        },
-        "insulation": {
-            "title": "Insulation Calculator",
-            "description": ""
-        },
-        "fertilizer": {
-            "title": "Fertilizer Calculator",
-            "description": ""
-        },
-        "series_and_parallel_resistor": {
-            "title": "Series and Parallel Resistor Calculator",
-            "description": ""
-        },
-        "voltage_drop": {
-            "title": "Voltage Drop Calculator",
-            "description": ""
-        },
-        "electrical_power": {
-            "title": "Electrical Power Calculator",
-            "description": ""
-        },
-        "material_strength": {
-            "title": "Material Strength Calculator",
-            "description": ""
-        },
-        "battery_charge_time": {
-            "title": "Battery Charge Time Calculator",
-            "description": ""
-        },
-        "grade_point_average": {
-            "title": "Grade Point Average Calculator",
-            "description": ""
-        },
-        "percentage": {
-            "title": "Percentage Calculator",
-            "description": ""
-        },
-        "mileage": {
-            "title": "Mileage Calculator",
-            "description": ""
-        },
-        "fuel_cost": {
-            "title": "Fuel Cost Calculator",
-            "description": ""
-        },
-        "navigation_route": {
-            "title": "Navigation Route Calculator",
-            "description": ""
-        },
-        "co2_emissions": {
-            "title": "CO2 Emissions Calculator",
-            "description": ""
-        },
-        "flight_time": {
-            "title": "Flight Time Calculator",
-            "description": ""
-        },
-        "body_fat": {
-            "title": "Body Fat Calculator",
-            "description": ""
-        },
-        "macronutrient": {
-            "title": "Macronutrient Calculator",
-            "description": ""
-        },
-        "ideal_weight": {
-            "title": "Ideal Weight Calculator",
-            "description": ""
-        },
-        "maximum_heart_rate": {
-            "title": "Maximum Heart Rate Calculator",
-            "description": ""
-        },
-        "recovery_time": {
-            "title": "Recovery Time Calculator",
-            "description": ""
-        },
-        "volume": {
-            "title": "Volume Calculator",
-            "description": ""
-        },
-        "surface_area": {
-            "title": "Surface Area Calculator",
-            "description": ""
-        },
-        "weight": {
-            "title": "Weight Calculator",
-            "description": ""
-        },
-        "profit_margin": {
-            "title": "Profit Margin Calculator",
-            "description": ""
-        },
-        "sale_price": {
-            "title": "Sale Price Calculator",
-            "description": ""
-        },
-        "break_even_point": {
-            "title": "Break-Even Point Calculator",
-            "description": ""
-        },
-        "car_performance": {
-            "title": "Car Performance Calculator",
-            "description": ""
-        },
-        "car_maintenance": {
-            "title": "Car Maintenance Calculator",
-            "description": ""
-        },
-        "car_financing": {
-            "title": "Car Financing Calculator",
-            "description": ""
-        },
-        "energy_consumption": {
-            "title": "Energy Consumption Calculator",
-            "description": ""
-        },
-        "solar_panel": {
-            "title": "Solar Panel Calculator",
-            "description": ""
-        },
-        "carbon_footprint": {
-            "title": "Carbon Footprint Calculator",
-            "description": ""
-        },
-        "energy_efficiency": {
-            "title": "Energy Efficiency Calculator",
-            "description": ""
-        },
-        "energy_savings": {
-            "title": "Energy Savings Calculator",
-            "description": ""
+        "vegetable_garden": {
+            "title": "Vegetable Garden Planting Calculator",
+            "description": "With this calculator, you can plan your vegetable garden planting: discover the needs, costs, and yields of the vegetables you intend to grow.",
+            "messages": {
+                "intro": "Factors considered: space needed, irrigation, fertilizer, soil, costs, yield, season, diseases.",
+                "diseases_preventions": {
+                    "use_disease_resistant_varieties": "use disease-resistant varieties",
+                    "rotate_crops": "rotate crops",
+                    "ensure_proper_spacing": "ensure proper spacing",
+                    "use_disease_resistant_seeds": "use disease-resistant seeds",
+                    "ensure_good_air_circulation": "ensure good air circulation",
+                    "avoid_overhead_watering": "avoid overhead watering",
+                    "water_at_the_base_of_the_plant": "water at the base of the plant",
+                    "avoid_soil_compaction": "avoid soil compaction",
+                    "use_row_covers": "use row covers",
+                    "use_certified_disease_free_seeds": "use certified disease-free seeds"
+                },
+                "diseases_signs_and_symptoms": {
+                    "yellowing_leaves": "yellowing leaves",
+                    "stunted_growth": "stunted growth",
+                    "downy_mildew": "downy mildew",
+                    "wilting_leaves": "wilting leaves",
+                    "spots_on_fruit": "spots on fruit",
+                    "powdery_mildew": "powdery mildew",
+                    "forked_roots": "forked roots",
+                    "root_maggots": "root maggots",
+                    "black_spots_on_leaves": "black spots on leaves",
+                    "wilting": "wilting"
+                },
+                "diseases_treatments": {
+                    "apply_organic_fungicide": "apply organic fungicide",
+                    "remove_affected_plants": "remove affected plants",
+                    "apply_fungicide": "apply fungicide",
+                    "remove_infected_leaves": "remove infected leaves",
+                    "apply_copper_fungicide": "apply copper fungicide",
+                    "remove_diseased_parts": "remove diseased parts",
+                    "apply_neem_oil": "apply neem oil",
+                    "remove_infected_parts": "remove infected parts",
+                    "use_organic_nematode_control": "use organic nematode control",
+                    "apply_insecticidal_soap": "apply insecticidal soap",
+                    "remove_and_destroy_infected_plants": "remove and destroy infected plants"
+                },
+                "fertilizers": {
+                    "compost": "compost",
+                    "organic_nitrogen": "organic nitrogen",
+                    "organic_compost": "organic compost",
+                    "nitrogen_rich_fertilizer": "nitrogen-rich fertilizer",
+                    "balanced_fertilizer": "balanced fertilizer",
+                    "potassium_rich_fertilizer": "potassium-rich fertilizer",
+                    "potash_rich_fertilizer": "potash-rich fertilizer"
+                },
+                "growing_tips": {
+                    "plant_in_cool_weather": "plant in cool weather",
+                    "keep_soil_consistently_moist": "keep soil consistently moist",
+                    "avoid_planting_in_hot_weather": "avoid planting in hot weather",
+                    "support_with_stakes": "support with stakes",
+                    "prune_suckers_for_better_yield": "prune suckers for better yield",
+                    "mulch_to_retain_moisture": "mulch to retain moisture",
+                    "train_vines_on_a_trellis": "train vines on a trellis",
+                    "thin_seedlings_to_prevent_crowding": "thin seedlings to prevent crowding",
+                    "ensure_deep_loose_soil": "ensure deep, loose soil",
+                    "harvest_early_to_avoid_bitterness": "harvest early to avoid bitterness",
+                    "ensure_consistent_moisture": "ensure consistent moisture",
+                    "hill_up_soil_around_plants": "hill up soil around plants",
+                    "avoid_waterlogged_soil": "avoid waterlogged soil"
+                },
+                "soils": {
+                    "loamy_soil": "loamy soil",
+                    "well_drained_soil": "well-drained soil",
+                    "slightly_acidic_soil": "slightly acidic soil",
+                    "sandy_loam": "sandy loam",
+                    "sandy_soil": "sandy soil"
+                },
+                "vegetable_types": {
+                    "leafy_vegetable": "leafy vegetable",
+                    "fruit_vegetable": "fruit vegetable",
+                    "root_vegetable": "root vegetable",
+                    "bulb_vegetable": "bulb vegetable",
+                    "tuber_vegetable": "tuber vegetable",
+                    "stem_vegetable": "stem vegetable",
+                    "flowering_vegetable": "flowering vegetable",
+                    "legume": "legume",
+                    "seed_vegetable": "seed vegetable",
+                    "herb": "herb"
+                },
+                "time_periods": {
+                    "per_week": "per week"
+                },
+                "vegetables": {
+                    "lettuce": "Lettuce",
+                    "spinach": "Spinach",
+                    "tomato": "Tomato",
+                    "cucumber": "Cucumber",
+                    "carrot": "Carrot",
+                    "radish": "Radish",
+                    "potato": "Potato"
+                },
+                "results": {
+                    "by_price": "With {cost}€, you can buy {plant_amount} plants. You will need {required_space} cm² of space and you will be able to harvest {harvest_amount} kg.",
+                    "by_available_space": "In {required_space} cm², you can plant {plant_amount} plants. It will cost you {cost}€ and you will be able to harvest {harvest_amount} kg.",
+                    "by_harvest_amount": "To harvest at least {harvest_amount} kg, you will need to plant {plant_amount} plants and you will need {required_space} cm² of space. It will cost you {cost}€."
+                },
+                "select_vegetables": "Select vegetables",
+                "vegetables_lbl": "Vegetables",
+                "what_to_base_the_calculation_on": "What to base the calculation on?",
+                "calculation_by_price": "Based on my budget",
+                "calculation_by_available_space": "Based on the space I have available",
+                "calculation_by_harvest_amount": "Based on the desired harvest amount",
+                "available_space": "Available space",
+                "desired_harvest": "Desired harvest",
+                "available_budget": "Available budget",
+                "no_vegetables_selected": "No vegetables selected",
+                "missing_user_data": "Missing information on the selected vegetables",
+                "more_info_on_this_vegetable": "More info on this vegetable",
+                "space_required_between_plants": "Space required between plants",
+                "irrigation": "Irrigation",
+                "irrigation_message": "{quantity} liters {frequency_amount} times {frequency_time_period}",
+                "suitable_fertilizers": "Suitable fertilizers",
+                "suitable_soils": "Suitable soil types",
+                "suitable_seasons": "Planting seasons",
+                "growing_tips_lbl": "Growing tips",
+                "common_diseases": "Common diseases",
+                "diseases_signs_and_symptoms_lbl": "Signs and symptoms",
+                "diseases_preventions_lbl": "Preventions",
+                "diseases_treatments_lbl": "Treatments"
+            }
         }
     }
 }

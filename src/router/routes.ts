@@ -31,6 +31,13 @@ const routes: RouteRecordRaw[] = [
         path: routesToParamRegexp(useLocalizedRoutePath('calculators.food_waste')),
         name: 'calculators.food_waste',
         component: () => import('@/views/calculators/food_waste/FoodWasteCalculatorView.vue')
+    },
+
+    {
+        path: routesToParamRegexp(useLocalizedRoutePath('calculators.vegetable_garden')),
+        name: 'calculators.vegetable_garden',
+        component: () =>
+            import('@/views/calculators/vegetable_gareden/VegetableGardenCalculatorView.vue')
     }
 ]
 

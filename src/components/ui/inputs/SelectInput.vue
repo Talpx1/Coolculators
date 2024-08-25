@@ -10,6 +10,14 @@ const selected = defineModel('selected')
 
 <template>
     <InputWrapper :label :label-position :label-class>
-        <Select v-model="selected" class="w-full" :options :optionLabel :optionValue :placeholder />
+        <Select
+            v-model="selected"
+            class="w-full"
+            :options
+            :optionLabel
+            :optionValue
+            :placeholder
+            :invalid
+        />
     </InputWrapper>
 </template>
