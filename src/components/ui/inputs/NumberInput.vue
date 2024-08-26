@@ -16,7 +16,7 @@ withDefaults(defineProps<NumberInputProps>(), {
     buttonLayout: 'vertical',
     min: 0,
     mode: 'decimal',
-    allowEmpty: true,
+    allowEmpty: false,
     step: 1
 })
 
