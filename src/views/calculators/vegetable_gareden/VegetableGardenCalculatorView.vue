@@ -3,9 +3,7 @@ import CalculatorPageWrapper from '@/components/functional/CalculatorPageWrapper
 import useVegetables, { type Vegetable } from './composables/useVegetables'
 import { useI18n } from 'vue-i18n'
 import I18nTranslator from '@/components/i18n/I18nTranslator.vue'
-import useCountries, { type Country } from '@/composables/useCountries'
 import { computed, ref } from 'vue'
-import CountrySelect from '@/components/ui/inputs/CountrySelect.vue'
 import MultiSelectInput from '@/components/ui/inputs/MultiSelectInput.vue'
 import { breakpointsTailwind, useBreakpoints } from '@vueuse/core'
 import RadioInput from '@/components/ui/inputs/RadioInput.vue'
@@ -15,31 +13,31 @@ import Message from 'primevue/message'
 import useVegetableGardenCalculation from './composables/useVegetableGardenCalculation'
 import Card from 'primevue/card'
 import Fieldset from 'primevue/fieldset'
+import useClimates, { type Climate } from './composables/useClimates'
+import SelectInput from '@/components/ui/inputs/SelectInput.vue'
+import type { MultiSelectChangeEvent } from 'primevue/multiselect'
 
-type CalculationType = 'byPrice' | 'byAvailableSpace' | 'byHarvestAmount'
+type CalculationType = 'byAvailableSpace' | 'byHarvestAmount'
 
 const { t, n } = useI18n()
 
 const vegetables = useVegetables()
 
-const selectedCountry = ref<Country>()
-const countries = useCountries()
+const selectedClimate = ref<Climate>()
+const climates = useClimates()
 
-const selectedVegetables = ref<Vegetable[]>()
+const selectedVegetables = ref<Vegetable[]>([])
 
-export type VegetableGardenUserInput = Record<
-    string,
-    {
-        calculation_type: CalculationType
-        available_space: number
-        available_budget: number
-        desired_harvest: number
-    }
->
-const userInput = ref<VegetableGardenUserInput>({})
+export type VegetableGardenUserInput = {
+    id: string
+    calculation_type: CalculationType
+    available_space: number
+    desired_harvest: number
+}
+const userInput = ref<VegetableGardenUserInput[]>([])
 
 const { results, calculate, errors, invalid } = useVegetableGardenCalculation(
-    selectedCountry,
+    selectedClimate,
     selectedVegetables,
     userInput
 )
@@ -48,6 +46,28 @@ const breakpoints = useBreakpoints(breakpointsTailwind)
 const radioBntsOrientation = computed(() =>
     breakpoints.isSmallerOrEqual('md') ? 'vertical' : 'horizontal'
 )
+
+function onVegetableSelection(e: MultiSelectChangeEvent) {
+    if (!e.value.length) {
+        userInput.value = []
+        return
+    }
+
+    userInput.value.filter((i) => e.value.map((v: Vegetable) => v.id).includes(i.id))
+
+    e.value.forEach((selected: Vegetable) => {
+        if (userInput.value.map((i) => i.id).includes(selected.id)) {
+            return
+        }
+
+        userInput.value.push({
+            id: selected.id,
+            calculation_type: 'byAvailableSpace',
+            available_space: selected.space_required_m2,
+            desired_harvest: selected.yield_kg_per_plant
+        })
+    })
+}
 </script>
 
 <template>
@@ -59,11 +79,14 @@ const radioBntsOrientation = computed(() =>
                 class="text-center lg:col-span-2"
             />
 
-            <CountrySelect
-                :invalid="invalid.country"
-                :countries
-                v-model:selected="selectedCountry"
-                :label="t('calculators.shared_messages.country')"
+            <SelectInput
+                :invalid="invalid.climate"
+                :options="climates"
+                option-label="name"
+                :label="t('calculators.vegetable_garden.messages.climate')"
+                :placeholder="t('calculators.vegetable_garden.messages.select_a_climate')"
+                filter
+                v-model:selected="selectedClimate"
             />
 
             <MultiSelectInput
@@ -75,20 +98,7 @@ const radioBntsOrientation = computed(() =>
                 option-label="name"
                 filter
                 :placeholder="t('calculators.vegetable_garden.messages.select_vegetables')"
-                @update:selected="
-                    () =>
-                        selectedVegetables?.forEach(
-                            (v) =>
-                                (userInput[v.id] = {
-                                    calculation_type: 'byAvailableSpace',
-                                    available_space: v.space_required_cm2,
-                                    available_budget: selectedCountry?.code
-                                        ? v.cost[selectedCountry.code]
-                                        : 1,
-                                    desired_harvest: v.yield_kg_per_plant
-                                })
-                        )
-                "
+                @change="onVegetableSelection"
             />
 
             <div
@@ -100,7 +110,7 @@ const radioBntsOrientation = computed(() =>
                 <div class="ml-2 py-2 pl-4 border-l-2 border-primary space-y-4">
                     <RadioInput
                         :orientation="radioBntsOrientation"
-                        v-model="userInput[vegetable.id].calculation_type"
+                        v-model="userInput.find((v) => v.id === vegetable.id)!.calculation_type"
                         :groupLabel="
                             t(
                                 'calculators.vegetable_garden.messages.what_to_base_the_calculation_on'
@@ -129,32 +139,26 @@ const radioBntsOrientation = computed(() =>
                     />
 
                     <NumberInput
-                        v-if="userInput[vegetable.id].calculation_type === 'byAvailableSpace'"
-                        suffix=" cm²"
+                        v-if="
+                            userInput.find((v) => v.id === vegetable.id)!.calculation_type ===
+                            'byAvailableSpace'
+                        "
+                        suffix=" m²"
                         input-class="max-w-24"
                         :label="t(`calculators.vegetable_garden.messages.available_space`)"
-                        :min="vegetable.space_required_cm2"
-                        v-model="userInput[vegetable.id].available_space"
+                        :min="vegetable.space_required_m2"
+                        v-model="userInput.find((v) => v.id === vegetable.id)!.available_space"
                         button-layout="horizontal"
                     />
                     <NumberInput
-                        v-else-if="userInput[vegetable.id].calculation_type === 'byHarvestAmount'"
+                        v-else
                         suffix=" kg"
                         :step="0.1"
                         :max-fraction-digits="1"
                         input-class="max-w-24"
                         :label="t(`calculators.vegetable_garden.messages.desired_harvest`)"
                         :min="vegetable.yield_kg_per_plant"
-                        v-model="userInput[vegetable.id].desired_harvest"
-                        button-layout="horizontal"
-                    />
-                    <NumberInput
-                        v-else
-                        suffix=" €"
-                        input-class="max-w-24"
-                        :label="t(`calculators.vegetable_garden.messages.available_budget`)"
-                        :min="selectedCountry?.code ? vegetable.cost[selectedCountry.code] : 1"
-                        v-model="userInput[vegetable.id].available_budget"
+                        v-model="userInput.find((v) => v.id === vegetable.id)!.desired_harvest"
                         button-layout="horizontal"
                     />
                 </div>
@@ -179,14 +183,6 @@ const radioBntsOrientation = computed(() =>
 
                     <template #content>
                         <I18nTranslator :keypath="result.text" tag="span">
-                            <template #cost>
-                                <b>{{
-                                    n(result.variables.cost, {
-                                        minimumFractionDigits: 0,
-                                        maximumFractionDigits: 2
-                                    })
-                                }}</b>
-                            </template>
                             <template #plant_amount>
                                 <b>{{ n(result.variables.plant_amount) }}</b>
                             </template>
@@ -221,7 +217,7 @@ const radioBntsOrientation = computed(() =>
                                             )
                                         }}:</span
                                     >
-                                    <span>{{ result.vegetable.space_required_cm2 }} cm²</span>
+                                    <span>{{ result.vegetable.space_required_m2 }} cm²</span>
                                 </div>
 
                                 <div class="flex flex-col lg:flex-row gap-1">

@@ -220,13 +220,12 @@
                     "use_disease_resistant_varieties": "utilizzare varietà resistenti alle malattie",
                     "rotate_crops": "ruotare le colture",
                     "ensure_proper_spacing": "garantire il giusto distanziamento",
-                    "use_disease_resistant_seeds": "utilizzare semi resistenti alle malattie",
                     "ensure_good_air_circulation": "garantire una buona circolazione dell’aria",
                     "avoid_overhead_watering": "evitare l’irrigazione dall’alto",
-                    "water_at_the_base_of_the_plant": "annaffiare alla base della pianta",
                     "avoid_soil_compaction": "evitare la compattazione del terreno",
                     "use_row_covers": "usare teli protettivi",
-                    "use_certified_disease_free_seeds": "utilizzare semi certificati privi di malattie"
+                    "use_disease_free_seeds": "utilizzare semi privi di malattie",
+                    "avoid_overwatering": "evitare l'irrigazione eccessiva"
                 },
                 "diseases_signs_and_symptoms": {
                     "yellowing_leaves": "foglie ingiallite",
@@ -237,8 +236,10 @@
                     "powdery_mildew": "oidio",
                     "forked_roots": "radici biforcate",
                     "root_maggots": "larve delle radici",
-                    "black_spots_on_leaves": "macchie nere sulle foglie",
-                    "wilting": "appassimento"
+                    "spots_on_leaves": "macchie sulle foglie",
+                    "wilting": "appassimento",
+                    "rotting": "marcente",
+                    "clubroot": "radici gonfie/distorte (clubroot)"
                 },
                 "diseases_treatments": {
                     "apply_organic_fungicide": "applicare un fungicida biologico",
@@ -248,10 +249,8 @@
                     "apply_copper_fungicide": "applicare un fungicida a base di rame",
                     "remove_diseased_parts": "rimuovere le parti malate",
                     "apply_neem_oil": "applicare olio di neem",
-                    "remove_infected_parts": "rimuovere le parti infette",
                     "use_organic_nematode_control": "utilizzare il controllo biologico dei nematodi",
-                    "apply_insecticidal_soap": "applicare sapone insetticida",
-                    "remove_and_destroy_infected_plants": "rimuovere e distruggere le piante infette"
+                    "apply_insecticidal_soap": "applicare sapone insetticida"
                 },
                 "fertilizers": {
                     "compost": "compost",
@@ -275,7 +274,12 @@
                     "harvest_early_to_avoid_bitterness": "raccogliere precocemente per evitare l'amarezza",
                     "ensure_consistent_moisture": "garantire un'umidità costante",
                     "hill_up_soil_around_plants": "accumulare terra intorno alle piante",
-                    "avoid_waterlogged_soil": "evitare terreni inzuppati d'acqua"
+                    "avoid_waterlogged_soil": "evitare terreni inzuppati d'acqua",
+                    "plant_in_full_sun": "piantare al sole pieno",
+                    "harvest_when_small_for_best_flavor": "raccogliere quando piccoli per un sapore migliore",
+                    "start_seeds_indoors": "iniziare la semina in casa",
+                    "protect_heads_from_direct_sunlight": "proteggere dal sole diretto",
+                    "avoid_excessive_nitrogen": "evitare azoto eccessivo"
                 },
                 "soils": {
                     "loamy_soil": "terreno argilloso",
@@ -306,12 +310,37 @@
                     "cucumber": "Cetriolo",
                     "carrot": "Carota",
                     "radish": "Ravanello",
-                    "potato": "Patata"
+                    "potato": "Patata",
+                    "broccoli": "Broccolo",
+                    "cauliflower": "Cavolfiore",
+                    "pepper": "Peperone",
+                    "eggplant": "Melanzana"
+                },
+                "climates": {
+                    "tropical": "Tropicale",
+                    "equatorial": "Equatoriale",
+                    "subtropical": "Subtropicale",
+                    "temperate": "Temperato",
+                    "humid_temperate": "Umido temperato",
+                    "oceanic": "Oceanico",
+                    "mediterranean": "Mediterraneo",
+                    "continental": "Continentale",
+                    "subarctic": "Subartico",
+                    "trans_siberian": "Trans siberiano",
+                    "polar": "Polare",
+                    "snow": "Nevicare",
+                    "glacial": "Glaciale",
+                    "steppe": "Steppa",
+                    "desert": "Deserto",
+                    "monsoon": "Monsone",
+                    "sinic": "Sinico",
+                    "savannah": "Savana",
+                    "alpine": "Alpino",
+                    "boreal": "Boreale"
                 },
                 "results": {
-                    "by_price": "Con {cost}€, potrai comprare {plant_amount} piante. Ti serviranno {required_space} cm² di spazio e riuscirai a raccogliere {harvest_amount} kg.",
-                    "by_available_space": "In {required_space} cm², potrai piantare {plant_amount} piante. Ti costerà {cost}€ e riuscirai a raccogliere {harvest_amount} kg.",
-                    "by_harvest_amount": "Per raccogliere almeno {harvest_amount} kg, dovrai piantare {plant_amount} piante e avrai bisogno di {required_space} cm² di spazio. Ti costerà {cost}€."
+                    "by_available_space": "In {required_space} m², potrai piantare {plant_amount} piante e riuscirai a raccogliere {harvest_amount} kg.",
+                    "by_harvest_amount": "Per raccogliere almeno {harvest_amount} kg, dovrai piantare {plant_amount} piante e avrai bisogno di {required_space} m² di spazio."
                 },
                 "select_vegetables": "Seleziona ortaggi",
                 "vegetables_lbl": "Ortaggi",
@@ -335,7 +364,9 @@
                 "common_diseases": "Malattie comuni",
                 "diseases_signs_and_symptoms_lbl": "Segni e sintomi",
                 "diseases_preventions_lbl": "Prevenzioni",
-                "diseases_treatments_lbl": "Cure"
+                "diseases_treatments_lbl": "Cure",
+                "climate": "Clima",
+                "select_a_climate": "Seleziona il clima della tua zona"
             }
         }
     }

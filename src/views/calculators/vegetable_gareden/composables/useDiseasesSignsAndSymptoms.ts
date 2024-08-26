@@ -29,10 +29,12 @@ export default function useDiseasesSignsAndSymptoms() {
         root_maggots: t(
             'calculators.vegetable_garden.messages.diseases_signs_and_symptoms.root_maggots'
         ),
-        black_spots_on_leaves: t(
-            'calculators.vegetable_garden.messages.diseases_signs_and_symptoms.black_spots_on_leaves'
+        spots_on_leaves: t(
+            'calculators.vegetable_garden.messages.diseases_signs_and_symptoms.spots_on_leaves'
         ),
-        wilting: t('calculators.vegetable_garden.messages.diseases_signs_and_symptoms.wilting')
+        wilting: t('calculators.vegetable_garden.messages.diseases_signs_and_symptoms.wilting'),
+        rotting: t('calculators.vegetable_garden.messages.diseases_signs_and_symptoms.rotting'),
+        clubroot: t('calculators.vegetable_garden.messages.diseases_signs_and_symptoms.clubroot')
     }))
 
     return diseases_signs_and_symptoms

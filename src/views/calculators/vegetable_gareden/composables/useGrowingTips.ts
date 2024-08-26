@@ -43,6 +43,21 @@ export default function useGrowingTips() {
         ),
         avoid_waterlogged_soil: t(
             'calculators.vegetable_garden.messages.growing_tips.avoid_waterlogged_soil'
+        ),
+        plant_in_full_sun: t(
+            'calculators.vegetable_garden.messages.growing_tips.plant_in_full_sun'
+        ),
+        harvest_when_small_for_best_flavor: t(
+            'calculators.vegetable_garden.messages.growing_tips.harvest_when_small_for_best_flavor'
+        ),
+        start_seeds_indoors: t(
+            'calculators.vegetable_garden.messages.growing_tips.start_seeds_indoors'
+        ),
+        protect_heads_from_direct_sunlight: t(
+            'calculators.vegetable_garden.messages.growing_tips.protect_heads_from_direct_sunlight'
+        ),
+        avoid_excessive_nitrogen: t(
+            'calculators.vegetable_garden.messages.growing_tips.avoid_excessive_nitrogen'
         )
     }))
 

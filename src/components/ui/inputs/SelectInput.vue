@@ -18,6 +18,7 @@ const selected = defineModel('selected')
             :optionValue
             :placeholder
             :invalid
+            :filter
         />
     </InputWrapper>
 </template>

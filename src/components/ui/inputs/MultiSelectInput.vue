@@ -1,5 +1,11 @@
 <script setup lang="ts">
-import type { MultiSelectProps } from 'primevue/multiselect'
+import type {
+    MultiSelectAllChangeEvent,
+    MultiSelectChangeEvent,
+    MultiSelectEmits,
+    MultiSelectFilterEvent,
+    MultiSelectProps
+} from 'primevue/multiselect'
 import InputWrapper, { type InputWrapperProps } from './InputWrapper.vue'
 import MultiSelect from 'primevue/multiselect'
 import { useI18n } from 'vue-i18n'
@@ -22,6 +28,18 @@ watch(locale, () => {
         (selected.value as any[]).map((s) => s[props.dataKey!]).includes(o[props.dataKey!])
     )
 })
+
+defineEmits<{
+    change: [MultiSelectChangeEvent]
+    focus: [Event]
+    blur: [Event]
+    'before-show': []
+    'before-hide': []
+    show: []
+    hide: []
+    filter: [MultiSelectFilterEvent]
+    'selectall-change': [MultiSelectAllChangeEvent]
+}>()
 </script>
 
 <template>
@@ -37,6 +55,18 @@ watch(locale, () => {
             :display
             :data-key
             :invalid
+            v-on="{
+                change: (event: MultiSelectChangeEvent) => $emit('change', event),
+                focus: (event: Event) => $emit('focus', event),
+                blur: (event: Event) => $emit('blur', event),
+                'before-show': $emit('before-show'),
+                'before-hide': $emit('before-hide'),
+                show: $emit('show'),
+                hide: $emit('hide'),
+                filter: (event: MultiSelectFilterEvent) => $emit('filter', event),
+                'selectall-change': (event: MultiSelectAllChangeEvent) =>
+                    $emit('selectall-change', event)
+            }"
         />
     </InputWrapper>
 </template>

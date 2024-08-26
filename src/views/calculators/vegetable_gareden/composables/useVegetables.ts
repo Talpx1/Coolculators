@@ -24,11 +24,10 @@ export type Vegetable = {
     id: string
     name: string
     type: string
-    space_required_cm2: number
+    space_required_m2: number
     irrigation: Irrigation
     suitable_fertilizers: string[]
     suitable_soils: string[]
-    cost: Record<string, number>
     yield_kg_per_plant: number
     suitable_seasons: string[]
     growing_tips: string[]
@@ -50,12 +49,12 @@ export default function useVegetables() {
     const DISEASES_PREVENTIONS = useDiseasesPreventions()
     const DISEASES_TREATMENTS = useDiseasesTreatments()
 
-    return computed(() => [
+    return computed((): Vegetable[] => [
         {
             id: 'lettuce',
             name: t('calculators.vegetable_garden.messages.vegetables.lettuce'),
             type: VEGETABLE_TYPES.value.leafy_vegetable,
-            space_required_cm2: 400,
+            space_required_m2: 0.04,
             irrigation: {
                 frequency: {
                     amount: 3,
@@ -65,15 +64,6 @@ export default function useVegetables() {
             },
             suitable_fertilizers: [FERTILIZERS.value.compost, FERTILIZERS.value.organic_nitrogen],
             suitable_soils: [SOILS.value.loamy_soil, SOILS.value.well_drained_soil],
-            cost: {
-                fr: 1.5,
-                de: 1.3,
-                it: 1.2,
-                nl: 1.4,
-                es: 1.25,
-                us: 1.0,
-                uk: 1.1
-            },
             yield_kg_per_plant: 0.2,
             suitable_seasons: [SEASONS.value.spring, SEASONS.value.fall],
             growing_tips: [
@@ -99,7 +89,7 @@ export default function useVegetables() {
             id: 'spinach',
             name: t('calculators.vegetable_garden.messages.vegetables.spinach'),
             type: VEGETABLE_TYPES.value.leafy_vegetable,
-            space_required_cm2: 300,
+            space_required_m2: 0.03,
             irrigation: {
                 frequency: {
                     amount: 2,
@@ -112,15 +102,6 @@ export default function useVegetables() {
                 FERTILIZERS.value.nitrogen_rich_fertilizer
             ],
             suitable_soils: [SOILS.value.well_drained_soil, SOILS.value.loamy_soil],
-            cost: {
-                fr: 1.8,
-                de: 1.6,
-                it: 1.5,
-                nl: 1.7,
-                es: 1.55,
-                us: 1.2,
-                uk: 1.3
-            },
             yield_kg_per_plant: 0.1,
             suitable_seasons: [SEASONS.value.spring, SEASONS.value.fall],
             growing_tips: [
@@ -134,7 +115,7 @@ export default function useVegetables() {
                 ],
                 prevention: [
                     DISEASES_PREVENTIONS.value.ensure_proper_spacing,
-                    DISEASES_PREVENTIONS.value.use_disease_resistant_seeds
+                    DISEASES_PREVENTIONS.value.use_disease_free_seeds
                 ],
                 treatment: [
                     DISEASES_TREATMENTS.value.apply_fungicide,
@@ -146,7 +127,7 @@ export default function useVegetables() {
             id: 'tomato',
             name: t('calculators.vegetable_garden.messages.vegetables.tomato'),
             type: VEGETABLE_TYPES.value.fruit_vegetable,
-            space_required_cm2: 2500,
+            space_required_m2: 0.25,
             irrigation: {
                 frequency: {
                     amount: 4,
@@ -159,15 +140,6 @@ export default function useVegetables() {
                 FERTILIZERS.value.compost
             ],
             suitable_soils: [SOILS.value.well_drained_soil, SOILS.value.slightly_acidic_soil],
-            cost: {
-                fr: 2.5,
-                de: 2.7,
-                it: 2.3,
-                nl: 2.6,
-                es: 2.4,
-                us: 2.0,
-                uk: 2.2
-            },
             yield_kg_per_plant: 4.0,
             suitable_seasons: [SEASONS.value.summer, SEASONS.value.late_spring],
             growing_tips: [
@@ -193,7 +165,7 @@ export default function useVegetables() {
             id: 'cucumber',
             name: t('calculators.vegetable_garden.messages.vegetables.cucumber'),
             type: VEGETABLE_TYPES.value.fruit_vegetable,
-            space_required_cm2: 100,
+            space_required_m2: 0.01,
             irrigation: {
                 frequency: {
                     amount: 3,
@@ -206,15 +178,6 @@ export default function useVegetables() {
                 FERTILIZERS.value.compost
             ],
             suitable_soils: [SOILS.value.well_drained_soil, SOILS.value.sandy_loam],
-            cost: {
-                fr: 2.0,
-                de: 2.1,
-                it: 1.9,
-                nl: 2.05,
-                es: 1.95,
-                us: 1.8,
-                uk: 1.85
-            },
             yield_kg_per_plant: 3.5,
             suitable_seasons: [SEASONS.value.summer],
             growing_tips: [
@@ -228,11 +191,11 @@ export default function useVegetables() {
                 ],
                 prevention: [
                     DISEASES_PREVENTIONS.value.rotate_crops,
-                    DISEASES_PREVENTIONS.value.water_at_the_base_of_the_plant
+                    DISEASES_PREVENTIONS.value.avoid_overhead_watering
                 ],
                 treatment: [
                     DISEASES_TREATMENTS.value.apply_neem_oil,
-                    DISEASES_TREATMENTS.value.remove_infected_parts
+                    DISEASES_TREATMENTS.value.remove_diseased_parts
                 ]
             }
         },
@@ -240,7 +203,7 @@ export default function useVegetables() {
             id: 'carrot',
             name: t('calculators.vegetable_garden.messages.vegetables.carrot'),
             type: VEGETABLE_TYPES.value.root_vegetable,
-            space_required_cm2: 100,
+            space_required_m2: 0.01,
             irrigation: {
                 frequency: {
                     amount: 2,
@@ -253,15 +216,6 @@ export default function useVegetables() {
                 FERTILIZERS.value.compost
             ],
             suitable_soils: [SOILS.value.sandy_soil, SOILS.value.well_drained_soil],
-            cost: {
-                fr: 1.2,
-                de: 1.1,
-                it: 1.0,
-                nl: 1.15,
-                es: 1.05,
-                us: 0.9,
-                uk: 1.0
-            },
             yield_kg_per_plant: 0.1,
             suitable_seasons: [SEASONS.value.spring, SEASONS.value.fall],
             growing_tips: [
@@ -287,46 +241,189 @@ export default function useVegetables() {
             id: 'radish',
             name: t('calculators.vegetable_garden.messages.vegetables.radish'),
             type: VEGETABLE_TYPES.value.root_vegetable,
-            space_required_cm2: 50,
+            space_required_m2: 0.005,
             irrigation: {
                 frequency: {
-                    amount: 3,
+                    amount: 2,
                     time_period: FREQUENCY_TIME_PERIODS.per_week
                 },
-                quantity_liters: 0.2
+                quantity_liters: 0.25
             },
             suitable_fertilizers: [
                 FERTILIZERS.value.balanced_fertilizer,
                 FERTILIZERS.value.compost
             ],
-            suitable_soils: [SOILS.value.well_drained_soil, SOILS.value.loamy_soil],
-            cost: {
-                fr: 1.0,
-                de: 1.05,
-                it: 0.9,
-                nl: 1.1,
-                es: 0.95,
-                us: 0.85,
-                uk: 0.9
-            },
-            yield_kg_per_plant: 0.05,
+            suitable_soils: [SOILS.value.loamy_soil, SOILS.value.well_drained_soil],
+            yield_kg_per_plant: 0.1,
             suitable_seasons: [SEASONS.value.spring, SEASONS.value.fall],
             growing_tips: [
-                GROWING_TIPS.value.harvest_early_to_avoid_bitterness,
-                GROWING_TIPS.value.ensure_consistent_moisture
+                GROWING_TIPS.value.plant_in_full_sun,
+                GROWING_TIPS.value.harvest_when_small_for_best_flavor
+            ],
+            diseases: {
+                signs_and_symptoms: [
+                    DISEASES_SIGNS_AND_SYMPTOMS.value.rotting,
+                    DISEASES_SIGNS_AND_SYMPTOMS.value.yellowing_leaves
+                ],
+                prevention: [
+                    DISEASES_PREVENTIONS.value.avoid_overwatering,
+                    DISEASES_PREVENTIONS.value.ensure_proper_spacing
+                ],
+                treatment: [
+                    DISEASES_TREATMENTS.value.remove_affected_plants,
+                    DISEASES_TREATMENTS.value.apply_copper_fungicide
+                ]
+            }
+        },
+        {
+            id: 'broccoli',
+            name: t('calculators.vegetable_garden.messages.vegetables.broccoli'),
+            type: VEGETABLE_TYPES.value.flowering_vegetable,
+            space_required_m2: 0.28,
+            irrigation: {
+                frequency: {
+                    amount: 3,
+                    time_period: FREQUENCY_TIME_PERIODS.per_week
+                },
+                quantity_liters: 1.0
+            },
+            suitable_fertilizers: [
+                FERTILIZERS.value.nitrogen_rich_fertilizer,
+                FERTILIZERS.value.compost
+            ],
+            suitable_soils: [SOILS.value.loamy_soil, SOILS.value.slightly_acidic_soil],
+            yield_kg_per_plant: 0.5,
+            suitable_seasons: [SEASONS.value.spring, SEASONS.value.fall],
+            growing_tips: [
+                GROWING_TIPS.value.start_seeds_indoors,
+                GROWING_TIPS.value.keep_soil_consistently_moist
             ],
             diseases: {
                 signs_and_symptoms: [
                     DISEASES_SIGNS_AND_SYMPTOMS.value.yellowing_leaves,
-                    DISEASES_SIGNS_AND_SYMPTOMS.value.root_maggots
+                    DISEASES_SIGNS_AND_SYMPTOMS.value.clubroot
                 ],
                 prevention: [
-                    DISEASES_PREVENTIONS.value.use_row_covers,
-                    DISEASES_PREVENTIONS.value.rotate_crops
+                    DISEASES_PREVENTIONS.value.rotate_crops,
+                    DISEASES_PREVENTIONS.value.use_disease_resistant_varieties
                 ],
                 treatment: [
-                    DISEASES_TREATMENTS.value.apply_insecticidal_soap,
-                    DISEASES_TREATMENTS.value.remove_and_destroy_infected_plants
+                    DISEASES_TREATMENTS.value.apply_fungicide,
+                    DISEASES_TREATMENTS.value.remove_affected_plants
+                ]
+            }
+        },
+        {
+            id: 'cauliflower',
+            name: t('calculators.vegetable_garden.messages.vegetables.cauliflower'),
+            type: VEGETABLE_TYPES.value.flowering_vegetable,
+            space_required_m2: 0.25,
+            irrigation: {
+                frequency: {
+                    amount: 3,
+                    time_period: FREQUENCY_TIME_PERIODS.per_week
+                },
+                quantity_liters: 1.2
+            },
+            suitable_fertilizers: [
+                FERTILIZERS.value.nitrogen_rich_fertilizer,
+                FERTILIZERS.value.compost
+            ],
+            suitable_soils: [SOILS.value.loamy_soil, SOILS.value.slightly_acidic_soil],
+            yield_kg_per_plant: 0.6,
+            suitable_seasons: [SEASONS.value.spring, SEASONS.value.fall],
+            growing_tips: [
+                GROWING_TIPS.value.keep_soil_consistently_moist,
+                GROWING_TIPS.value.protect_heads_from_direct_sunlight
+            ],
+            diseases: {
+                signs_and_symptoms: [
+                    DISEASES_SIGNS_AND_SYMPTOMS.value.downy_mildew,
+                    DISEASES_SIGNS_AND_SYMPTOMS.value.clubroot
+                ],
+                prevention: [
+                    DISEASES_PREVENTIONS.value.rotate_crops,
+                    DISEASES_PREVENTIONS.value.use_disease_resistant_varieties
+                ],
+                treatment: [
+                    DISEASES_TREATMENTS.value.apply_fungicide,
+                    DISEASES_TREATMENTS.value.remove_affected_plants
+                ]
+            }
+        },
+        {
+            id: 'pepper',
+            name: t('calculators.vegetable_garden.messages.vegetables.pepper'),
+            type: VEGETABLE_TYPES.value.fruit_vegetable,
+            space_required_m2: 0.2,
+            irrigation: {
+                frequency: {
+                    amount: 3,
+                    time_period: FREQUENCY_TIME_PERIODS.per_week
+                },
+                quantity_liters: 0.8
+            },
+            suitable_fertilizers: [
+                FERTILIZERS.value.potash_rich_fertilizer,
+                FERTILIZERS.value.compost
+            ],
+            suitable_soils: [SOILS.value.loamy_soil, SOILS.value.well_drained_soil],
+            yield_kg_per_plant: 1.5,
+            suitable_seasons: [SEASONS.value.summer, SEASONS.value.late_spring],
+            growing_tips: [
+                GROWING_TIPS.value.plant_in_full_sun,
+                GROWING_TIPS.value.avoid_excessive_nitrogen
+            ],
+            diseases: {
+                signs_and_symptoms: [
+                    DISEASES_SIGNS_AND_SYMPTOMS.value.yellowing_leaves,
+                    DISEASES_SIGNS_AND_SYMPTOMS.value.wilting
+                ],
+                prevention: [
+                    DISEASES_PREVENTIONS.value.avoid_overwatering,
+                    DISEASES_PREVENTIONS.value.ensure_good_air_circulation
+                ],
+                treatment: [
+                    DISEASES_TREATMENTS.value.apply_copper_fungicide,
+                    DISEASES_TREATMENTS.value.remove_diseased_parts
+                ]
+            }
+        },
+        {
+            id: 'eggplant',
+            name: t('calculators.vegetable_garden.messages.vegetables.eggplant'),
+            type: VEGETABLE_TYPES.value.fruit_vegetable,
+            space_required_m2: 0.3,
+            irrigation: {
+                frequency: {
+                    amount: 3,
+                    time_period: FREQUENCY_TIME_PERIODS.per_week
+                },
+                quantity_liters: 1.2
+            },
+            suitable_fertilizers: [
+                FERTILIZERS.value.balanced_fertilizer,
+                FERTILIZERS.value.compost
+            ],
+            suitable_soils: [SOILS.value.loamy_soil, SOILS.value.well_drained_soil],
+            yield_kg_per_plant: 2.0,
+            suitable_seasons: [SEASONS.value.summer, SEASONS.value.spring],
+            growing_tips: [
+                GROWING_TIPS.value.plant_in_full_sun,
+                GROWING_TIPS.value.support_with_stakes
+            ],
+            diseases: {
+                signs_and_symptoms: [
+                    DISEASES_SIGNS_AND_SYMPTOMS.value.spots_on_leaves,
+                    DISEASES_SIGNS_AND_SYMPTOMS.value.wilting
+                ],
+                prevention: [
+                    DISEASES_PREVENTIONS.value.ensure_good_air_circulation,
+                    DISEASES_PREVENTIONS.value.use_disease_resistant_varieties
+                ],
+                treatment: [
+                    DISEASES_TREATMENTS.value.apply_fungicide,
+                    DISEASES_TREATMENTS.value.remove_diseased_parts
                 ]
             }
         },
@@ -334,7 +431,7 @@ export default function useVegetables() {
             id: 'potato',
             name: t('calculators.vegetable_garden.messages.vegetables.potato'),
             type: VEGETABLE_TYPES.value.root_vegetable,
-            space_required_cm2: 3000,
+            space_required_m2: 0.3,
             irrigation: {
                 frequency: {
                     amount: 3,
@@ -347,15 +444,6 @@ export default function useVegetables() {
                 FERTILIZERS.value.compost
             ],
             suitable_soils: [SOILS.value.loamy_soil, SOILS.value.well_drained_soil],
-            cost: {
-                fr: 2.0,
-                de: 2.1,
-                it: 1.9,
-                nl: 2.05,
-                es: 1.95,
-                us: 1.8,
-                uk: 1.85
-            },
             yield_kg_per_plant: 2.0,
             suitable_seasons: [SEASONS.value.spring, SEASONS.value.summer],
             growing_tips: [
@@ -364,16 +452,16 @@ export default function useVegetables() {
             ],
             diseases: {
                 signs_and_symptoms: [
-                    DISEASES_SIGNS_AND_SYMPTOMS.value.black_spots_on_leaves,
+                    DISEASES_SIGNS_AND_SYMPTOMS.value.spots_on_leaves,
                     DISEASES_SIGNS_AND_SYMPTOMS.value.wilting
                 ],
                 prevention: [
                     DISEASES_PREVENTIONS.value.rotate_crops,
-                    DISEASES_PREVENTIONS.value.use_certified_disease_free_seeds
+                    DISEASES_PREVENTIONS.value.use_disease_free_seeds
                 ],
                 treatment: [
                     DISEASES_TREATMENTS.value.apply_organic_fungicide,
-                    DISEASES_TREATMENTS.value.remove_and_destroy_infected_plants
+                    DISEASES_TREATMENTS.value.remove_affected_plants
                 ]
             }
         }

@@ -12,17 +12,11 @@ export default function useDiseasesPreventions() {
         ensure_proper_spacing: t(
             'calculators.vegetable_garden.messages.diseases_preventions.ensure_proper_spacing'
         ),
-        use_disease_resistant_seeds: t(
-            'calculators.vegetable_garden.messages.diseases_preventions.use_disease_resistant_seeds'
-        ),
         ensure_good_air_circulation: t(
             'calculators.vegetable_garden.messages.diseases_preventions.ensure_good_air_circulation'
         ),
         avoid_overhead_watering: t(
             'calculators.vegetable_garden.messages.diseases_preventions.avoid_overhead_watering'
-        ),
-        water_at_the_base_of_the_plant: t(
-            'calculators.vegetable_garden.messages.diseases_preventions.water_at_the_base_of_the_plant'
         ),
         avoid_soil_compaction: t(
             'calculators.vegetable_garden.messages.diseases_preventions.avoid_soil_compaction'
@@ -30,8 +24,11 @@ export default function useDiseasesPreventions() {
         use_row_covers: t(
             'calculators.vegetable_garden.messages.diseases_preventions.use_row_covers'
         ),
-        use_certified_disease_free_seeds: t(
-            'calculators.vegetable_garden.messages.diseases_preventions.use_certified_disease_free_seeds'
+        use_disease_free_seeds: t(
+            'calculators.vegetable_garden.messages.diseases_preventions.use_disease_free_seeds'
+        ),
+        avoid_overwatering: t(
+            'calculators.vegetable_garden.messages.diseases_preventions.avoid_overwatering'
         )
     }))
 

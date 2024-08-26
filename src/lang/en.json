@@ -220,13 +220,12 @@
                     "use_disease_resistant_varieties": "use disease-resistant varieties",
                     "rotate_crops": "rotate crops",
                     "ensure_proper_spacing": "ensure proper spacing",
-                    "use_disease_resistant_seeds": "use disease-resistant seeds",
                     "ensure_good_air_circulation": "ensure good air circulation",
                     "avoid_overhead_watering": "avoid overhead watering",
-                    "water_at_the_base_of_the_plant": "water at the base of the plant",
                     "avoid_soil_compaction": "avoid soil compaction",
                     "use_row_covers": "use row covers",
-                    "use_certified_disease_free_seeds": "use certified disease-free seeds"
+                    "use_disease_free_seeds": "use disease-free seeds",
+                    "avoid_overwatering": "avoid overwatering"
                 },
                 "diseases_signs_and_symptoms": {
                     "yellowing_leaves": "yellowing leaves",
@@ -237,8 +236,10 @@
                     "powdery_mildew": "powdery mildew",
                     "forked_roots": "forked roots",
                     "root_maggots": "root maggots",
-                    "black_spots_on_leaves": "black spots on leaves",
-                    "wilting": "wilting"
+                    "spots_on_leaves": "spots on leaves",
+                    "wilting": "wilting",
+                    "rotting": "rotting",
+                    "clubroot": "clubroot"
                 },
                 "diseases_treatments": {
                     "apply_organic_fungicide": "apply organic fungicide",
@@ -248,10 +249,8 @@
                     "apply_copper_fungicide": "apply copper fungicide",
                     "remove_diseased_parts": "remove diseased parts",
                     "apply_neem_oil": "apply neem oil",
-                    "remove_infected_parts": "remove infected parts",
                     "use_organic_nematode_control": "use organic nematode control",
-                    "apply_insecticidal_soap": "apply insecticidal soap",
-                    "remove_and_destroy_infected_plants": "remove and destroy infected plants"
+                    "apply_insecticidal_soap": "apply insecticidal soap"
                 },
                 "fertilizers": {
                     "compost": "compost",
@@ -275,7 +274,12 @@
                     "harvest_early_to_avoid_bitterness": "harvest early to avoid bitterness",
                     "ensure_consistent_moisture": "ensure consistent moisture",
                     "hill_up_soil_around_plants": "hill up soil around plants",
-                    "avoid_waterlogged_soil": "avoid waterlogged soil"
+                    "avoid_waterlogged_soil": "avoid waterlogged soil",
+                    "plant_in_full_sun": "plant in full sun",
+                    "harvest_when_small_for_best_flavor": "harvest when small for best flavor",
+                    "start_seeds_indoors": "start seeds indoors",
+                    "protect_heads_from_direct_sunlight": "protect heads from direct sunlight",
+                    "avoid_excessive_nitrogen": "avoid excessive nitrogen"
                 },
                 "soils": {
                     "loamy_soil": "loamy soil",
@@ -306,12 +310,37 @@
                     "cucumber": "Cucumber",
                     "carrot": "Carrot",
                     "radish": "Radish",
-                    "potato": "Potato"
+                    "potato": "Potato",
+                    "broccoli": "Broccoli",
+                    "cauliflower": "Cauliflower",
+                    "pepper": "Pepper",
+                    "eggplant": "Eggplant"
+                },
+                "climates": {
+                    "tropical": "Tropical",
+                    "equatorial": "Equatorial",
+                    "subtropical": "Subtropical",
+                    "temperate": "Temperate",
+                    "humid_temperate": "Humid temperate",
+                    "oceanic": "Oceanic",
+                    "mediterranean": "Mediterranean",
+                    "continental": "Continental",
+                    "subarctic": "Subarctic",
+                    "trans_siberian": "Trans siberian",
+                    "polar": "Polar",
+                    "snow": "Snow",
+                    "glacial": "Glacial",
+                    "steppe": "Steppe",
+                    "desert": "Desert",
+                    "monsoon": "Monsoon",
+                    "sinic": "Sinic",
+                    "savannah": "Savannah",
+                    "alpine": "Alpine",
+                    "boreal": "Boreal"
                 },
                 "results": {
-                    "by_price": "With {cost}€, you can buy {plant_amount} plants. You will need {required_space} cm² of space and you will be able to harvest {harvest_amount} kg.",
-                    "by_available_space": "In {required_space} cm², you can plant {plant_amount} plants. It will cost you {cost}€ and you will be able to harvest {harvest_amount} kg.",
-                    "by_harvest_amount": "To harvest at least {harvest_amount} kg, you will need to plant {plant_amount} plants and you will need {required_space} cm² of space. It will cost you {cost}€."
+                    "by_available_space": "In {required_space} m², you can plant {plant_amount} plants and you will be able to harvest {harvest_amount} kg.",
+                    "by_harvest_amount": "To harvest at least {harvest_amount} kg, you will need to plant {plant_amount} plants and you will need {required_space} m² of space."
                 },
                 "select_vegetables": "Select vegetables",
                 "vegetables_lbl": "Vegetables",
@@ -335,7 +364,9 @@
                 "common_diseases": "Common diseases",
                 "diseases_signs_and_symptoms_lbl": "Signs and symptoms",
                 "diseases_preventions_lbl": "Preventions",
-                "diseases_treatments_lbl": "Treatments"
+                "diseases_treatments_lbl": "Treatments",
+                "climate": "Climate",
+                "select_a_climate": "Select the climate in your area"
             }
         }
     }
