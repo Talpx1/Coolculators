@@ -216,7 +216,8 @@ function nFormat(val: number) {
                     >
                         <template #source_link>
                             <TextualLink
-                                to="https: //www.co2everything.com/how-we-calculate-km-of-driving"
+                                wrapper-classes="!block"
+                                to="https://www.co2everything.com/how-we-calculate-km-of-driving"
                             >
                                 https://www.co2everything.com/how-we-calculate-km-of-driving
                             </TextualLink>

@@ -1,7 +1,9 @@
 <script setup lang="ts">
 import type { RouteLocationRaw, RouterLinkProps } from 'vue-router'
 
-defineProps<Omit<RouterLinkProps, 'to'> & { to: string | RouteLocationRaw }>()
+defineProps<
+    Omit<RouterLinkProps, 'to'> & { to: string | RouteLocationRaw; wrapperClasses?: string }
+>()
 
 defineOptions({ inheritAttrs: false })
 
@@ -11,7 +13,7 @@ function isExternal(destination: string | RouteLocationRaw): destination is stri
 </script>
 
 <template>
-    <div class="text-primary-500 underline inline-block">
+    <div :class="`text-primary-500 underline inline ${wrapperClasses}`">
         <a
             v-if="isExternal($props.to)"
             v-bind="$attrs"

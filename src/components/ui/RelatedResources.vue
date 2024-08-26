@@ -11,7 +11,7 @@ const { t } = useI18n()
 <template>
     <div>
         {{ t(label) }}:
-        <ul class="list-inside list-disc">
+        <ul class="list-inside list-disc lg:space-y-0 space-y-2" style="word-wrap: anywhere">
             <li v-for="resource in resources" :key="resource">
                 <TextualLink :to="resource">
                     {{ resource }}
