@@ -16,6 +16,10 @@ import Fieldset from 'primevue/fieldset'
 import useClimates, { type Climate } from './composables/useClimates'
 import SelectInput from '@/components/ui/inputs/SelectInput.vue'
 import type { MultiSelectChangeEvent } from 'primevue/multiselect'
+import TranslatableParagraphBlock from '@/components/i18n/TranslatableParagraphBlock.vue'
+import SecondaryHeading from '@/components/ui/typography/SecondaryHeading.vue'
+import TextParagraph from '@/components/ui/typography/TextParagraph.vue'
+import TextualLink from '@/components/ui/TextualLink.vue'
 
 type CalculationType = 'byAvailableSpace' | 'byHarvestAmount'
 
@@ -117,12 +121,6 @@ function onVegetableSelection(e: MultiSelectChangeEvent) {
                             )
                         "
                         :entries="[
-                            {
-                                label: t(
-                                    'calculators.vegetable_garden.messages.calculation_by_price'
-                                ),
-                                value: 'byPrice'
-                            },
                             {
                                 label: t(
                                     'calculators.vegetable_garden.messages.calculation_by_available_space'
@@ -375,6 +373,107 @@ function onVegetableSelection(e: MultiSelectChangeEvent) {
                 </Card>
             </div>
             <span v-else>{{ t('calculators.shared_messages.insert_data_to_calculate') }}</span>
+        </div>
+
+        <div class="flex flex-col gap-16 justify-self-center max-w-full">
+            <TranslatableParagraphBlock
+                titleKeypath="calculators.vegetable_garden.messages.what_is_the_vegetable_sowing_calculator_for"
+            />
+
+            <TranslatableParagraphBlock
+                titleKeypath="calculators.vegetable_garden.messages.what_information_will_the_sowing_calculator_provide_me"
+            />
+
+            <TranslatableParagraphBlock
+                titleKeypath="calculators.vegetable_garden.messages.why_is_climate_an_important_element_in_sowing_calculations"
+            />
+
+            <div>
+                <SecondaryHeading>
+                    <I18nTranslator
+                        keypath="calculators.vegetable_garden.messages.what_else_might_be_useful_to_know_for_growing_my_vegetable_garden"
+                    />
+                </SecondaryHeading>
+
+                <TextParagraph>
+                    <I18nTranslator
+                        keypath="calculators.vegetable_garden.messages.what_else_might_be_useful_to_know_for_growing_my_vegetable_garden_description.part_1"
+                    >
+                        <template #part_1_links>
+                            <ul class="list-disc list-inside space-y-2 lg:space-y-0">
+                                <li>
+                                    <TextualLink
+                                        to="https://www.viridea.it/consigli/orto-in-balcone-e-in-giardino-semine-e-trapianti-seguendo-la-luna/"
+                                    >
+                                        (ITA)
+                                        https://www.viridea.it/consigli/orto-in-balcone-e-in-giardino-semine-e-trapianti-seguendo-la-luna/
+                                    </TextualLink>
+                                </li>
+                                <li>
+                                    <TextualLink
+                                        to="https://www.ortoggi.it/le_fasi_lunari_orto.php"
+                                    >
+                                        (ITA) https://www.ortoggi.it/le_fasi_lunari_orto.php
+                                    </TextualLink>
+                                </li>
+                                <li>
+                                    <TextualLink
+                                        to="https://www.haxnicks.co.uk/blogs/grow-at-home/lunar-gardening"
+                                    >
+                                        (ENG)
+                                        https://www.haxnicks.co.uk/blogs/grow-at-home/lunar-gardening
+                                    </TextualLink>
+                                </li>
+                                <li>
+                                    <TextualLink
+                                        to="https://www.almanac.com/content/planting-by-the-moon"
+                                    >
+                                        (ENG) https://www.almanac.com/content/planting-by-the-moon
+                                    </TextualLink>
+                                </li>
+                            </ul>
+                        </template>
+                    </I18nTranslator>
+
+                    <I18nTranslator
+                        keypath="calculators.vegetable_garden.messages.what_else_might_be_useful_to_know_for_growing_my_vegetable_garden_description.part_2"
+                    >
+                        <template #part_2_links>
+                            <ul class="list-disc list-inside space-y-2 lg:space-y-0">
+                                <li>
+                                    <TextualLink to="https://www.ortoggi.it/la_consociazione.html">
+                                        (ITA) https://www.ortoggi.it/la_consociazione.html
+                                    </TextualLink>
+                                </li>
+                                <li>
+                                    <TextualLink
+                                        to="https://www.compo-hobby.it/manuale/cura-delle-piante/curare-orto/consociazioni-orto#al-02-perch-alcune-verdure-non-vanno-d-accordo-"
+                                    >
+                                        (ITA)
+                                        https://www.compo-hobby.it/manuale/cura-delle-piante/curare-orto/consociazioni-orto#al-02-perch-alcune-verdure-non-vanno-d-accordo-
+                                    </TextualLink>
+                                </li>
+                                <li>
+                                    <TextualLink
+                                        to="https://greenlifesoil.com.au/sustainable-gardening-tips/companion-planting"
+                                    >
+                                        (ENG)
+                                        https://greenlifesoil.com.au/sustainable-gardening-tips/companion-planting
+                                    </TextualLink>
+                                </li>
+                                <li>
+                                    <TextualLink
+                                        to="https://www.almanac.com/companion-planting-guide-vegetables"
+                                    >
+                                        (ENG)
+                                        https://www.almanac.com/companion-planting-guide-vegetables
+                                    </TextualLink>
+                                </li>
+                            </ul>
+                        </template>
+                    </I18nTranslator>
+                </TextParagraph>
+            </div>
         </div>
     </CalculatorPageWrapper>
 </template>
