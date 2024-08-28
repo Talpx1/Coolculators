@@ -6,7 +6,7 @@ import AutoComplete, {
     type AutoCompleteOptionSelectEvent
 } from 'primevue/autocomplete'
 import { useToast } from 'primevue/usetoast'
-import { ref } from 'vue'
+import { ref, unref } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { useRouter } from 'vue-router'
 
@@ -17,12 +17,12 @@ const query = ref('')
 const allItems = useCalculatorList()
 const found = ref<CalculatorObject[]>([])
 
-const search = (event: AutoCompleteCompleteEvent) => {
+function search(event: AutoCompleteCompleteEvent) {
     found.value = event.query
-        ? allItems.value.filter((item) =>
-              item.title.toLowerCase().includes(event.query.toLowerCase())
-          )
-        : allItems.value
+        ? allItems.value
+              .map((i) => unref(i))
+              .filter((item) => item.title.toLowerCase().includes(event.query.toLowerCase()))
+        : allItems.value.map((i) => unref(i))
 }
 
 const router = useRouter()
