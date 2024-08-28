@@ -9,7 +9,10 @@ import useLocalizedRoute from '@/composables/useLocalizedRoute'
 const options: LocaleObject[] = useLocale().localesAsArray()
 
 const { locale } = useI18n()
-const selectedLocale = ref(options.find((o) => o.code === locale.value))
+const selectedLocale = ref(
+    options.find((o) => o.code === locale.value) ??
+        options.find((o) => o.code === import.meta.env.VITE_FALLBACK_LOCALE)
+)
 
 const router = useRouter()
 const route = useRoute()
