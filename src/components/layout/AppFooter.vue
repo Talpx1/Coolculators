@@ -6,14 +6,17 @@ import Dialog from 'primevue/dialog'
 import { ref } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { PrimeIcons } from '@primevue/core/api'
+import I18nTranslator from '../i18n/I18nTranslator.vue'
 
 const { t } = useI18n()
 
 const isPrivacyDialogOpen = ref(false)
 const isContactDialogOpen = ref(false)
+const isAboutDialogOpen = ref(false)
 
 const togglePrivacyDialog = useToggle(isPrivacyDialogOpen)
 const toggleContactDialog = useToggle(isContactDialogOpen)
+const toggleAboutDialog = useToggle(isAboutDialogOpen)
 </script>
 
 <template>
@@ -24,19 +27,40 @@ const toggleContactDialog = useToggle(isContactDialogOpen)
             <a href="https://buymeacoffee.com/talp1" target="_blank">
                 <Button text :label="t('support_my_work')" :icon="PrimeIcons.HEART_FILL" />
             </a>
-            <Button text label="Privacy" @click="togglePrivacyDialog()" />
             <Button text :label="t('contact_us')" @click="toggleContactDialog()" />
+            <Button text label="About" @click="toggleAboutDialog()" />
+            <Button text label="Privacy" @click="togglePrivacyDialog()" />
         </div>
 
-        <Dialog v-model:visible="isPrivacyDialogOpen" header="Privacy">
+        <Dialog modal v-model:visible="isPrivacyDialogOpen" header="Privacy">
             {{ t('privacy_disclaimer') }}
         </Dialog>
 
-        <Dialog v-model:visible="isContactDialogOpen" :header="t('contact_us')">
+        <Dialog modal v-model:visible="isContactDialogOpen" :header="t('contact_us')">
             <a href="mailto:hello@coolculators.com" class="flex items-center gap-4">
                 <span :class="PrimeIcons.ENVELOPE"></span>
                 hello@coolculators.com
             </a>
+        </Dialog>
+
+        <Dialog modal v-model:visible="isAboutDialogOpen" header="About">
+            <I18nTranslator keypath="about" tag="p">
+                <template #age>
+                    {{
+                        Math.abs(
+                            new Date(
+                                Date.now() - new Date('03/04/2001').getTime()
+                            ).getUTCFullYear() - 1970
+                        ).toString()
+                    }}
+                </template>
+            </I18nTranslator>
+
+            <div class="mt-4">
+                <a href="https://buymeacoffee.com/talp1" target="_blank">
+                    <Button :label="t('support_my_work')" :icon="PrimeIcons.HEART_FILL" />
+                </a>
+            </div>
         </Dialog>
     </footer>
 </template>
