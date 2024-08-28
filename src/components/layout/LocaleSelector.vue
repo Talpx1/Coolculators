@@ -5,6 +5,7 @@ import { useI18n } from 'vue-i18n'
 import { ref } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 import useLocalizedRoute from '@/composables/useLocalizedRoute'
+import useFlagEmoji from '@/composables/useFlagEmoji'
 
 const options: LocaleObject[] = useLocale().localesAsArray()
 
@@ -43,25 +44,19 @@ async function onChange(e: SelectChangeEvent) {
 <template>
     <Select v-model="selectedLocale" :options @change="onChange">
         <template #value="slotProps: { value: LocaleObject }">
-            <div class="flex items-center gap-2">
-                <img
-                    :alt="slotProps.value.label"
-                    src="https://primefaces.org/cdn/primevue/images/flag/flag_placeholder.png"
-                    :class="`mr-2 flag flag-${slotProps.value.flag_code.toLowerCase()}`"
-                    style="width: 18px"
-                />
-                <div>{{ slotProps.value.label }}</div>
+            <div>
+                <span class="text-xl">{{
+                    useFlagEmoji().fromCode(slotProps.value.flag_code)
+                }}</span>
+                {{ slotProps.value.label }}
             </div>
         </template>
         <template #option="slotProps: { option: LocaleObject; selected: boolean; index: number }">
-            <div class="flex items-center">
-                <img
-                    :alt="slotProps.option.label"
-                    src="https://primefaces.org/cdn/primevue/images/flag/flag_placeholder.png"
-                    :class="`mr-2 flag flag-${slotProps.option.flag_code.toLowerCase()}`"
-                    style="width: 18px"
-                />
-                <div>{{ slotProps.option.label }}</div>
+            <div>
+                <span class="text-xl">{{
+                    useFlagEmoji().fromCode(slotProps.option.flag_code)
+                }}</span>
+                {{ slotProps.option.label }}
             </div>
         </template>
     </Select>

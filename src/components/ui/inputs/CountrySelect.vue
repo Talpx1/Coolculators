@@ -2,6 +2,7 @@
 import Select, { type SelectProps } from 'primevue/select'
 import { useI18n } from 'vue-i18n'
 import InputWrapper, { type InputWrapperProps } from './InputWrapper.vue'
+import useFlagEmoji from '@/composables/useFlagEmoji'
 
 type Country = { name: string; code: string }
 type CountrySelectProps = { countries: Country[] } & InputWrapperProps &
@@ -28,28 +29,20 @@ const selectedCountry = defineModel('selected')
             :invalid
         >
             <template #value="slotProps">
-                <div v-if="slotProps.value" class="flex items-center">
-                    <img
-                        :alt="slotProps.value.label"
-                        src="https://primefaces.org/cdn/primevue/images/flag/flag_placeholder.png"
-                        :class="`mr-2 flag flag-${slotProps.value.code.toLowerCase()}`"
-                        style="width: 18px"
-                    />
-                    <div>{{ slotProps.value.name }}</div>
+                <div v-if="slotProps.value">
+                    <span class="text-xl">{{ useFlagEmoji().fromCode(slotProps.value.code) }}</span>
+                    {{ slotProps.value.name }}
                 </div>
                 <span v-else>
                     {{ slotProps.placeholder }}
                 </span>
             </template>
             <template #option="slotProps">
-                <div class="flex items-center">
-                    <img
-                        :alt="slotProps.option.label"
-                        src="https://primefaces.org/cdn/primevue/images/flag/flag_placeholder.png"
-                        :class="`mr-2 flag flag-${slotProps.option.code.toLowerCase()}`"
-                        style="width: 18px"
-                    />
-                    <div>{{ slotProps.option.name }}</div>
+                <div>
+                    <span class="text-xl">{{
+                        useFlagEmoji().fromCode(slotProps.option.code)
+                    }}</span>
+                    {{ slotProps.option.name }}
                 </div>
             </template>
         </Select>

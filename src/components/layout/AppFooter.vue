@@ -20,7 +20,7 @@ const toggleAboutDialog = useToggle(isAboutDialogOpen)
 </script>
 
 <template>
-    <footer class="flex flex-col-reverse md:flex-row px-5 py-2 items-center justify-between gap-8">
+    <footer class="flex flex-col-reverse md:flex-row px-5 py-5 items-center justify-between gap-8">
         &copy;{{ new Date().getFullYear() }} {{ APP_TITLE }}
 
         <div class="flex flex-col md:flex-row gap-4 md:gap-8">
