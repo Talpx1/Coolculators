@@ -20,7 +20,10 @@ const toggleContactDialog = useToggle(isContactDialogOpen)
     <footer class="flex flex-col-reverse md:flex-row px-5 py-2 items-center justify-between gap-8">
         &copy;{{ new Date().getFullYear() }} {{ APP_TITLE }}
 
-        <div class="flex gap-8">
+        <div class="flex flex-col md:flex-row gap-4 md:gap-8">
+            <a href="https://buymeacoffee.com/talp1" target="_blank">
+                <Button text :label="t('support_my_work')" :icon="PrimeIcons.HEART_FILL" />
+            </a>
             <Button text label="Privacy" @click="togglePrivacyDialog()" />
             <Button text :label="t('contact_us')" @click="toggleContactDialog()" />
         </div>
