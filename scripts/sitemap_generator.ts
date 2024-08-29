@@ -1,5 +1,5 @@
 import fs from 'fs'
-import { routes } from '../src/composables/useLocalizedRoutePath.ts'
+import { default as routes } from '../src/data/localizedRoutes.ts'
 
 const SAVE_PATH = './public/sitemap.xml'
 const PRODUCTION_URL = 'https://coolculators.com'

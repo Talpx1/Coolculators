@@ -5,7 +5,7 @@ import { useI18n } from 'vue-i18n'
 import type { Climate } from './useClimates'
 
 type Result = {
-    vegetable: Vegetable
+    vegetableId: string
     text: string
     variables: {
         plant_amount: number
@@ -58,9 +58,9 @@ export default function useVegetableGardenCalculation(
         }
 
         userInput.value.forEach((vegetableInputData) => {
-            const vegetableData = selectedVegetables.value?.filter(
+            const vegetableData = selectedVegetables.value?.find(
                 (v) => v.id === vegetableInputData.id
-            )[0]!
+            )!
 
             switch (vegetableInputData.calculation_type) {
                 default:
@@ -72,7 +72,7 @@ export default function useVegetableGardenCalculation(
                         vegetableInputData.available_space / vegetableData.space_required_m2
                     )
                     results.value.push({
-                        vegetable: vegetableData,
+                        vegetableId: vegetableData.id,
                         text: 'calculators.vegetable_garden.messages.results.by_available_space',
                         variables: {
                             plant_amount: plantAmount,
@@ -93,7 +93,7 @@ export default function useVegetableGardenCalculation(
                                 selectedClimate.value!.growth_coefficient)
                     )
                     results.value.push({
-                        vegetable: vegetableData,
+                        vegetableId: vegetableData.id,
                         text: 'calculators.vegetable_garden.messages.results.by_harvest_amount',
                         variables: {
                             plant_amount: plantAmount,

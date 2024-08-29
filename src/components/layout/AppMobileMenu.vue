@@ -37,7 +37,7 @@ onBeforeRouteUpdate(() => {
             </div>
 
             <a href="https://buymeacoffee.com/talp1" target="_blank">
-                <Button text :label="t('support_my_work')" :icon="PrimeIcons.HEART_FILL" />
+                <Button text :label="t('support_my_work')" />
             </a>
         </Drawer>
     </aside>

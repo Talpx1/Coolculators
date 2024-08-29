@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { CalculatorObject } from '@/composables/useCalculatorList'
+import type { CalculatorObject } from '@/data/calculators'
 import Button from 'primevue/button'
 import Card from 'primevue/card'
 import Tag from 'primevue/tag'

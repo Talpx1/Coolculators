@@ -72,6 +72,14 @@ function onVegetableSelection(e: MultiSelectChangeEvent) {
         })
     })
 }
+
+const reactiveVegetableData = computed(() => {
+    const obj: Record<string, Vegetable> = {}
+    results.value.forEach(
+        (v) => (obj[v.vegetableId] = vegetables.value.find((v2) => v2.id === v.vegetableId)!)
+    )
+    return obj
+})
 </script>
 
 <template>
@@ -172,10 +180,10 @@ function onVegetableSelection(e: MultiSelectChangeEvent) {
                 </Message>
             </span>
             <div v-else-if="results.length" class="grid grid-cols-1 lg:grid-cols-2 gap-16">
-                <Card v-for="result in results" :key="result.vegetable.id" class="flex flex-col">
+                <Card v-for="result in results" :key="result.vegetableId" class="flex flex-col">
                     <template #title
                         ><span class="font-bold text-xl">{{
-                            result.vegetable.name
+                            reactiveVegetableData[result.vegetableId].name
                         }}</span></template
                     >
 
@@ -204,7 +212,9 @@ function onVegetableSelection(e: MultiSelectChangeEvent) {
                             <div class="flex flex-col gap-4">
                                 <div class="flex flex-col lg:flex-row gap-1">
                                     <span class="font-bold">{{ t('category') }}:</span>
-                                    <span>{{ result.vegetable.type }}</span>
+                                    <span>{{
+                                        reactiveVegetableData[result.vegetableId].type
+                                    }}</span>
                                 </div>
 
                                 <div class="flex flex-col lg:flex-row gap-1">
@@ -215,7 +225,13 @@ function onVegetableSelection(e: MultiSelectChangeEvent) {
                                             )
                                         }}:</span
                                     >
-                                    <span>{{ result.vegetable.space_required_m2 }} cm²</span>
+                                    <span
+                                        >{{
+                                            reactiveVegetableData[result.vegetableId]
+                                                .space_required_m2
+                                        }}
+                                        m²</span
+                                    >
                                 </div>
 
                                 <div class="flex flex-col lg:flex-row gap-1">
@@ -229,13 +245,16 @@ function onVegetableSelection(e: MultiSelectChangeEvent) {
                                         tag="span"
                                     >
                                         <template #frequency_amount>{{
-                                            result.vegetable.irrigation.frequency.amount
+                                            reactiveVegetableData[result.vegetableId].irrigation
+                                                .frequency.amount
                                         }}</template>
                                         <template #frequency_time_period>{{
-                                            result.vegetable.irrigation.frequency.time_period
+                                            reactiveVegetableData[result.vegetableId].irrigation
+                                                .frequency.time_period
                                         }}</template>
                                         <template #quantity>{{
-                                            result.vegetable.irrigation.quantity_liters
+                                            reactiveVegetableData[result.vegetableId].irrigation
+                                                .quantity_liters
                                         }}</template>
                                     </I18nTranslator>
                                 </div>
@@ -249,7 +268,9 @@ function onVegetableSelection(e: MultiSelectChangeEvent) {
                                         }}:</span
                                     >
                                     <span>{{
-                                        result.vegetable.suitable_fertilizers.join(', ')
+                                        reactiveVegetableData[
+                                            result.vegetableId
+                                        ].suitable_fertilizers.join(', ')
                                     }}</span>
                                 </div>
 
@@ -261,7 +282,11 @@ function onVegetableSelection(e: MultiSelectChangeEvent) {
                                             )
                                         }}:</span
                                     >
-                                    <span>{{ result.vegetable.suitable_soils.join(', ') }}</span>
+                                    <span>{{
+                                        reactiveVegetableData[
+                                            result.vegetableId
+                                        ].suitable_soils.join(', ')
+                                    }}</span>
                                 </div>
 
                                 <div class="flex flex-col lg:flex-row gap-1">
@@ -272,7 +297,11 @@ function onVegetableSelection(e: MultiSelectChangeEvent) {
                                             )
                                         }}:</span
                                     >
-                                    <span>{{ result.vegetable.suitable_seasons.join(', ') }}</span>
+                                    <span>{{
+                                        reactiveVegetableData[
+                                            result.vegetableId
+                                        ].suitable_seasons.join(', ')
+                                    }}</span>
                                 </div>
 
                                 <div class="flex flex-col">
@@ -285,7 +314,8 @@ function onVegetableSelection(e: MultiSelectChangeEvent) {
                                     >
                                     <div class="ml-2 pl-2 border-l-2 border-primary">
                                         <p
-                                            v-for="tip in result.vegetable.growing_tips"
+                                            v-for="tip in reactiveVegetableData[result.vegetableId]
+                                                .growing_tips"
                                             :key="tip.replace(/\s/g, '').substring(0, 15)"
                                         >
                                             {{ tip }}
@@ -314,9 +344,9 @@ function onVegetableSelection(e: MultiSelectChangeEvent) {
                                                 }}:</span
                                             >
                                             <span>{{
-                                                result.vegetable.diseases.signs_and_symptoms.join(
-                                                    ', '
-                                                )
+                                                reactiveVegetableData[
+                                                    result.vegetableId
+                                                ].diseases.signs_and_symptoms.join(', ')
                                             }}</span>
                                         </div>
 
@@ -330,8 +360,9 @@ function onVegetableSelection(e: MultiSelectChangeEvent) {
                                             >
                                             <div class="ml-2 pl-2 border-l-2 border-primary">
                                                 <p
-                                                    v-for="prevention in result.vegetable.diseases
-                                                        .prevention"
+                                                    v-for="prevention in reactiveVegetableData[
+                                                        result.vegetableId
+                                                    ].diseases.prevention"
                                                     :key="
                                                         prevention
                                                             .replace(/\s/g, '')
@@ -353,8 +384,9 @@ function onVegetableSelection(e: MultiSelectChangeEvent) {
                                             >
                                             <div class="ml-2 pl-2 border-l-2 border-primary">
                                                 <p
-                                                    v-for="treatment in result.vegetable.diseases
-                                                        .treatment"
+                                                    v-for="treatment in reactiveVegetableData[
+                                                        result.vegetableId
+                                                    ].diseases.treatment"
                                                     :key="
                                                         treatment
                                                             .replace(/\s/g, '')

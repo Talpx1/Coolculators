@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import useCalculatorList from '@/composables/useCalculatorList'
+import useCalculatorsList from '@/composables/useCalculatorsList'
 import { useI18n } from 'vue-i18n'
 import PrimaryHeading from '@/components/ui/typography/PrimaryHeading.vue'
 import { APP_TITLE } from '@/main'
@@ -9,7 +9,7 @@ import logo from '@/assets/logo.png'
 import { SUPPORTED_LOCALE_CODES } from '@/composables/useLocale'
 import CalculatorCard from '@/components/ui/CalculatorCard.vue'
 
-const calculators = useCalculatorList()
+const calculators = useCalculatorsList()
 
 const { t, locale } = useI18n()
 

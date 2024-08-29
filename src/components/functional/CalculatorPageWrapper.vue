@@ -9,7 +9,7 @@ import useLocalizedRoutePath from '@/composables/useLocalizedRoutePath'
 import PrimaryHeading from '@/components/ui/typography/PrimaryHeading.vue'
 import { computed } from 'vue'
 import { useRoute } from 'vue-router'
-import useCalculatorList from '@/composables/useCalculatorList'
+import useCalculatorsList from '@/composables/useCalculatorsList'
 import Tag from 'primevue/tag'
 import CalculatorCard from '../ui/CalculatorCard.vue'
 
@@ -43,7 +43,7 @@ const { t, locale } = useI18n()
 
 const route = useRoute()
 
-const allCalculators = useCalculatorList()
+const allCalculators = useCalculatorsList()
 const currentCalculator = computed(() => allCalculators.value.find((c) => c.id === props.id)!)
 const relatedCalculators = computed(() =>
     allCalculators.value

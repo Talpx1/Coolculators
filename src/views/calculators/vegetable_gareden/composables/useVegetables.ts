@@ -38,9 +38,9 @@ export default function useVegetables() {
     const { t } = useI18n()
 
     const VEGETABLE_TYPES = useVegetableTypes()
-    const FREQUENCY_TIME_PERIODS = {
+    const FREQUENCY_TIME_PERIODS = computed(() => ({
         per_week: t('calculators.vegetable_garden.messages.time_periods.per_week')
-    }
+    }))
     const FERTILIZERS = useFertilizers()
     const SOILS = useSoils()
     const SEASONS = useSeasons()
@@ -58,7 +58,7 @@ export default function useVegetables() {
             irrigation: {
                 frequency: {
                     amount: 3,
-                    time_period: FREQUENCY_TIME_PERIODS.per_week
+                    time_period: FREQUENCY_TIME_PERIODS.value.per_week
                 },
                 quantity_liters: 0.5
             },
@@ -93,7 +93,7 @@ export default function useVegetables() {
             irrigation: {
                 frequency: {
                     amount: 2,
-                    time_period: FREQUENCY_TIME_PERIODS.per_week
+                    time_period: FREQUENCY_TIME_PERIODS.value.per_week
                 },
                 quantity_liters: 0.4
             },
@@ -131,7 +131,7 @@ export default function useVegetables() {
             irrigation: {
                 frequency: {
                     amount: 4,
-                    time_period: FREQUENCY_TIME_PERIODS.per_week
+                    time_period: FREQUENCY_TIME_PERIODS.value.per_week
                 },
                 quantity_liters: 1.5
             },
@@ -169,7 +169,7 @@ export default function useVegetables() {
             irrigation: {
                 frequency: {
                     amount: 3,
-                    time_period: FREQUENCY_TIME_PERIODS.per_week
+                    time_period: FREQUENCY_TIME_PERIODS.value.per_week
                 },
                 quantity_liters: 1.2
             },
@@ -207,7 +207,7 @@ export default function useVegetables() {
             irrigation: {
                 frequency: {
                     amount: 2,
-                    time_period: FREQUENCY_TIME_PERIODS.per_week
+                    time_period: FREQUENCY_TIME_PERIODS.value.per_week
                 },
                 quantity_liters: 0.3
             },
@@ -245,7 +245,7 @@ export default function useVegetables() {
             irrigation: {
                 frequency: {
                     amount: 2,
-                    time_period: FREQUENCY_TIME_PERIODS.per_week
+                    time_period: FREQUENCY_TIME_PERIODS.value.per_week
                 },
                 quantity_liters: 0.25
             },
@@ -283,7 +283,7 @@ export default function useVegetables() {
             irrigation: {
                 frequency: {
                     amount: 3,
-                    time_period: FREQUENCY_TIME_PERIODS.per_week
+                    time_period: FREQUENCY_TIME_PERIODS.value.per_week
                 },
                 quantity_liters: 1.0
             },
@@ -321,7 +321,7 @@ export default function useVegetables() {
             irrigation: {
                 frequency: {
                     amount: 3,
-                    time_period: FREQUENCY_TIME_PERIODS.per_week
+                    time_period: FREQUENCY_TIME_PERIODS.value.per_week
                 },
                 quantity_liters: 1.2
             },
@@ -359,7 +359,7 @@ export default function useVegetables() {
             irrigation: {
                 frequency: {
                     amount: 3,
-                    time_period: FREQUENCY_TIME_PERIODS.per_week
+                    time_period: FREQUENCY_TIME_PERIODS.value.per_week
                 },
                 quantity_liters: 0.8
             },
@@ -397,7 +397,7 @@ export default function useVegetables() {
             irrigation: {
                 frequency: {
                     amount: 3,
-                    time_period: FREQUENCY_TIME_PERIODS.per_week
+                    time_period: FREQUENCY_TIME_PERIODS.value.per_week
                 },
                 quantity_liters: 1.2
             },
@@ -435,7 +435,7 @@ export default function useVegetables() {
             irrigation: {
                 frequency: {
                     amount: 3,
-                    time_period: FREQUENCY_TIME_PERIODS.per_week
+                    time_period: FREQUENCY_TIME_PERIODS.value.per_week
                 },
                 quantity_liters: 2.0
             },

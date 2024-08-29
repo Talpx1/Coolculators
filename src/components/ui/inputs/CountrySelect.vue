@@ -3,15 +3,25 @@ import Select, { type SelectProps } from 'primevue/select'
 import { useI18n } from 'vue-i18n'
 import InputWrapper, { type InputWrapperProps } from './InputWrapper.vue'
 import useFlagEmoji from '@/composables/useFlagEmoji'
+import { watch } from 'vue'
 
 type Country = { name: string; code: string }
 type CountrySelectProps = { countries: Country[] } & InputWrapperProps &
-    Omit<SelectProps, 'unstyled' | 'locale' | 'option-label' | 'placeholder' | 'options'>
+    Omit<
+        SelectProps,
+        'unstyled' | 'locale' | 'option-label' | 'placeholder' | 'options' | 'dataKey'
+    >
 
-defineProps<CountrySelectProps>()
+const props = defineProps<CountrySelectProps>()
 const { t, locale } = useI18n()
 
 const selectedCountry = defineModel('selected')
+
+watch(locale, () => {
+    selectedCountry.value = props.countries.find(
+        (o) => (selectedCountry.value as Country).code === o.code
+    )
+})
 </script>
 
 <template>
@@ -27,6 +37,7 @@ const selectedCountry = defineModel('selected')
             :empty-message="$props.emptyMessage ?? t('no_results')"
             :empty-filter-message="$props.emptyFilterMessage ?? t('no_results')"
             :invalid
+            dataKey="code"
         >
             <template #value="slotProps">
                 <div v-if="slotProps.value">

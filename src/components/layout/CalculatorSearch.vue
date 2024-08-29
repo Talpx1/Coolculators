@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import type { CalculatorObject } from '@/composables/useCalculatorList'
-import useCalculatorList from '@/composables/useCalculatorList'
+import useCalculatorsList from '@/composables/useCalculatorsList'
+import type { CalculatorObject } from '@/data/calculators'
 import AutoComplete, {
     type AutoCompleteCompleteEvent,
     type AutoCompleteOptionSelectEvent
@@ -14,7 +14,7 @@ const { t } = useI18n()
 
 const query = ref('')
 
-const allItems = useCalculatorList()
+const allItems = useCalculatorsList()
 const found = ref<CalculatorObject[]>([])
 
 function search(event: AutoCompleteCompleteEvent) {

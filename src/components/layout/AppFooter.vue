@@ -25,11 +25,11 @@ const toggleAboutDialog = useToggle(isAboutDialogOpen)
 
         <div class="flex flex-col md:flex-row gap-4 md:gap-8">
             <a href="https://buymeacoffee.com/talp1" target="_blank">
-                <Button text :label="t('support_my_work')" :icon="PrimeIcons.HEART_FILL" />
+                <Button text :label="t('support_my_work')" />
             </a>
             <Button text :label="t('contact_us')" @click="toggleContactDialog()" />
-            <Button text label="About" @click="toggleAboutDialog()" />
-            <Button text label="Privacy" @click="togglePrivacyDialog()" />
+            <Button text label="ℹ️ About" @click="toggleAboutDialog()" />
+            <Button text label="🍪 Privacy" @click="togglePrivacyDialog()" />
         </div>
 
         <Dialog modal v-model:visible="isPrivacyDialogOpen" header="Privacy">
@@ -38,7 +38,6 @@ const toggleAboutDialog = useToggle(isAboutDialogOpen)
 
         <Dialog modal v-model:visible="isContactDialogOpen" :header="t('contact_us')">
             <a href="mailto:hello@coolculators.com" class="flex items-center gap-4">
-                <span :class="PrimeIcons.ENVELOPE"></span>
                 hello@coolculators.com
             </a>
         </Dialog>
@@ -58,7 +57,7 @@ const toggleAboutDialog = useToggle(isAboutDialogOpen)
 
             <div class="mt-4">
                 <a href="https://buymeacoffee.com/talp1" target="_blank">
-                    <Button :label="t('support_my_work')" :icon="PrimeIcons.HEART_FILL" />
+                    <Button :label="t('support_my_work')" />
                 </a>
             </div>
         </Dialog>
