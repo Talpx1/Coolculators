@@ -30,6 +30,11 @@ const value = defineModel<number | null>()
 
 <template>
     <InputWrapper :label :label-position :label-class>
-        <InputNumber v-model="value" :locale v-bind="{ ...$props, ...$attrs }" />
+        <InputNumber
+            v-model="value"
+            :locale
+            v-bind="{ ...$props, ...$attrs }"
+            :suffix="undefined"
+        />
     </InputWrapper>
 </template>
