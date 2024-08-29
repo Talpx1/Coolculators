@@ -22,7 +22,7 @@ const numberInputProps = {
     class: '!w-32 lg:!w-48 text-2xl lg:text-4xl',
     incrementButtonClass: '[&>span.pi]:w-full [&>span.pi]:h-full [&>span.pi]:align-middle',
     decrementButtonClass: '[&>span.pi]:w-full [&>span.pi]:h-full [&>span.pi]:align-middle',
-    labelClass: 'text-center text-2xl mb-2'
+    labelClass: 'text-center text-xl lg:text-2xl mb-2'
 }
 </script>
 
