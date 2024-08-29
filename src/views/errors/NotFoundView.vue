@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import MainLogo from '@/components/ui/MainLogo.vue'
 import Button from 'primevue/button'
-import { PrimeIcons } from '@primevue/core/api'
 </script>
 
 <template>
@@ -17,7 +16,7 @@ import { PrimeIcons } from '@primevue/core/api'
         </div>
 
         <RouterLink :to="{ path: '/' }">
-            <Button :icon="PrimeIcons.HOME" label="Go back to the Homepage" />
+            <Button class="text-4xl" label="🔙🏠" />
         </RouterLink>
     </main>
 </template>
