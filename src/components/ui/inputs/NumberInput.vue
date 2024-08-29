@@ -4,14 +4,16 @@ import { useI18n } from 'vue-i18n'
 import { PrimeIcons } from '@primevue/core/api'
 import InputWrapper, { type InputWrapperProps } from './InputWrapper.vue'
 
+//HACK: disabling format as suffix + format is bugged on mobile
+
 const { locale } = useI18n()
 
-type NumberInputProps = Omit<InputNumberProps, 'unstyled' | 'locale'> & InputWrapperProps
+type NumberInputProps = Omit<InputNumberProps, 'unstyled' | 'locale' | 'format'> & InputWrapperProps
 
 withDefaults(defineProps<NumberInputProps>(), {
     incrementIcon: PrimeIcons.PLUS,
     decrementIcon: PrimeIcons.MINUS,
-    format: true,
+    format: false,
     showButtons: true,
     buttonLayout: 'vertical',
     min: 0,
@@ -27,6 +29,6 @@ const value = defineModel<number | null>()
 
 <template>
     <InputWrapper :label :label-position :label-class>
-        <InputNumber v-model="value" :locale v-bind="{ ...$props, ...$attrs }" />
+        <InputNumber v-model="value" :locale :format="false" v-bind="{ ...$props, ...$attrs }" />
     </InputWrapper>
 </template>
