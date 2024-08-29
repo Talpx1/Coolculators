@@ -1,7 +1,7 @@
-import type { Country } from '@/composables/useCountries'
 import { ref, type Ref } from 'vue'
 import { FOOD_CATEGORIES, type UserFoodData } from './useNewFoodCategoryDataObject'
 import { useI18n } from 'vue-i18n'
+import type { Country } from '@/data/countries'
 
 type CalculatedWastes = {
     total_emissions: number
