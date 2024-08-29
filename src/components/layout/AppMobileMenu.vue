@@ -32,7 +32,10 @@ onBeforeRouteUpdate(() => {
             </template>
 
             <div class="flex flex-col gap-16 py-8">
-                <CalculatorSearch />
+                <CalculatorSearch
+                    appendTo="self"
+                    overlayClass="p-mobile-autocomplete-dropdown-overlay"
+                />
                 <LocaleSelector />
             </div>
 
@@ -42,3 +45,14 @@ onBeforeRouteUpdate(() => {
         </Drawer>
     </aside>
 </template>
+
+<style>
+.p-mobile-autocomplete-dropdown-overlay {
+    max-width: 100%;
+    left: 0 !important;
+}
+
+.p-mobile-autocomplete-dropdown-overlay ul li {
+    text-overflow: ellipsis;
+}
+</style>
