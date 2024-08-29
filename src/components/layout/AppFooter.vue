@@ -32,7 +32,7 @@ const toggleAboutDialog = useToggle(isAboutDialogOpen)
             <Button text label="🍪 Privacy" @click="togglePrivacyDialog()" />
         </div>
 
-        <Dialog modal v-model:visible="isPrivacyDialogOpen" header="Privacy">
+        <Dialog modal v-model:visible="isPrivacyDialogOpen" header="🍪 Privacy">
             {{ t('privacy_disclaimer') }}
         </Dialog>
 
@@ -42,7 +42,7 @@ const toggleAboutDialog = useToggle(isAboutDialogOpen)
             </a>
         </Dialog>
 
-        <Dialog modal v-model:visible="isAboutDialogOpen" header="About">
+        <Dialog modal v-model:visible="isAboutDialogOpen" header="ℹ️ About">
             <I18nTranslator keypath="about" tag="p">
                 <template #age>
                     {{
