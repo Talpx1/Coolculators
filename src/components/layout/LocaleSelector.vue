@@ -5,7 +5,7 @@ import { useI18n } from 'vue-i18n'
 import { ref } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 import useLocalizedRoute from '@/composables/useLocalizedRoute'
-import useFlagEmoji from '@/composables/useFlagEmoji'
+import FlagEmoji from '../ui/typography/FlagEmoji.vue'
 
 const options: LocaleObject[] = useLocale().localesAsArray()
 
@@ -45,17 +45,13 @@ async function onChange(e: SelectChangeEvent) {
     <Select v-model="selectedLocale" :options @change="onChange">
         <template #value="slotProps: { value: LocaleObject }">
             <div>
-                <span class="text-xl">{{
-                    useFlagEmoji().fromCode(slotProps.value.flag_code)
-                }}</span>
+                <FlagEmoji :country-code="slotProps.value.flag_code" />
                 {{ slotProps.value.label }}
             </div>
         </template>
         <template #option="slotProps: { option: LocaleObject; selected: boolean; index: number }">
             <div>
-                <span class="text-xl">{{
-                    useFlagEmoji().fromCode(slotProps.option.flag_code)
-                }}</span>
+                <FlagEmoji :country-code="slotProps.option.flag_code" />
                 {{ slotProps.option.label }}
             </div>
         </template>
