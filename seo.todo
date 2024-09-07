@@ -1,13 +1,13 @@
+[ ] implement tag archive pages -> always include "calculator" keyword in url and headings
+[ ] implement category archive pages -> always include "calculator" keyword in url and headings
+[ ] meta desc: include target keyword literally on the left
+[ ] insert FAQs
+[ ] build hierarchically related calculators: from most generic to most in depth
 [ ] zero volume keyword
 [ ] infographic
-[ ] build hierarchically related calculators: from most generic to most in depth
-[ ] insert FAQs
-[ ] implement category archive pages -> always include "calculator" keyword in url and headings
-[ ] implement tag archive pages -> always include "calculator" keyword in url and headings
 [ ] add featured images for calculator
 
 [X] content index in each calculator -> all in p tag
-[X] meta desc: include target keyword on the left
 [X] add links to known sources
 [X] explain with words how to calculate -> steps
 [X] related calculators
