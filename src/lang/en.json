@@ -103,7 +103,7 @@
         },
         "body_mass_index": {
             "title": "⚖️ Body Mass Index (BMI) Calculator",
-            "description": "Underweight, normal weight, or overweight? Find out by calculating your BMI.",
+            "description": "The BMI calculator allows you to find out if you are underweight, normal weight or overweight, in relation to your height.",
             "messages": {
                 "bmi": "BMI",
                 "severe_thinness": "Severe Thinness",
@@ -178,7 +178,7 @@
         },
         "food_waste": {
             "title": "🥕🗑️ Food Waste Calculator",
-            "description": "Discover the CO₂eq emissions caused by your food waste and find out how much you could have saved.",
+            "description": "Calculate the CO₂eq emissions caused by your food waste and find out how much you could have saved.",
             "messages": {
                 "intro": "This Food Waste Calculator allows you to measure the environmental impact and the economic cost of your food waste.{break}By understanding your CO₂eq emissions, you can make more sustainable choices, reduce waste, and save money.",
                 "meat": "🍖 Meat",
@@ -214,7 +214,7 @@
         },
         "vegetable_garden": {
             "title": "🍅🫛 Vegetable Garden Planting Calculator",
-            "description": "With this calculator, you can plan your vegetable garden planting: discover the needs, costs, and yields of the vegetables you intend to grow.",
+            "description": "With the vegetable sowing calculator you can plan the sowing of your vegetables: discover the needs, costs, and yields of the vegetables you intend to grow.",
             "messages": {
                 "intro": "Factors considered: space needed, irrigation, fertilizer, soil, costs, yield, season, diseases.",
                 "diseases_preventions": {

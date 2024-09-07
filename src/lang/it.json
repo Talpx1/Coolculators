@@ -104,7 +104,7 @@
         },
         "body_mass_index": {
             "title": "⚖️ Calcolatore di Indice di Massa Corporea (IMC)",
-            "description": "Sottopeso, normopeso o sovrappeso? Scoprilo calcolando il tuo IMC.",
+            "description": "Il calcolatore IMC ti permette di scoprire se sei sottopeso, normopeso o sovrappeso, in relazione alla tua altezza.",
             "messages": {
                 "bmi": "IMC",
                 "severe_thinness": "Grave magrezza",
@@ -179,7 +179,7 @@
         },
         "food_waste": {
             "title": "🥕🗑️ Calcolatore Spreco Alimentare",
-            "description": "Scopri le emissioni di CO₂eq causate dal tuo spreco alimentare e determina quanto avresti potuto risparmiare.",
+            "description": "Calcola le emissioni di CO₂eq causate dal tuo spreco alimentare e determina quanto avresti potuto risparmiare.",
             "messages": {
                 "intro": "Questo Calcolatore dello Spreco Alimentare ti permette di misurare l'impatto ambientale e il costo economico dell tuo spreco di cibo.{break}Conoscendo le tue emissioni di CO₂eq, puoi fare scelte più sostenibili, ridurre lo spreco e risparmiare.",
                 "meat": "🍖 Carne",
@@ -215,7 +215,7 @@
         },
         "vegetable_garden": {
             "title": "🍅🫛 Calcolatore di Semina dell'Orto",
-            "description": "Con questo calcolatore potrai pianificare la semina del tuo orto: scopri le necessità, il costo e la resa degli ortaggi che hai intenzione di coltivare.",
+            "description": "Con il calcolatore di semina dell'orto potrai pianificare la semina dei tuoi ortaggi: scopri le necessità, il costo e la resa degli ortaggi che hai intenzione di coltivare.",
             "messages": {
                 "intro": "Fattori presi in considerazione: spazio necessario, irrigazione, fertilizzante, terreno, costi, resa, stagione, malattie.",
                 "diseases_preventions": {
@@ -341,8 +341,8 @@
                     "boreal": "🌲 Boreale"
                 },
                 "results": {
-                    "by_available_space": "In {required_space} m², potrai piantare {plant_amount} piante e riuscirai a raccogliere {harvest_amount} kg.",
-                    "by_harvest_amount": "Per raccogliere almeno {harvest_amount} kg, dovrai piantare {plant_amount} piante e avrai bisogno di {required_space} m² di spazio."
+                    "by_available_space": "In {required_space} m², potrete piantare {plant_amount} piante e riuscirete a raccogliere {harvest_amount} kg.",
+                    "by_harvest_amount": "Per raccogliere almeno {harvest_amount} kg, dovrete piantare {plant_amount} piante e avrete bisogno di {required_space} m² di spazio."
                 },
                 "select_vegetables": "Seleziona ortaggi",
                 "vegetables_lbl": "🥕 Ortaggi",
@@ -370,15 +370,15 @@
                 "climate": "🌡️ Clima",
                 "select_a_climate": "Seleziona il clima della tua zona",
                 "what_is_the_vegetable_sowing_calculator_for": "A cosa serve il calcolatore di semina dell'orto?",
-                "what_is_the_vegetable_sowing_calculator_for_description": "Questo calcolatore è pensato per coloro che vogliono iniziare a fare orto, ma che non hanno ancora idea di come funzioni questo mondo.{break}Con il calcolatore di semina, ci poniamo come obiettivo quello di darvi indicazioni su come gestire gli ortaggi che desiderate coltivare.{break}Infatti, dopo aver inserito i dati richiesti, il calcolatore saprà dirvi quante piante coltivare, quanto sarà il raccolto stimato e svariate altre informazioni necessarie a garantire che il vostro orti sia un successo.",
+                "what_is_the_vegetable_sowing_calculator_for_description": "Questo calcolatore è pensato per coloro che vogliono iniziare a fare orto, ma che non hanno ancora idea di come funzioni questo mondo.{break}Con il calcolatore di semina, ci poniamo come obiettivo quello di darvi indicazioni su come gestire gli ortaggi che desiderate coltivare.{break}Infatti, dopo aver inserito i dati richiesti, il calcolatore saprà dirvi quante piante coltivare, quanto sarà il raccolto stimato e svariate altre informazioni necessarie a garantire che il vostro orto sia un successo.",
                 "what_information_will_the_sowing_calculator_provide_me": "Quali informazioni mi fornirà il calcolatore di semina?",
                 "what_information_will_the_sowing_calculator_provide_me_description": "Come detto, potrete farvi un'idea sul numero di piante da coltivare, sullo spazio necessario per farlo e sul raccolto che potrete aspettarvi.{break}Inoltre, il calcolo fornirà la distanza da lasciare tra le piante, la stagione di semina consigliata, la quantità e frequenza di irrigazione, i fertilizzanti e tipi di suolo più adatti all'ortaggio.{break}Insieme a tutto questo, abbiamo pensato potessero essere utili alcuni consigli per migliorare l'esperienza di coltivazione e per conoscere, prevenire e trattare le malattie più comuni per ogni ortaggio.",
                 "why_is_climate_an_important_element_in_sowing_calculations": "Perché il clima è un elemento importante nel calcolo della semina?",
-                "why_is_climate_an_important_element_in_sowing_calculations_description": "Come avrete potuto notare, il nostro strumento per la pianificazione dell'orto richiede di selezionare il clima della zona in cui è situato il vostro orto.{break}Questa necessità è dovuta al fatto che in climi diversi, gli ortaggi crescono con più o meno facilità e a ritmi differenti.{break}Ogni clima ha un coefficiente di crescita associato, il cui il valore massimo è 1, che indica un clima perfetto per la coltivazione.{break}Comunque, non dovrai preoccuparti di niente, il nostro calcolatore prende già in considerazione questo fattore, includendolo nei calcoli e fornendo, di conseguenza, un risultato misurato sul clima selezionato.{break}È importante ricordare che una serra potrebbe alterare le condizioni prese in considerazione per il clima: in questo caso seleziona un clima più caldo e umido di quello in cui il tuo orto è situato.",
+                "why_is_climate_an_important_element_in_sowing_calculations_description": "Come avrete potuto notare, il nostro strumento per la pianificazione dell'orto richiede di selezionare il clima della zona in cui è situato il vostro orto.{break}Questa necessità è dovuta al fatto che in climi diversi, gli ortaggi crescono con più o meno facilità e a ritmi differenti.{break}Ogni clima ha un coefficiente di crescita associato, il cui il valore massimo è 1, che indica un clima perfetto per la coltivazione.{break}Comunque, non dovrete preoccuparvi di niente, il nostro calcolatore prende già in considerazione questo fattore, includendolo nei calcoli e fornendo, di conseguenza, un risultato misurato sul clima selezionato.{break}È importante ricordare che una serra potrebbe alterare le condizioni prese in considerazione per il clima: in questo caso selezionate un clima più caldo e umido di quello in cui il vostro orto è situato.",
                 "what_else_might_be_useful_to_know_for_growing_my_vegetable_garden": "Cos'altro potrebbe essere utile sapere per la coltivazione del mio orto?",
                 "what_else_might_be_useful_to_know_for_growing_my_vegetable_garden_description": {
-                    "part_1": "Ci sono un paio di considerazioni che potrebbero incrementare la produttività del tuo orto, che non sono (per ora) prese in considerazione dal calcolatore.{break}Tra le principali troviamo la fase lunare e l'abbinamento di ortaggi.{space}La Luna e le sue fasi giocano un ruolo importante nella coltivazione del tuo orto, causando una variazione in come un ortaggio cresce, fiorisce o si sviluppa.{break}Ci sono fasi lunari più o meno adatte per ogni ortaggio, stile di semina (coltura protetta, semina in casa, ...) e azioni preparatorie per il terreno (concimazione con diversi tipi di fertilizzante, travaso, ...).{space}Più informazioni sulle fasi lunari nella coltivazione:{break}{part_1_links}",
-                    "part_2": "{break}Per quanto riguarda l'abbinamento di ortaggi, a cui ci si riferisce col termine \"consociazione\", è bene sapere che ci sono ortaggi che, se piantati sullo stesso terreno, si \"abbinano\" più o meno bene con altri.{break}Abbinamenti azzeccati aiutano a contrastare i parassiti, migliorare la crescita e, in alcuni casi, il sapore dell'ortaggio stesso.{break}Al contrario, una consociazione non corretta potrebbe danneggiare il rendimento del tuo orto a causa di un consumo idrico o di nutrienti sbilanciato, oppure aumentando il rischio di trasmissione di malattie e parassiti.{space}Più informazioni sulla consociazione:{break}{part_2_links}"
+                    "part_1": "Ci sono un paio di considerazioni che potrebbero incrementare la produttività del vostro orto, che non sono (per ora) prese in considerazione dal calcolatore.{break}Tra le principali troviamo la fase lunare e l'abbinamento di ortaggi.{space}La Luna e le sue fasi giocano un ruolo importante nella coltivazione del vostro orto, causando una variazione in come un ortaggio cresce, fiorisce o si sviluppa.{break}Ci sono fasi lunari più o meno adatte per ogni ortaggio, stile di semina (coltura protetta, semina in casa, ...) e azioni preparatorie per il terreno (concimazione con diversi tipi di fertilizzante, travaso, ...).{space}Più informazioni sulle fasi lunari nella coltivazione:{break}{part_1_links}",
+                    "part_2": "{break}Per quanto riguarda l'abbinamento di ortaggi, a cui ci si riferisce col termine \"consociazione\", è bene sapere che ci sono ortaggi che, se piantati sullo stesso terreno, si \"abbinano\" più o meno bene con altri.{break}Abbinamenti azzeccati aiutano a contrastare i parassiti, migliorare la crescita e, in alcuni casi, il sapore dell'ortaggio stesso.{break}Al contrario, una consociazione non corretta potrebbe danneggiare il rendimento del vostro orto a causa di un consumo idrico o di nutrienti sbilanciato, oppure aumentando il rischio di trasmissione di malattie e parassiti.{space}Più informazioni sulla consociazione:{break}{part_2_links}"
                 }
             }
         }

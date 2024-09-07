@@ -312,7 +312,9 @@ const reactiveVegetableData = computed(() => {
                                             )
                                         }}:</span
                                     >
-                                    <div class="ml-2 pl-2 border-l-2 border-primary">
+                                    <div
+                                        class="ml-2 pl-2 border-l-2 border-primary flex flex-col gap-2"
+                                    >
                                         <p
                                             v-for="tip in reactiveVegetableData[result.vegetableId]
                                                 .growing_tips"
@@ -335,7 +337,7 @@ const reactiveVegetableData = computed(() => {
                                     <div
                                         class="flex flex-col gap-2 ml-2 pl-2 border-l-2 border-primary"
                                     >
-                                        <div class="flex flex-col lg:flex-row gap-1">
+                                        <div class="flex flex-col">
                                             <span class="font-bold"
                                                 >{{
                                                     t(
@@ -343,11 +345,20 @@ const reactiveVegetableData = computed(() => {
                                                     )
                                                 }}:</span
                                             >
-                                            <span>{{
-                                                reactiveVegetableData[
-                                                    result.vegetableId
-                                                ].diseases.signs_and_symptoms.join(', ')
-                                            }}</span>
+                                            <div
+                                                class="ml-2 pl-2 border-l-2 border-primary flex flex-col gap-2"
+                                            >
+                                                <p
+                                                    v-for="symptom in reactiveVegetableData[
+                                                        result.vegetableId
+                                                    ].diseases.signs_and_symptoms"
+                                                    :key="
+                                                        symptom.replace(/\s/g, '').substring(0, 15)
+                                                    "
+                                                >
+                                                    {{ symptom }}
+                                                </p>
+                                            </div>
                                         </div>
 
                                         <div class="flex flex-col">
@@ -358,7 +369,9 @@ const reactiveVegetableData = computed(() => {
                                                     )
                                                 }}:</span
                                             >
-                                            <div class="ml-2 pl-2 border-l-2 border-primary">
+                                            <div
+                                                class="ml-2 pl-2 border-l-2 border-primary flex flex-col gap-2"
+                                            >
                                                 <p
                                                     v-for="prevention in reactiveVegetableData[
                                                         result.vegetableId
@@ -382,7 +395,9 @@ const reactiveVegetableData = computed(() => {
                                                     )
                                                 }}:</span
                                             >
-                                            <div class="ml-2 pl-2 border-l-2 border-primary">
+                                            <div
+                                                class="ml-2 pl-2 border-l-2 border-primary flex flex-col gap-2"
+                                            >
                                                 <p
                                                     v-for="treatment in reactiveVegetableData[
                                                         result.vegetableId
