@@ -9,6 +9,8 @@ import BmiFormula from './components/BmiFormula.vue'
 import BmiRangesTable from './components/BmiRangesTable.vue'
 import RelatedResources from '@/components/ui/RelatedResources.vue'
 import BmiParagraphs from './components/BmiParagraphs.vue'
+import BlogContentWrapper from '@/components/functional/BlogContentWrapper.vue'
+import SecondaryHeading from '@/components/ui/typography/SecondaryHeading.vue'
 
 const { t, n } = useI18n()
 
@@ -28,53 +30,55 @@ const numberInputProps = {
 
 <template>
     <CalculatorPageWrapper id="body_mass_index" application-category="HealthApplication">
-        <div class="flex gap-16">
-            <NumberInput
-                v-bind="numberInputProps"
-                :label="t('calculators.shared_messages.weight')"
-                v-model="weight"
-                suffix=" kg"
-            />
-            <NumberInput
-                v-bind="numberInputProps"
-                :label="t('calculators.shared_messages.height')"
-                v-model="height"
-                suffix=" m"
-                :step="0.01"
-                :max-fraction-digits="2"
-                :min-fraction-digits="2"
-            />
-        </div>
-
-        <div class="flex">
-            <div v-if="bmi && bmiRange" class="text-2xl lg:text-4xl space-y-4">
-                <div>
-                    {{ t('calculators.body_mass_index.messages.bmi') }}:
-                    <span :style="{ color: bmiRange.color }"
-                        >{{ n(bmi, { maximumFractionDigits: 1 }) }} kg/m<sup>2</sup></span
-                    >
-                </div>
-                <div :style="{ color: bmiRange.color }">{{ bmiRange.label }}</div>
+        <template #calculator>
+            <div class="flex gap-16">
+                <NumberInput
+                    v-bind="numberInputProps"
+                    :label="t('calculators.shared_messages.weight')"
+                    v-model="weight"
+                    suffix=" kg"
+                />
+                <NumberInput
+                    v-bind="numberInputProps"
+                    :label="t('calculators.shared_messages.height')"
+                    v-model="height"
+                    suffix=" m"
+                    :step="0.01"
+                    :max-fraction-digits="2"
+                    :min-fraction-digits="2"
+                />
             </div>
-            <div v-else>{{ t('calculators.shared_messages.insert_data_to_calculate') }}</div>
-        </div>
 
-        <BmiBar :bmi :bmi-range />
+            <div class="flex">
+                <div v-if="bmi && bmiRange" class="text-2xl lg:text-4xl space-y-4">
+                    <div>
+                        {{ t('calculators.body_mass_index.messages.bmi') }}:
+                        <span :style="{ color: bmiRange.color }"
+                            >{{ n(bmi, { maximumFractionDigits: 1 }) }} kg/m<sup>2</sup></span
+                        >
+                    </div>
+                    <div :style="{ color: bmiRange.color }">{{ bmiRange.label }}</div>
+                </div>
+                <div v-else>{{ t('calculators.shared_messages.insert_data_to_calculate') }}</div>
+            </div>
 
-        <BmiFormula />
+            <BmiBar :bmi :bmi-range />
 
-        <BmiRangesTable />
+            <BmiFormula />
 
-        <div class="flex flex-col gap-16 justify-self-center max-w-full">
+            <BmiRangesTable />
+        </template>
+
+        <template #blog>
             <BmiParagraphs />
-        </div>
 
-        <RelatedResources
-            :resources="[
-                'https://www.betterhealth.vic.gov.au/health/healthyliving/body-mass-index-bmi',
-                'https://www.cdc.gov/bmi/faq/',
-                'https://emedicine.medscape.com/article/123702-overview#showall?form=fpf'
-            ]"
-        />
+            <RelatedResources
+                :resources="[
+                    'https://www.betterhealth.vic.gov.au/health/healthyliving/body-mass-index-bmi',
+                    'https://www.cdc.gov/bmi/faq/',
+                    'https://emedicine.medscape.com/article/123702-overview#showall?form=fpf'
+                ]"
+            />
+        </template>
     </CalculatorPageWrapper>
 </template>

@@ -76,6 +76,7 @@
     "calculators": {
         "shared_messages": {
             "insert_data_to_calculate": "Specifica dei valori per ogni campo richiesto per calcolare il risultato",
+            "content_index_table": "📰 Indice dei contenuti",
             "weight": "⚖️ Peso",
             "height": "📏 Altezza",
             "age": "⏳ Età",

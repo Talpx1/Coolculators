@@ -12,6 +12,7 @@ import { useRoute } from 'vue-router'
 import useCalculatorsList from '@/composables/useCalculatorsList'
 import Tag from 'primevue/tag'
 import CalculatorCard from '../ui/CalculatorCard.vue'
+import BlogContentWrapper from './BlogContentWrapper.vue'
 
 type ApplicationCategory =
     | 'GameApplication'
@@ -140,7 +141,11 @@ useSchemaOrg([
             <h2>{{ t(`calculators.${props.id}.description`) }}</h2>
         </div>
 
-        <slot />
+        <slot name="calculator" />
+
+        <BlogContentWrapper class="my-8">
+            <slot name="blog" />
+        </BlogContentWrapper>
 
         <div v-if="relatedCalculators.length">
             <div class="font-bold mb-4 text-xl">{{ t('related_calculators') }}</div>

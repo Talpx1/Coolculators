@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import TextualLink from '@/components/ui/TextualLink.vue'
+import FlagEmoji from '@/components/ui/typography/FlagEmoji.vue'
 import SecondaryHeading from '@/components/ui/typography/SecondaryHeading.vue'
 import useFlagEmoji from '@/composables/useFlagEmoji'
 import Card from 'primevue/card'
@@ -168,7 +169,10 @@ const top10CountryByFoodWastePerYear = countriesFoodWasteData
                         :key="entry.name"
                         class="contents"
                     >
-                        <div>{{ entry.flag_emoji }} {{ t(`countries.${entry.name}`) }}</div>
+                        <div>
+                            <FlagEmoji>{{ entry.flag_emoji }}</FlagEmoji>
+                            {{ t(`countries.${entry.name}`) }}
+                        </div>
                         <div>{{ n(entry.kg_per_capita) }}</div>
                     </div>
                 </div>
@@ -202,7 +206,10 @@ const top10CountryByFoodWastePerYear = countriesFoodWasteData
                         :key="entry.name"
                         class="contents"
                     >
-                        <div>{{ entry.flag_emoji }} {{ t(`countries.${entry.name}`) }}</div>
+                        <div>
+                            <FlagEmoji>{{ entry.flag_emoji }}</FlagEmoji>
+                            {{ t(`countries.${entry.name}`) }}
+                        </div>
                         <div>{{ n(entry.annual_tons_in_millions) }}M</div>
                     </div>
                 </div>

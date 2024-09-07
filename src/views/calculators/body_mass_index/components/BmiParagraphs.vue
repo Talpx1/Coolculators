@@ -2,7 +2,6 @@
 import { useI18n } from 'vue-i18n'
 import SecondaryHeading from '@/components/ui/typography/SecondaryHeading.vue'
 import TextParagraph from '@/components/ui/typography/TextParagraph.vue'
-import I18nTranslator from '@/components/i18n/I18nTranslator.vue'
 import TranslatableParagraphBlock from '@/components/i18n/TranslatableParagraphBlock.vue'
 
 const { t } = useI18n()

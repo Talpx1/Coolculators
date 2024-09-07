@@ -8,7 +8,7 @@ defineProps<
 defineOptions({ inheritAttrs: false })
 
 function isExternal(destination: string | RouteLocationRaw): destination is string {
-    return typeof destination === 'string'
+    return typeof destination === 'string' && destination.startsWith('http')
 }
 </script>
 

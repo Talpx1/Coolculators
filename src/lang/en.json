@@ -75,6 +75,7 @@
     "calculators": {
         "shared_messages": {
             "insert_data_to_calculate": "Specify values for every required field to calculate the result",
+            "content_index_table": "📰 Table of contents",
             "weight": "⚖️ Weight",
             "height": "📏 Height",
             "age": "⏳ Age",

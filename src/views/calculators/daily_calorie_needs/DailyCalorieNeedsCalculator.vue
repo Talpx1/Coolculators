@@ -53,92 +53,101 @@ const radioBntsOrientation = computed(() =>
 
 <template>
     <CalculatorPageWrapper id="daily_calorie_needs" application-category="HealthApplication">
-        <div class="flex flex-col gap-8 justify-self-center">
-            <div class="flex gap-2 lg:gap-8">
-                <NumberInput
-                    v-bind="numberInputProps"
-                    :label="t('calculators.shared_messages.weight')"
-                    v-model="weight"
-                    suffix=" kg"
-                />
-                <NumberInput
-                    v-bind="numberInputProps"
-                    :label="t('calculators.shared_messages.height')"
-                    v-model="height"
-                    suffix=" m"
-                    :step="0.01"
-                    :max-fraction-digits="2"
-                    :min-fraction-digits="2"
-                />
-                <NumberInput
-                    v-bind="numberInputProps"
-                    :label="t('calculators.shared_messages.age')"
-                    v-model="age"
-                />
-            </div>
-            <div class="mt-8 flex flex-col gap-8">
-                <RadioInput
-                    :orientation="radioBntsOrientation"
-                    class="text-xl lg:text-2xl"
-                    v-model="gender"
-                    :groupLabel="t('calculators.shared_messages.gender')"
-                    :entries="[
-                        { label: t('calculators.shared_messages.male'), value: 'male' },
-                        { label: t('calculators.shared_messages.female'), value: 'female' }
-                    ]"
-                />
-                <RadioInput
-                    :orientation="radioBntsOrientation"
-                    class="text-xl lg:text-2xl"
-                    v-model="lifestyleCoefficient"
-                    :groupLabel="t('calculators.daily_calorie_needs.messages.physical_activity')"
-                    :entries="[
-                        {
-                            label: t(
-                                'calculators.daily_calorie_needs.messages.sedentary_lifestyle'
-                            ),
-                            value: 1.2
-                        },
-                        {
-                            label: t(
-                                'calculators.daily_calorie_needs.messages.moderately_active_lifestyle'
-                            ),
-                            value: 1.3
-                        },
-                        {
-                            label: t('calculators.daily_calorie_needs.messages.active_lifestyle'),
-                            value: 1.4
-                        }
-                    ]"
-                />
-            </div>
-        </div>
-
-        <div class="flex flex-col justify-self-center">
-            <div v-if="dailyCalorieNeeds && bmr" class="space-y-4 text-xl lg:text-4xl">
-                <div>
-                    {{ t('calculators.daily_calorie_needs.messages.bmr') }}:
-                    {{ n(bmr, { maximumFractionDigits: 2, minimumFractionDigits: 2 }) }} kcal
+        <template #calculator>
+            <div class="flex flex-col gap-8 justify-self-center">
+                <div class="flex gap-2 lg:gap-8">
+                    <NumberInput
+                        v-bind="numberInputProps"
+                        :label="t('calculators.shared_messages.weight')"
+                        v-model="weight"
+                        suffix=" kg"
+                    />
+                    <NumberInput
+                        v-bind="numberInputProps"
+                        :label="t('calculators.shared_messages.height')"
+                        v-model="height"
+                        suffix=" m"
+                        :step="0.01"
+                        :max-fraction-digits="2"
+                        :min-fraction-digits="2"
+                    />
+                    <NumberInput
+                        v-bind="numberInputProps"
+                        :label="t('calculators.shared_messages.age')"
+                        v-model="age"
+                    />
                 </div>
-                <div>
-                    {{ t('calculators.daily_calorie_needs.messages.daily_calorie_needs') }}:
-                    {{
-                        n(dailyCalorieNeeds, { maximumFractionDigits: 2, minimumFractionDigits: 2 })
-                    }}
-                    kcal
+                <div class="mt-8 flex flex-col gap-8">
+                    <RadioInput
+                        :orientation="radioBntsOrientation"
+                        class="text-xl lg:text-2xl"
+                        v-model="gender"
+                        :groupLabel="t('calculators.shared_messages.gender')"
+                        :entries="[
+                            { label: t('calculators.shared_messages.male'), value: 'male' },
+                            { label: t('calculators.shared_messages.female'), value: 'female' }
+                        ]"
+                    />
+                    <RadioInput
+                        :orientation="radioBntsOrientation"
+                        class="text-xl lg:text-2xl"
+                        v-model="lifestyleCoefficient"
+                        :groupLabel="
+                            t('calculators.daily_calorie_needs.messages.physical_activity')
+                        "
+                        :entries="[
+                            {
+                                label: t(
+                                    'calculators.daily_calorie_needs.messages.sedentary_lifestyle'
+                                ),
+                                value: 1.2
+                            },
+                            {
+                                label: t(
+                                    'calculators.daily_calorie_needs.messages.moderately_active_lifestyle'
+                                ),
+                                value: 1.3
+                            },
+                            {
+                                label: t(
+                                    'calculators.daily_calorie_needs.messages.active_lifestyle'
+                                ),
+                                value: 1.4
+                            }
+                        ]"
+                    />
                 </div>
             </div>
-            <div v-else>
-                {{ t('calculators.shared_messages.insert_data_to_calculate') }}
+
+            <div class="flex flex-col justify-self-center">
+                <div v-if="dailyCalorieNeeds && bmr" class="space-y-4 text-xl lg:text-4xl">
+                    <div>
+                        {{ t('calculators.daily_calorie_needs.messages.bmr') }}:
+                        {{ n(bmr, { maximumFractionDigits: 2, minimumFractionDigits: 2 }) }} kcal
+                    </div>
+                    <div>
+                        {{ t('calculators.daily_calorie_needs.messages.daily_calorie_needs') }}:
+                        {{
+                            n(dailyCalorieNeeds, {
+                                maximumFractionDigits: 2,
+                                minimumFractionDigits: 2
+                            })
+                        }}
+                        kcal
+                    </div>
+                </div>
+                <div v-else>
+                    {{ t('calculators.shared_messages.insert_data_to_calculate') }}
+                </div>
             </div>
-        </div>
 
-        <div class="flex flex-col justify-self-center">
-            <DailyCalorieNeedsFormula />
-        </div>
+            <div class="flex flex-col justify-self-center">
+                <DailyCalorieNeedsFormula />
+            </div>
+        </template>
 
-        <div class="flex flex-col gap-16 justify-self-center max-w-full">
+        <template #blog>
             <DailyCalorieNeedsParagraphs />
-        </div>
+        </template>
     </CalculatorPageWrapper>
 </template>
